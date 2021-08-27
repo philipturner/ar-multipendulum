@@ -29,7 +29,7 @@ struct InteractionSettingsView: View {
             }
             
             Toggle(isOn: $coordinator.interactionSettings.usingHandForSelection) {
-                Text("Use Hand For Selection")
+                Text("Use Hand for Selection")
             }
             
             Text("""

@@ -11,12 +11,12 @@ struct FlyingTutorialView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack {
-                VStack(alignment: .center) {
+                VStack {
                     Text("How to Use Flying Mode")
                         .font(.headline)
                 }
                 
-                VStack(alignment: .leading) {
+                VStack {
                     Text("""
                     
                     Flying mode allows you to move around your surroundings and see them from a different position than where you are currently standing. You cannot interact with virtual objects when in this mode, but you can still see them along with your surroundings.

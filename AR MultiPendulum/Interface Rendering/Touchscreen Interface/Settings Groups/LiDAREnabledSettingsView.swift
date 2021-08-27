@@ -35,6 +35,11 @@ struct LiDAREnabledSettingsView: View {
             }
             
             if coordinator.lidarEnabledSettings.allowingHandReconstruction {
+                VStack {
+                    Text("Choose On-Screen Hand")
+                }
+                .frame(maxWidth: UIScreen.main.bounds.width, alignment: .center)
+                
                 Picker("Handedness", selection: $coordinator.lidarEnabledSettings.handheldHandedness) {
                     Text("Left").tag(Handedness.left)
                     Text("Auto").tag(Handedness.none)
