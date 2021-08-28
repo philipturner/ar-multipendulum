@@ -9,3 +9,5 @@ Some of the latest iOS devices have a built-in LiDAR scanner, which allows a dev
 This repository contains source code created during [this](https://github.com/philipturner/scene-color-reconstruction) research on scene color reconstruction. This source code uses the term "mixed reality" (MR) to differentiate code that generates the handheld experience from code that generates the headset experience. This term is a synonym for augmented reality often used to describe AR headset experiences.
 
 A browser version of the multi-pendulum simulation can be accessed [here](https://github.com/philipturner/multipendulum).
+
+The public TestFlight beta will be available [here](https://testflight.apple.com/join/96heMdWD) soon.
