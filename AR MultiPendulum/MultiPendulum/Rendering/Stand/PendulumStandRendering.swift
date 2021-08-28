@@ -15,6 +15,7 @@ extension PendulumRenderer {
         var pendulumHalfWidth: Float
         var numPendulums: Int
         
+        var pendulumColor: simd_float3
         var pendulumLocation: simd_float3
         var pendulumOrientation: simd_quatf
         var doingTwoSidedPendulums: Bool
@@ -25,6 +26,7 @@ extension PendulumRenderer {
             pendulumHalfWidth      = pendulumRenderer.pendulumHalfWidth
             numPendulums           = pendulumRenderer.numPendulums
             
+            pendulumColor          = pendulumRenderer.pendulumColor
             pendulumLocation       = pendulumRenderer.pendulumLocation
             pendulumOrientation    = pendulumRenderer.pendulumOrientation
             doingTwoSidedPendulums = pendulumRenderer.doingTwoSidedPendulums
@@ -58,13 +60,13 @@ extension PendulumRenderer {
         }
         
         let baseBottom = baseTop - 0.01 * yAxis
-        
+            
         standObjects.append(CentralObject(roundShapeType: .cylinder,
                                           modelSpaceBottom: baseBottom,
                                           modelSpaceTop: baseTop,
                                           diameter: 0.30,
                                           
-                                          color: [0.5, 0.5, 0.5])!)
+                                          color: standColor)!)
         
         if doingTwoSidedPendulums {
             baseTop -= standCenterToPendulumDistance * zAxis
@@ -78,7 +80,7 @@ extension PendulumRenderer {
                                               modelSpaceTop: standTop,
                                               diameter: standDiameter,
                                               
-                                              color: [0.5, 0.5, 0.5])!)
+                                              color: standColor)!)
         }
         
         appendStandObject()
@@ -109,7 +111,7 @@ extension PendulumRenderer {
                                               modelSpaceTop: pivotEnd,
                                               diameter: jointDiameter,
                                               
-                                              color: [0.3, 0.3, 0.3])!)
+                                              color: pivotColor)!)
         }
         
         var depths: simd_float2

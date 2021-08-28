@@ -67,10 +67,10 @@ extension PendulumInterface {
         }
         
         mutating func highlight() {
-            buttonObject.setColor([0.5, 0.5, 0.5])
+            buttonObject.setColor([0.6, 0.6, 0.6])
             
             for i in 0..<6 {
-                symbolObjects[i].setColor([0.7, 0.7, 0.7])
+                symbolObjects[i].setColor([0.8, 0.8, 0.8])
             }
         }
     }

@@ -16,6 +16,24 @@ extension PendulumRenderer: GeometryRenderer {
         var modifiedState: PendulumState?
         let interactionRay = renderer.interactionRay
         
+        @inline(__always)
+        func highlightSimulation() {
+            pendulumColor = [1.0, 0.25, 0.25]
+            jointColor    = [0.5, 0.5, 0.5]
+            
+            standColor = [0.8, 0.8, 0.8]
+            pivotColor = [0.6, 0.6, 0.6]
+        }
+        
+        @inline(__always)
+        func unhighlightSimulation() {
+            pendulumColor = [0.9, 0.0, 0.0]
+            jointColor    = [0.3, 0.3, 0.3]
+            
+            standColor = [0.5, 0.5, 0.5]
+            pivotColor = [0.3, 0.3, 0.3]
+        }
+        
         switch pendulumInterface.currentAction {
         case .movingSimulation(false):
             if let interactionRay = interactionRay {
@@ -26,6 +44,8 @@ extension PendulumRenderer: GeometryRenderer {
                     pendulumLocation = fma(normalize(interactionRay.direction), 0.5, interactionRay.origin)
                 }
             }
+            
+            highlightSimulation()
         case .modifyingSimulation(let originalRay, let originalDirection, let wasReplaying, let stateToModify):
             isReplaying = false
             
@@ -54,9 +74,13 @@ extension PendulumRenderer: GeometryRenderer {
             if renderer.pendingTap == nil {
                 isReplaying = wasReplaying
                 pendulumInterface.currentAction = .none
+                
+                unhighlightSimulation()
+            } else {
+                highlightSimulation()
             }
         default:
-            break
+            unhighlightSimulation()
         }
         
         lastInteractionRay = interactionRay

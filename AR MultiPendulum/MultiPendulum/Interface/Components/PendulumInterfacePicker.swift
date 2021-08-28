@@ -36,8 +36,8 @@ extension PendulumInterface.PickerElement {
         return .init(position: .zero, forwardDirection: [0, 0, 1], orthogonalUpDirection: [0, 1, 0],
                      width: width, height: panelHeight, depth: 0.001, radius: 0,
                      
-                     highlightColor: [0.5, 0.7, 0.9],
-                     surfaceColor:   [0.3, 0.5, 0.7], surfaceOpacity: 0.6,
+                     highlightColor: [0.6, 0.8, 1.0], highlightOpacity: 1.0,
+                     surfaceColor:   [0.3, 0.5, 0.7], surfaceOpacity: 0.75,
                      characterGroups: paragraph.characterGroups)
     }
     
@@ -222,18 +222,6 @@ extension PendulumInterface {
                                                       diameter: 0.01,
                                                       
                                                       color: [0.5, 0.5, 0.5])!)
-            }
-        }
-        
-        mutating func highlight() {
-            assert(highlightedElement == nil)
-            
-            for i in 0..<2 {
-                sideObjects[i].setColor([0.5, 0.5, 0.5])
-            }
-            
-            for i in 0..<separatorObjects.count{
-                separatorObjects[i].setColor([0.7, 0.7, 0.7])
             }
         }
         

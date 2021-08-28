@@ -36,13 +36,15 @@ final class PendulumRenderer: DelegateRenderer {
     var jointRadius: Float = 0.035
     
     var pendulumLocation: simd_float3 = [0.25, 0, -0.25]
-    var pendulumColor: simd_float3 = [0.9, 0, 0]
-    var jointColor: simd_float3 = .init(repeating: 0.3)
+    var pendulumColor: simd_float3 = [0.9, 0.0, 0.0]
+    var jointColor: simd_float3    = [0.3, 0.3, 0.3]
     var doingTwoSidedPendulums = true
     
     var shouldUpdateStand = true
     var lastStandState: StandState!
     var standObjects: [CentralObject] = []
+    var standColor: simd_float3 = [0.5, 0.5, 0.5]
+    var pivotColor: simd_float3 = [0.3, 0.3, 0.3]
     
     var prototype: PendulumSimulationPrototype
     var meshConstructor: PendulumMeshConstructor!

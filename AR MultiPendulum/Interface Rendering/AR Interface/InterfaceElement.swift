@@ -28,15 +28,21 @@ extension InterfaceRenderer {
             set { centralObject.shininess = newValue }
         }
         
+        var surfaceOpacity: Float
+        
         var baseSurfaceColor: simd_half3
         var highlightedSurfaceColor: simd_half3
-        var surfaceOpacity: Float
+        
+        var baseSurfaceOpacity: Float
+        var highlightedSurfaceOpacity: Float
         
         private var _isHighlighted = false
         var isHighlighted: Bool {
             get { _isHighlighted }
             set {
-                surfaceColor = .init(newValue ? highlightedSurfaceColor : baseSurfaceColor)
+                surfaceColor   = .init(newValue ? highlightedSurfaceColor   : baseSurfaceColor)
+                surfaceOpacity =       newValue ? highlightedSurfaceOpacity : baseSurfaceOpacity
+                
                 _isHighlighted = newValue
             }
         }
@@ -57,7 +63,7 @@ extension InterfaceRenderer {
         init(position: simd_float3, forwardDirection: simd_float3, orthogonalUpDirection: simd_float3,
              width: Float, height: Float, depth: Float, radius: Float,
              
-             highlightColor: simd_float3 = [0.2, 0.2, 0.9],
+             highlightColor: simd_float3 = [0.2, 0.2, 0.9], highlightOpacity: Float = 1.0,
              surfaceColor:   simd_float3 = [0.1, 0.1, 0.8], surfaceShininess: Float = 32, surfaceOpacity: Float = 1.0,
              textColor:      simd_float3 = [0.9, 0.9, 0.9], textShininess:    Float = 32, textOpacity:    Float = 1.0,
              characterGroups: [CharacterGroup?])
@@ -80,13 +86,16 @@ extension InterfaceRenderer {
             controlPoints = Self.getControlPoints(width: width, height: height, radius: self.radius)
             normalTransform = simd_half3x3(simd_float3x3(orientation))
             
-            baseSurfaceColor        = .init(surfaceColor)
-            highlightedSurfaceColor = .init(highlightColor)
-            self.surfaceOpacity     = surfaceOpacity
+            baseSurfaceColor          = .init(surfaceColor)
+            highlightedSurfaceColor   = .init(highlightColor)
+            baseSurfaceOpacity        = surfaceOpacity
+            highlightedSurfaceOpacity = highlightOpacity
             
-            self.textColor      = .init(textColor)
-            self.textShininess  = .init(textShininess)
-            self.textOpacity    = .init(textOpacity)
+            self.surfaceOpacity = surfaceOpacity
+            
+            self.textColor     = .init(textColor)
+            self.textShininess = .init(textShininess)
+            self.textOpacity   = .init(textOpacity)
             
             self.characterGroups = characterGroups
         }
