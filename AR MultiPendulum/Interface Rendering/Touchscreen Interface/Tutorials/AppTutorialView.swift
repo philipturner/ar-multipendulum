@@ -32,7 +32,7 @@ struct AppTutorialView: View {
                         
                         AR MultiPendulum allows you to interact with virtual objects directly with your hand instead of tapping their location on a touchscreen. It brings a mesmerizing multi-pendulum simulation into augmented reality. You interact with this simulation through hand movements and modify it through a holographic interface.
                         
-                        Not only does this app bring augmented reality to a pendulum simulation, it is also the first app to simulate more than two pendulums. Additionally, by repurposing a VR headset for AR, this is the first app that gives users an affordable AR headset experience.
+                        Not only does this app bring augmented reality to a pendulum simulation, it is also the first app to simulate more than three pendulums. Additionally, by repurposing a VR headset for AR, this is the first app that gives users an affordable AR headset experience.
                         
                         The interactive controls used in this app differ greatly from most other interactions on iOS. PLEASE THOROUGHLY READ THE FOLLOWING TUTORIAL BEFORE USING THIS APP.
                         
