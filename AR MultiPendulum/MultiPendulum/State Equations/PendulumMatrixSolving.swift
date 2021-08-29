@@ -38,9 +38,6 @@ extension PendulumStateEquations {
             let angle_i = angles[i]
             
             while j < numVectorizedPendulums {
-                let ijLocation = i_row + j
-                let jiLocation = j_row + i
-                
                 let j_plus_1 = j + 1
                 
                 let ijMultipliers = simd_double2(massSumsTimesLengthProducts_i[j],
@@ -50,26 +47,23 @@ extension PendulumStateEquations {
                                                                 angle_i - angles[j_plus_1]))
                 
                 if j > i {
-                    ijLocation.pointee = ijValues[0]
-                    jiLocation.pointee = ijValues[0]
+                    i_row[j] = ijValues[0]
+                    j_row[i] = ijValues[0]
                 }
                 
-                ijLocation[1]       = ijValues[1]
-                jiLocation[rowSize] = ijValues[1]
+                i_row[j + 1]       = ijValues[1]
+                j_row[i + rowSize] = ijValues[1]
                 
                 j += 2
                 j_row += rowSize << 1
             }
             
             if numPendulumsIsOdd != 0, j >= matrixFillStart {
-                let ijLocation = i_row + j
-                let jiLocation = j_row + i
-                
                 let ijMultiplier = massSumsTimesLengthProducts_i[j]
                 let ijValue = ijMultiplier * cos(angle_i - angles[j])
                 
-                ijLocation.pointee = ijValue
-                jiLocation.pointee = ijValue
+                i_row[j] = ijValue
+                j_row[i] = ijValue
             }
             
             i_row[numPendulums] = momenta[i]
@@ -87,9 +81,7 @@ extension PendulumStateEquations {
         }
         
         for i in 0..<numPendulums {
-            let layerRef = inputLayer
-            inputLayer = outputLayer
-            outputLayer = layerRef
+            swap(&inputLayer, &outputLayer)
             
             let iiiValue = inputLayer[i * (rowSize + 1)]
             
@@ -221,18 +213,15 @@ extension PendulumStateEquations {
                                                  massSumsTimesLengthProducts_i[j + 1])
                 
                 if j >= matrixFillRoundedStart {
-                    let ijLocation = i_row + j
-                    let jiLocation = j_row + i
-                    
                     let ijValues = ijMultipliers * getCos(sinval: sinval, angle: angleDifference)
                     
                     if j > i {
-                        ijLocation.pointee = ijValues[0]
-                        jiLocation.pointee = ijValues[0]
+                        i_row[j] = ijValues[0]
+                        j_row[i] = ijValues[0]
                     }
                     
-                    ijLocation[1]       = ijValues[1]
-                    jiLocation[rowSize] = ijValues[1]
+                    i_row[j + 1]       = ijValues[1]
+                    j_row[i + rowSize] = ijValues[1]
                 }
                 
                 do {
@@ -269,13 +258,10 @@ extension PendulumStateEquations {
                 let ijMultiplier = massSumsTimesLengthProducts_i[j]
                 
                 if j >= matrixFillStart {
-                    let ijLocation = i_row + j
-                    let jiLocation = j_row + i
-                    
                     let ijValue = ijMultiplier * getCos(sinval: sinval, angle: angleDifference)
                     
-                    ijLocation.pointee = ijValue
-                    jiLocation.pointee = ijValue
+                    i_row[j] = ijValue
+                    j_row[i] = ijValue
                 }
                 
                 if j != i {
@@ -319,13 +305,8 @@ extension PendulumStateEquations {
         }
         
         for i in 0..<numPendulums {
-            var layerRef = inputLayer
-            inputLayer = outputLayer
-            outputLayer = layerRef
-            
-            layerRef = inputDerivativeLayer
-            inputDerivativeLayer = outputDerivativeLayer
-            outputDerivativeLayer = layerRef
+            swap(&inputLayer, &outputLayer)
+            swap(&inputDerivativeLayer, &outputDerivativeLayer)
             
             let iiiOffset = i * (rowSize + 1)
             

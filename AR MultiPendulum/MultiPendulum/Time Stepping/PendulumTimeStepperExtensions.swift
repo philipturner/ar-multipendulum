@@ -6,7 +6,7 @@
 //
 
 import simd
-import Foundation
+//import Foundation
 extension PendulumTimeStepper {
     
     @inline(__always)
