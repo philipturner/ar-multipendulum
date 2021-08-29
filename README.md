@@ -10,4 +10,4 @@ This repository contains source code created during [this](https://github.com/ph
 
 A browser version of the multi-pendulum simulation can be accessed [here](https://github.com/philipturner/multipendulum).
 
-The public TestFlight beta will be available [here](https://testflight.apple.com/join/96heMdWD) soon.
+The public TestFlight beta is available [here](https://testflight.apple.com/join/96heMdWD).
