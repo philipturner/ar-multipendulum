@@ -14,6 +14,16 @@ extension InterfaceRenderer {
     typealias CharacterGroup = (boundingRects: [simd_float4], glyphIndices: [UInt16])
     typealias ParagraphReturn = (characterGroups: [CharacterGroup?], suggestedHeight: Float)
     
+    static func scaleParagraph(_ input: inout ParagraphReturn, scale: Float) {
+        input.suggestedHeight *= scale
+        
+        for i in 0..<input.characterGroups.count {
+            if let originalBoundingRects = input.characterGroups[i]?.boundingRects {
+                input.characterGroups[i]!.boundingRects = originalBoundingRects.map{ $0 * scale }
+            }
+        }
+    }
+    
     static func createParagraph(stringSegments: [StringSegment], width: Float, pixelSize: Float) -> ParagraphReturn {
         guard stringSegments.count > 0 else {
             return (characterGroups: [nil, nil, nil], suggestedHeight: 0)

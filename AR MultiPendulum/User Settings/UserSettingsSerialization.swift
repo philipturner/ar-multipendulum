@@ -49,6 +49,7 @@ extension UserSettings {
         var doingMixedRealityRendering: Bool
         var renderingViewSeparator: Bool
         var doingTwoSidedPendulums: Bool
+        var interfaceScale: Float
         
         enum Handedness: Int, Codable {
             case none = 0
@@ -71,6 +72,7 @@ extension UserSettings {
             doingMixedRealityRendering: false,
             renderingViewSeparator: true,
             doingTwoSidedPendulums: false,
+            interfaceScale: 1.0,
             
             canHideSettingsIcon: false,
             usingHandForSelection: true,
@@ -85,7 +87,9 @@ extension UserSettings {
         mutating func transferData(from settings: RenderingSettings) {
             doingMixedRealityRendering = settings.doingMixedRealityRendering
             renderingViewSeparator     = settings.renderingViewSeparator
+            
             doingTwoSidedPendulums     = settings.doingTwoSidedPendulums
+            interfaceScale             = settings.interfaceScale
         }
         
         mutating func transferData(from settings: InteractionSettings) {

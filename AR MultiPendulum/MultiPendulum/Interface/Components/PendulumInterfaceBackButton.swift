@@ -25,6 +25,10 @@ extension PendulumInterface {
             interfaceRenderer.interfaceElements.append(CachedParagraph.backButton.interfaceElement)
         }
         
+        mutating func resetSize() {
+            interfaceRenderer.interfaceElements[index] = CachedParagraph.backButton.interfaceElement
+        }
+        
         func rayTrace(ray worldSpaceRay: RayTracing.Ray) -> Float? {
             element.rayTrace(ray: worldSpaceRay)
         }
@@ -34,7 +38,7 @@ extension PendulumInterface {
 
 extension PendulumInterface.BackButton: PendulumInterfaceElement, InterfaceParagraphContainer {
     
-    enum CachedParagraph: UInt8, PendulumParagraphList {
+    enum CachedParagraph: UInt8, PendulumParagraphListElement {
         case backButton
         
         var parameters: Parameters {
@@ -57,10 +61,13 @@ extension PendulumInterface.BackButton: PendulumInterfaceElement, InterfaceParag
     }
     
     fileprivate static func generateInterfaceElement(type: CachedParagraph) -> InterfaceRenderer.InterfaceElement {
-        let paragraph = Self.createParagraph(type)
+        var paragraph = Self.createParagraph(type)
+        let scale = PendulumInterface.sizeScale
+        
+        InterfaceRenderer.scaleParagraph(&paragraph, scale: scale)
         
         return .init(position: .zero, forwardDirection: [0, 0, 1], orthogonalUpDirection: [0, 1, 0],
-                     width: width, height: 0.08, depth: 0.05, radius: .greatestFiniteMagnitude,
+                     width: width * scale, height: 0.08 * scale, depth: 0.05 * scale, radius: .greatestFiniteMagnitude,
                      
                      highlightColor: [0.6, 0.8, 1.0], highlightOpacity: 1.0,
                      surfaceColor:   [0.3, 0.5, 0.7], surfaceOpacity: 0.75,

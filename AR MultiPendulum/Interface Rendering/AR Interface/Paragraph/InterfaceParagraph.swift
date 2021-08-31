@@ -88,15 +88,15 @@ extension InterfaceRenderer {
 
 
 
-protocol InterfaceParagraphList: CaseIterable {
+protocol InterfaceParagraphListElement: CaseIterable {
     var parameters: InterfaceParagraph.Parameters { get }
 }
 
 protocol InterfaceParagraphContainer {
-    associatedtype CachedParagraph: InterfaceParagraphList
+    associatedtype CachedParagraph: InterfaceParagraphListElement
 }
 
-extension InterfaceParagraphList {
+extension InterfaceParagraphListElement {
     typealias Parameters = InterfaceParagraph.Parameters
 }
 

@@ -7,7 +7,7 @@
 
 import simd
 
-protocol PendulumParagraphList: Equatable, InterfaceParagraphList {
+protocol PendulumParagraphListElement: Equatable, InterfaceParagraphListElement {
     var rawValue: UInt8 { get }
     init?(rawValue: UInt8)
     
@@ -17,7 +17,7 @@ protocol PendulumParagraphList: Equatable, InterfaceParagraphList {
 
 extension PendulumInterface: InterfaceParagraphContainer {
     
-    enum CachedParagraph: UInt8, PendulumParagraphList {
+    enum CachedParagraph: UInt8, PendulumParagraphListElement {
         case startSimulation
         case stopSimulation
         case reset
@@ -78,7 +78,7 @@ extension PendulumInterface: InterfaceParagraphContainer {
         }
     }
     
-    struct ParagraphIndexContainer<List: PendulumParagraphList>: RayTraceable {
+    struct ParagraphIndexContainer<ListElement: PendulumParagraphListElement>: RayTraceable {
         private var interfaceRenderer: InterfaceRenderer
         private var indexStart: Int
         
@@ -87,23 +87,30 @@ extension PendulumInterface: InterfaceParagraphContainer {
             
             indexStart = interfaceRenderer.interfaceElements.count
             
-            for paragraphType in List.allCases {
+            for paragraphType in ListElement.allCases {
                 interfaceRenderer.interfaceElements.append(paragraphType.interfaceElement)
             }
         }
         
-        subscript(index: List) -> InterfaceRenderer.InterfaceElement {
+        mutating func resetSize() {
+            var i = indexStart
+            
+            for paragraphType in ListElement.allCases {
+                interfaceRenderer.interfaceElements[i] = paragraphType.interfaceElement
+                i += 1
+            }
+        }
+        
+        subscript(index: ListElement) -> InterfaceRenderer.InterfaceElement {
             get { interfaceRenderer.interfaceElements[indexStart + Int(index.rawValue)] }
             set { interfaceRenderer.interfaceElements[indexStart + Int(index.rawValue)] = newValue }
         }
-        
-        typealias ListElement = List
         
         func rayTrace(ray worldSpaceRay: RayTracing.Ray) -> (element: ListElement, progress: Float)? {
             var elementID: ListElement?
             var minProgress: Float = .greatestFiniteMagnitude
             
-            for elementType in List.allCases where !self[elementType].hidden {
+            for elementType in ListElement.allCases where !self[elementType].hidden {
                 if let progress = self[elementType].rayTrace(ray: worldSpaceRay), progress < minProgress {
                     minProgress = progress
                     elementID   = elementType
@@ -121,12 +128,13 @@ extension PendulumInterface: InterfaceParagraphContainer {
 }
 
 protocol PendulumIndexContainer {
-    associatedtype List: PendulumParagraphList
-    var elements: PendulumInterface.ParagraphIndexContainer<List> { get set }
+    associatedtype ListElement: PendulumParagraphListElement
+    var elements: PendulumInterface.ParagraphIndexContainer<ListElement> { get set }
+    mutating func resetSize()
 }
 
 extension PendulumIndexContainer {
-    subscript(index: List) -> InterfaceRenderer.InterfaceElement {
+    subscript(index: ListElement) -> InterfaceRenderer.InterfaceElement {
         get { elements[index] }
         set { elements[index] = newValue }
     }
@@ -153,11 +161,15 @@ extension PendulumInterface.RectangularButton {
     }
     
     static func generateInterfaceElement(type: CachedParagraph) -> InterfaceRenderer.InterfaceElement {
-        let paragraph = PendulumInterface.createParagraph(type)
-        let height = max(0.08, paragraph.suggestedHeight + 0.01)
+        var paragraph = PendulumInterface.createParagraph(type)
+        let scale = PendulumInterface.sizeScale
+        
+        InterfaceRenderer.scaleParagraph(&paragraph, scale: scale)
+        
+        let height = max(0.08 * scale, 0.02 * scale + paragraph.suggestedHeight)
         
         return .init(position: .zero, forwardDirection: [0, 0, 1], orthogonalUpDirection: [0, 1, 0],
-                     width: width, height: height, depth: 0.05, radius: .greatestFiniteMagnitude,
+                     width: width * scale, height: height, depth: 0.05 * scale, radius: .greatestFiniteMagnitude,
                      
                      highlightColor: [0.6, 0.8, 1.0], highlightOpacity: 1.0,
                      surfaceColor:   [0.3, 0.5, 0.7], surfaceOpacity: 0.75,
@@ -177,7 +189,7 @@ fileprivate extension PendulumInterface {
     enum Settings:          RectangularButton { static let label = "Settings" }
     
     enum NumberOfPendulums: RectangularButton { static let label = "Number of Pendulums" }
-    enum ModifyProperty:    RectangularButton { static let label = "Modify Property" }
+    enum ModifyProperty:    RectangularButton { static let label = "Configure Other Start Conditions" }
     
     enum Length:            RectangularButton { static let label = "Length" }
     enum Gravity:           RectangularButton { static let label = "Gravity" }

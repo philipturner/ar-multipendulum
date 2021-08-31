@@ -10,7 +10,7 @@ import simd
 extension PendulumInterface {
     
     struct Counter: PendulumIndexContainer, InterfaceParagraphContainer {
-        enum CachedParagraph: UInt8, PendulumParagraphList {
+        enum CachedParagraph: UInt8, PendulumParagraphListElement {
             case minus10
             case minus5
             case minus1
@@ -174,6 +174,10 @@ extension PendulumInterface {
             elements = .init(interfaceRenderer: pendulumInterface.interfaceRenderer)
         }
         
+        mutating func resetSize() {
+            elements.resetSize()
+        }
+        
         
         
         mutating func resetHighlighting() {
@@ -293,10 +297,14 @@ extension PendulumInterface.CircularButton {
     }
     
     static func generateInterfaceElement(type: Counter.CachedParagraph) -> InterfaceRenderer.InterfaceElement {
-        let paragraph = Counter.createParagraph(type)
+        var paragraph = Counter.createParagraph(type)
+        let scale = PendulumInterface.sizeScale
+        
+        InterfaceRenderer.scaleParagraph(&paragraph, scale: scale)
         
         return .init(position: .zero, forwardDirection: [0, 0, 1], orthogonalUpDirection: [0, 1, 0],
-                     width: width, height: height, depth: 0.05, radius: .greatestFiniteMagnitude,
+                     width: width * scale, height: height * scale,
+                     depth: 0.05  * scale, radius: .greatestFiniteMagnitude,
                      
                      highlightColor: [0.6, 0.8, 1.0], highlightOpacity: 1.0,
                      surfaceColor:   [0.3, 0.5, 0.7], surfaceOpacity: 0.75,

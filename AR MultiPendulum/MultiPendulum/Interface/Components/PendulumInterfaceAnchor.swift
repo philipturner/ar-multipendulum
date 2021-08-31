@@ -18,30 +18,34 @@ extension PendulumInterface {
             let yAxis = orientation.act([0, 1, 0])
             let zAxis = orientation.act([0, 0, 1])
             
-            let buttonStart = position - zAxis * 0.025
-            let buttonEnd   = position + zAxis * 0.025
+            let fullScale = 0.05  * PendulumInterface.sizeScale
+            let halfScale = 0.025 * PendulumInterface.sizeScale
+            
+            let buttonStart = fma(-halfScale, zAxis, position)
+            let buttonEnd   = fma( halfScale, zAxis, position)
             
             buttonObject = CentralObject(roundShapeType: .cylinder,
                                          modelSpaceBottom: buttonStart,
                                          modelSpaceTop: buttonEnd,
-                                         diameter: 0.15,
+                                         diameter: 0.15 * PendulumInterface.sizeScale,
                                          
                                          color: [0.3, 0.3, 0.3])!
             buttonObject.updateTransforms()
             
             
             
-            let symbolCenter = buttonEnd + zAxis * 0.025
+            let symbolCenter = fma(halfScale, zAxis, buttonEnd)
+            let directionCylinderDiameter = 0.02 * PendulumInterface.sizeScale
             
             for i in 0..<2 {
                 let delta = i == 0 ? xAxis : yAxis
-                let objectStart = symbolCenter - 0.05 * delta
-                let objectEnd   = symbolCenter + 0.05 * delta
+                let objectStart = fma(-fullScale, delta, symbolCenter)
+                let objectEnd   = fma( fullScale, delta, symbolCenter)
                 
                 symbolObjects.append(CentralObject(roundShapeType: .cylinder,
                                                    modelSpaceBottom: objectStart,
                                                    modelSpaceTop: objectEnd,
-                                                   diameter: 0.02,
+                                                   diameter: directionCylinderDiameter,
                                                    
                                                    color: [0.5, 0.5, 0.5])!)
             }
@@ -50,13 +54,13 @@ extension PendulumInterface {
                 var delta = (i & 1) == 0 ? xAxis : yAxis
                 if i >= 2 { delta = -delta }
                 
-                let objectStart = symbolCenter + 0.05 * delta
-                let objectEnd   = objectStart  + 0.025 * delta
+                let objectStart = fma(fullScale, delta, symbolCenter)
+                let objectEnd   = fma(halfScale, delta, objectStart)
                 
                 symbolObjects.append(CentralObject(roundShapeType: .cone,
                                                    modelSpaceBottom: objectStart,
                                                    modelSpaceTop: objectEnd,
-                                                   diameter: 0.025,
+                                                   diameter: halfScale,
                                                    
                                                    color: [0.5, 0.5, 0.5])!)
             }

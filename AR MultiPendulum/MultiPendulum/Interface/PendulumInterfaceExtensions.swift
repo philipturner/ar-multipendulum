@@ -13,28 +13,61 @@ extension PendulumInterface {
     func updateResources() {
         func setMeasurementText() {
             let parameters = CachedParagraph.measurement.parameters
-            let paragraph = InterfaceRenderer.createParagraph(stringSegments: [(counter.measurement, 0)],
+            var paragraph = InterfaceRenderer.createParagraph(stringSegments: [(counter.measurement, 0)],
                                                               width:     parameters.width,
                                                               pixelSize: parameters.pixelSize)
+            
+            InterfaceRenderer.scaleParagraph(&paragraph, scale: Self.sizeScale)
             
             interfaceElements[.measurement].characterGroups = paragraph.characterGroups
         }
         
-        if interfaceElements == nil {
-            interfaceElements = .init(interfaceRenderer: interfaceRenderer)
-            backButton        = .init(interfaceRenderer: interfaceRenderer)
-            counter           = .init(pendulumInterface: self)
+        do {
+            let newSizeScale: Float = 0.8 * renderer.userSettings.storedSettings.interfaceScale
             
-            propertyPicker        = .init(interfaceRenderer: interfaceRenderer)
-            lengthPicker          = .init(interfaceRenderer: interfaceRenderer)
-            massPicker            = .init(interfaceRenderer: interfaceRenderer)
-            anglePicker           = .init(interfaceRenderer: interfaceRenderer)
-            angularVelocityPicker = .init(interfaceRenderer: interfaceRenderer)
+            @inline(__always)
+            func setNewSize() {
+                Self.sizeScale = newSizeScale
+                anchorDirection = simd_quatf(angle: degreesToRadians(20 * Self.sizeScale), axis: [1, 0, 0]).act([0, 0, -1])
+            }
             
-            baseInterface = .settings
-            setMeasurementText()
-            baseInterface = .mainInterface
+            if interfaceElements == nil {
+                setNewSize()
+                
+                interfaceElements = .init(interfaceRenderer: interfaceRenderer)
+                backButton        = .init(interfaceRenderer: interfaceRenderer)
+                counter           = .init(pendulumInterface: self)
+                
+                propertyPicker        = .init(interfaceRenderer: interfaceRenderer)
+                lengthPicker          = .init(interfaceRenderer: interfaceRenderer)
+                massPicker            = .init(interfaceRenderer: interfaceRenderer)
+                anglePicker           = .init(interfaceRenderer: interfaceRenderer)
+                angularVelocityPicker = .init(interfaceRenderer: interfaceRenderer)
+                
+                baseInterface = .settings
+                setMeasurementText()
+                baseInterface = .mainInterface
+            } else if Self.sizeScale != newSizeScale {
+                setNewSize()
+                
+                interfaceElements.resetSize()
+                backButton       .resetSize()
+                counter          .resetSize()
+                
+                propertyPicker       .resetSize()
+                lengthPicker         .resetSize()
+                massPicker           .resetSize()
+                anglePicker          .resetSize()
+                angularVelocityPicker.resetSize()
+                
+                let previousInterface = baseInterface
+                baseInterface = .settings
+                setMeasurementText()
+                baseInterface = previousInterface
+            }
         }
+        
+        
         
         if let highlightedElementID = highlightedElementID {
             interfaceElements[highlightedElementID].isHighlighted = false
@@ -77,7 +110,7 @@ extension PendulumInterface {
                 makeInterface()
             }
         case .openingPicker(let pickerType):
-            pickerAnimationProgress += 0.03
+            pickerAnimationProgress += 0.05
             
             if pickerAnimationProgress >= 1 {
                 pickerAnimationProgress = 1
@@ -108,7 +141,7 @@ extension PendulumInterface {
                     case .angularVelocity: angularVelocityPicker.hidden = false
                     }
                     
-                    func rayTracePicker<T: PendulumParagraphList>(picker: inout Picker<T>) -> T? {
+                    func rayTracePicker<T: PendulumParagraphListElement>(picker: inout Picker<T>) -> T? {
                         guard let selectedElement = picker.elements.rayTrace(ray: intersectionRay)?.element else {
                             return nil
                         }
@@ -152,7 +185,7 @@ extension PendulumInterface {
                 }
             }
         case .closingPicker(let pickerType):
-            pickerAnimationProgress -= 0.03
+            pickerAnimationProgress -= 0.05
             
             if pickerAnimationProgress <= -1 {
                 pickerAnimationProgress = -1

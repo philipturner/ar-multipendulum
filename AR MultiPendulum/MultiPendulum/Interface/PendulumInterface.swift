@@ -13,6 +13,8 @@ final class PendulumInterface: DelegateRenderer {
     var pendulumRenderer: PendulumRenderer { renderer.pendulumRenderer }
     var cameraMeasurements: CameraMeasurements { renderer.cameraMeasurements }
     
+    static var sizeScale: Float = .nan
+    
     enum PickerType {
         case property
         case length
@@ -97,7 +99,7 @@ final class PendulumInterface: DelegateRenderer {
     var highlightedElementID: CachedParagraph?
     
     var interfaceDepth: Float = 0.7
-    var anchorDirection: simd_float3 = normalize([0, 1, -1])
+    var anchorDirection: simd_float3 = .init(repeating: .nan)
     
     var anchor: Anchor!
     var backButton: BackButton!

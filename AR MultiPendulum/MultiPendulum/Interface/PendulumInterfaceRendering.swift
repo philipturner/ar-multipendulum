@@ -25,7 +25,7 @@ extension PendulumInterface {
         func renderBackButton() {
             backButton.element.hidden = false
             
-            let elementDirection = simd_quatf(angle: degreesToRadians(12), axis: rotationAxis).act(anchorDirection)
+            let elementDirection = simd_quatf(angle: degreesToRadians(12 * Self.sizeScale), axis: rotationAxis).act(anchorDirection)
             let upDirection = cross(elementDirection, rotationAxis)
             
             let position = fma(elementDirection, interfaceDepth, headPosition)
@@ -37,7 +37,7 @@ extension PendulumInterface {
         
         @inline(__always)
         func renderCircularButtons(direction: simd_float3) {
-            var separationAngle: Float = -degreesToRadians(10)
+            var separationAngle: Float = -degreesToRadians(10 * Self.sizeScale)
             var separationAngleHalf = separationAngle / 2
             
             let upDirection = cross(direction, rotationAxis)
@@ -71,8 +71,8 @@ extension PendulumInterface {
         
         switch presentedInterface {
         case .mainInterface:
-            var elementDirection = simd_quatf(angle: degreesToRadians(12), axis: rotationAxis).act(anchorDirection)
-            let elementSeparationRotation = simd_quatf(angle: degreesToRadians(10), axis: rotationAxis)
+            var elementDirection = simd_quatf(angle: degreesToRadians(12 * Self.sizeScale), axis: rotationAxis).act(anchorDirection)
+            let elementSeparationRotation = simd_quatf(angle: degreesToRadians(9 * Self.sizeScale), axis: rotationAxis)
             
             for button in PresentedInterface.mainInterface.rectangularButtons {
                 let position = fma(elementDirection, interfaceDepth, headPosition)
@@ -89,9 +89,19 @@ extension PendulumInterface {
             renderBackButton()
             
             let buttons = presentedInterface.rectangularButtons
+            var directionAngle: Float
+            var separationAngle: Float
             
-            var elementDirection = simd_quatf(angle: degreesToRadians(22), axis: rotationAxis).act(anchorDirection)
-            let elementSeparationRotation = simd_quatf(angle: degreesToRadians(10), axis: rotationAxis)
+            if case .settings = presentedInterface {
+                directionAngle = degreesToRadians(12 + 10)
+                separationAngle = degreesToRadians(10)
+            } else {
+                directionAngle = degreesToRadians(12 + 9.5)
+                separationAngle = degreesToRadians(9.5)
+            }
+            
+            var elementDirection = simd_quatf(angle: directionAngle * Self.sizeScale, axis: rotationAxis).act(anchorDirection)
+            let elementSeparationRotation = simd_quatf(angle: separationAngle * Self.sizeScale, axis: rotationAxis)
             
             func renderRectangularButton(_ button: CachedParagraph) {
                 let position = fma(elementDirection, interfaceDepth, headPosition)
@@ -116,10 +126,10 @@ extension PendulumInterface {
         case .picker(let pickerType):
             renderBackButton()
             
-            func renderPicker<T: PendulumParagraphList>(picker: inout Picker<T>) {
+            func renderPicker<T: PendulumParagraphListElement>(picker: inout Picker<T>) {
                 picker.hidden = false
                 
-                let pickerDirection = simd_quatf(angle: degreesToRadians(33), axis: rotationAxis).act(anchorDirection)
+                let pickerDirection = simd_quatf(angle: degreesToRadians(33 * Self.sizeScale), axis: rotationAxis).act(anchorDirection)
                 
                 let pickerPosition = fma(pickerDirection, interfaceDepth, headPosition)
                 let pickerUpDirection = cross(pickerDirection, rotationAxis)
