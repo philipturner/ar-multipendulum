@@ -9,9 +9,6 @@ import SwiftUI
 
 extension ScrollView {
     
-    // This doesn't truly fix flickering, but nothing fully fixes it.
-    // However, this is still used because it may reduce the amount of flickering.
-    
     func fixFlickering() -> some View {
         fixFlickering { $0 }
     }
@@ -35,4 +32,5 @@ extension ScrollView {
             .edgesIgnoringSafeArea(.all)
         }
     }
+    
 }

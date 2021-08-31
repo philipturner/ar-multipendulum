@@ -94,7 +94,7 @@ extension PendulumInterface {
                 case .numberOfPendulums: return ([          .minus5,     .minus1        ], [.plus1,         .plus5             ])
                 case .length:            return ([.minus1,  .minusTenth, .minusHundredth], [.plusHundredth, .plusTenth, .plus1 ])
                 case .gravity:           return ([.minus10, .minus1,     .minusTenth    ], [.plusTenth,     .plus1,     .plus10])
-                case .angle:             return ([          .minus5,     .minus1        ], [.plus1,         .plus5             ])
+                case .angle:             return ([          .minus10,    .minus1        ], [.plus1,         .plus10            ])
                 case .angularVelocity:   return ([          .minusHalf,  .minusTenth    ], [.plusTenth,     .plusHalf          ])
                 }
             }
