@@ -61,7 +61,11 @@ extension PendulumInterface {
                 angularVelocityPicker.resetSize()
                 
                 let previousInterface = baseInterface
-                baseInterface = .settings
+                
+                if previousInterface == .mainInterface {
+                    baseInterface = .settings
+                }
+                
                 setMeasurementText()
                 baseInterface = previousInterface
             }
