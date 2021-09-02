@@ -51,10 +51,10 @@ float Utilities::getIntersectionProgress(float2x2 line1, float2x2 line2, threadg
     
     
     float progress0 = fast::divide(dot(intersection - line1[0], delta1), length_squared(delta1));
-    if (progress0 < 1e-5 || progress0 > 1 - 1e-5)
+    if (progress0 < 1e-4 || progress0 > 1 - 1e-4)
     {
-        if (abs(progress0)     < 1e-5 ||
-            abs(progress0 - 1) < 1e-5)
+        if (abs(progress0)     < 1e-4 ||
+            abs(progress0 - 1) < 1e-4)
         {
             *shouldReturnEarly = true;
         }
@@ -63,10 +63,10 @@ float Utilities::getIntersectionProgress(float2x2 line1, float2x2 line2, threadg
     }
     
     float progress1 = fast::divide(dot(intersection - line2[0], delta2), length_squared(delta2));
-    if (progress1 < 1e-5 || progress1 > 1 - 1e-5)
+    if (progress1 < 1e-4 || progress1 > 1 - 1e-4)
     {
-        if (abs(progress1)     < 1e-5 ||
-            abs(progress1 - 1) < 1e-5)
+        if (abs(progress1)     < 1e-4 ||
+            abs(progress1 - 1) < 1e-4)
         {
             *shouldReturnEarly = true;
         }
