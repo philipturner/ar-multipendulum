@@ -238,21 +238,20 @@ kernel void locateHandCenter(device ComputeUniforms &uniforms [[ buffer(0) ]],
     {
         ushort2 numLessGreater(1);
         ushort2 i_range = select(ushort2(0, 11), { 11, 21 }, isHelperThread);
-        
+
         for (ushort i = i_range[0]; i < i_range[1]; ++i)
         {
             float retrievedDepth = depths[i];
-            
-            if (!isnan(retrievedDepth))
+
+            if (!isnan(retrievedDepth) && i != depth_id)
             {
                 numLessGreater += select(ushort2(1, 0), { 0, 1 }, retrievedDepth < thread_depth);
             }
         }
         
-        if (isHelperThread)
-        {
-            tg_medianData[depth_id] = numLessGreater;
-        }
+        if (isHelperThread) { tg_medianData[depth_id] = numLessGreater; }
+        threadgroup_barrier(mem_flags::mem_threadgroup);
+        
         if (!isHelperThread)
         {
             numLessGreater += tg_medianData[depth_id];
@@ -260,7 +259,7 @@ kernel void locateHandCenter(device ComputeUniforms &uniforms [[ buffer(0) ]],
             thread_medianData = ushort2(depth_id, numLessGreater[0] * numLessGreater[1]);
             tg_medianData[depth_id] = thread_medianData;
         }
-        
+
         *shouldReturnEarly = false;
     }
     
