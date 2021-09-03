@@ -74,7 +74,7 @@ struct AppTutorialView: View {
                         
                         Text("""
                         
-                        Some of the latest iOS devices have a built-in LiDAR scanner, which allows a device to understand the 3D shape of its surroundings. On these devices, this app uses the scanner to more realistically render your surroundings and reconstruct the 3D position of your on-screen hand. If your device has a LiDAR scanner, you will see "Scene Reconstruction" and "Hand Reconstruction" as options in the settings panel.
+                        Some of the latest iPhones and iPads have a built-in LiDAR scanner, which allows a device to understand the 3D shape of its surroundings. On these devices, this app uses the scanner to more realistically render your surroundings and reconstruct the 3D position of your on-screen hand. If your device has a LiDAR scanner, you will see "Scene Reconstruction" and "Hand Reconstruction" as options in the settings panel.
                         
                         """)
                         
