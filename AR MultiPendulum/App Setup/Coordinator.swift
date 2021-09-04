@@ -31,6 +31,8 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
     var separatorView: UIView!
     private var separatorGestureRecognizer: UILongPressGestureRecognizer!
     
+    var disablingLiDAR = false
+    
     override init() {
         super.init()
         session = ARSession()
@@ -42,6 +44,19 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
             configuration.sceneReconstruction = .mesh
             configuration.frameSemantics.insert(.sceneDepth)
             configuration.frameSemantics.insert(.personSegmentation)
+            
+            if configuration.videoFormat.imageResolution != CGSize(width: 1920, height: 1440) ||
+               configuration.videoFormat.framesPerSecond != 60
+            {
+                if let desiredFormat = ARWorldTrackingConfiguration.supportedVideoFormats.first(where: {
+                    $0.imageResolution == CGSize(width: 1920, height: 1440) &&
+                    $0.framesPerSecond == 60
+                }) {
+                    configuration.videoFormat = desiredFormat
+                } else {
+                    disablingLiDAR = true
+                }
+            }
         }
         
         session.run(configuration)

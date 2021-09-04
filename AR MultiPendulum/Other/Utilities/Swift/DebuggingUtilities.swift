@@ -10,6 +10,7 @@ import Foundation
 fileprivate let doingDebugLabels = true
 fileprivate let bypassingMetalAPIValidation = false
 
+@inline(__always)
 func debugLabel(_ closure: (() -> Void)) {
     #if DEBUG
     if doingDebugLabels {
@@ -18,6 +19,7 @@ func debugLabel(_ closure: (() -> Void)) {
     #endif
 }
 
+@inline(__always)
 func debugLabelReturn<T>(_ defaultOutput: T, _ closure: (() -> T)) -> T {
     #if DEBUG
     if doingDebugLabels {
@@ -30,6 +32,7 @@ func debugLabelReturn<T>(_ defaultOutput: T, _ closure: (() -> T)) -> T {
     #endif
 }
 
+@inline(__always)
 func debugLabelConditionalReturn<T>(_ closure1: (() -> T), else closure2: (() -> T)) -> T {
     #if DEBUG
     if doingDebugLabels {
@@ -42,6 +45,7 @@ func debugLabelConditionalReturn<T>(_ closure1: (() -> T), else closure2: (() ->
     #endif
 }
 
+@inline(__always)
 func onlyForMetalAPIValidation(_ closure: (() -> Void)) {
     #if DEBUG
     if !bypassingMetalAPIValidation {

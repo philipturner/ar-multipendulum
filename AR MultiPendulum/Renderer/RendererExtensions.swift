@@ -5,7 +5,7 @@
 //  Created by Philip Turner on 6/11/21.
 //
 
-import Metal
+import MetalPerformanceShaders
 import ARKit
 
 protocol GeometryRenderer {
@@ -114,6 +114,50 @@ extension Renderer: GeometryRenderer {
     
     func asyncUpdateTextures(frame: ARFrame) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
+            @inline(never)
+            func fallbackCreateTexture(_ pixelBuffer: CVPixelBuffer, to reference: inout MTLTexture!, _ label: String,
+                                       _ pixelFormat: MTLPixelFormat, _ width: Int, _ height: Int, _ planeIndex: Int = 0)
+            {
+                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat,
+                                                          CVPixelBufferGetWidthOfPlane(pixelBuffer, planeIndex),
+                                                          CVPixelBufferGetHeightOfPlane(pixelBuffer, planeIndex), planeIndex)
+                
+                guard reference != nil else {
+                    usleep(10_000)
+                    return
+                }
+                
+                if usingLiDAR {
+                    let commandBuffer = commandQueue.makeDebugCommandBuffer()
+                    let kernel = MPSNNResizeBilinear(device: device, resizeWidth: width, resizeHeight: height, alignCorners: false)
+                    
+                    let textureDescriptor = MTLTextureDescriptor()
+                    textureDescriptor.width = width
+                    textureDescriptor.height = height
+                    textureDescriptor.pixelFormat = pixelFormat
+                    textureDescriptor.usage = [.shaderRead, .shaderWrite]
+                    let output = device.makeTexture(descriptor: textureDescriptor)!
+                    
+                    let numFeatureChannels: Int = {
+                        switch pixelFormat {
+                        case .r8Unorm:  return 1
+                        case .r32Float: return 1
+                        case .rg8Unorm: return 2
+                        default: fatalError("This case should never happen!")
+                        }
+                    }()
+                    
+                    let sourceImage = MPSImage(texture: reference, featureChannels: numFeatureChannels)
+                    let destinationImage = MPSImage(texture: output, featureChannels: numFeatureChannels)
+                    
+                    kernel.encode(commandBuffer: commandBuffer, sourceImage: sourceImage,
+                                  destinationImage: destinationImage)
+                    commandBuffer.commit()
+                    
+                    reference = destinationImage.texture
+                }
+            }
+            
             @inline(__always)
             func bind(_ pixelBuffer: CVPixelBuffer?, to reference: inout MTLTexture!, _ label: String,
                       _ pixelFormat: MTLPixelFormat, _ width: Int, _ height: Int, _ planeIndex: Int = 0)
@@ -123,7 +167,12 @@ extension Renderer: GeometryRenderer {
                     return
                 }
                 
-                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat, width, height, planeIndex)!
+                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat, width, height, planeIndex)
+                
+                while reference == nil {
+                    fallbackCreateTexture(pixelBuffer, to: &reference, label, pixelFormat, width, height, planeIndex)
+                }
+                
                 reference.optLabel = label
             }
             

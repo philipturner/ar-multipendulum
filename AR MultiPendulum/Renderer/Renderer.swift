@@ -88,7 +88,7 @@ final class Renderer {
         // have significantly worse rendering performance than using layers.
         
         usingVertexAmplification = device.supportsFamily(.apple7)
-        usingLiDAR = ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
+        usingLiDAR = !coordinator.disablingLiDAR && ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
         
         textureCache = CVMetalTextureCache?(nil,    [kCVMetalTextureCacheMaximumTextureAgeKey : 1e-5],
                                             device, [kCVMetalTextureUsage : MTLTextureUsage.shaderRead.rawValue])!
