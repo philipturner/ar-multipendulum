@@ -5,7 +5,7 @@
 //  Created by Philip Turner on 6/11/21.
 //
 
-import MetalPerformanceShaders
+import Metal
 import ARKit
 
 protocol GeometryRenderer {
@@ -114,50 +114,6 @@ extension Renderer: GeometryRenderer {
     
     func asyncUpdateTextures(frame: ARFrame) {
         DispatchQueue.global(qos: .userInitiated).async { [self] in
-            @inline(never)
-            func fallbackCreateTexture(_ pixelBuffer: CVPixelBuffer, to reference: inout MTLTexture!, _ label: String,
-                                       _ pixelFormat: MTLPixelFormat, _ width: Int, _ height: Int, _ planeIndex: Int = 0)
-            {
-                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat,
-                                                          CVPixelBufferGetWidthOfPlane(pixelBuffer, planeIndex),
-                                                          CVPixelBufferGetHeightOfPlane(pixelBuffer, planeIndex), planeIndex)
-                
-                guard reference != nil else {
-                    usleep(10_000)
-                    return
-                }
-                
-                if usingLiDAR {
-                    let commandBuffer = commandQueue.makeDebugCommandBuffer()
-                    let kernel = MPSNNResizeBilinear(device: device, resizeWidth: width, resizeHeight: height, alignCorners: false)
-                    
-                    let textureDescriptor = MTLTextureDescriptor()
-                    textureDescriptor.width = width
-                    textureDescriptor.height = height
-                    textureDescriptor.pixelFormat = pixelFormat
-                    textureDescriptor.usage = [.shaderRead, .shaderWrite]
-                    let output = device.makeTexture(descriptor: textureDescriptor)!
-                    
-                    let numFeatureChannels: Int = {
-                        switch pixelFormat {
-                        case .r8Unorm:  return 1
-                        case .r32Float: return 1
-                        case .rg8Unorm: return 2
-                        default: fatalError("This case should never happen!")
-                        }
-                    }()
-                    
-                    let sourceImage = MPSImage(texture: reference, featureChannels: numFeatureChannels)
-                    let destinationImage = MPSImage(texture: output, featureChannels: numFeatureChannels)
-                    
-                    kernel.encode(commandBuffer: commandBuffer, sourceImage: sourceImage,
-                                  destinationImage: destinationImage)
-                    commandBuffer.commit()
-                    
-                    reference = destinationImage.texture
-                }
-            }
-            
             @inline(__always)
             func bind(_ pixelBuffer: CVPixelBuffer?, to reference: inout MTLTexture!, _ label: String,
                       _ pixelFormat: MTLPixelFormat, _ width: Int, _ height: Int, _ planeIndex: Int = 0)
@@ -167,12 +123,7 @@ extension Renderer: GeometryRenderer {
                     return
                 }
                 
-                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat, width, height, planeIndex)
-                
-                while reference == nil {
-                    fallbackCreateTexture(pixelBuffer, to: &reference, label, pixelFormat, width, height, planeIndex)
-                }
-                
+                reference = textureCache.createMTLTexture(pixelBuffer, pixelFormat, width, height, planeIndex)!
                 reference.optLabel = label
             }
             
@@ -189,8 +140,11 @@ extension Renderer: GeometryRenderer {
                 }
             }
             
-            bind(frame.capturedImage, to: &colorTextureY,    "Color Texture (Y)",    .r8Unorm, 1920, 1440)
-            bind(frame.capturedImage, to: &colorTextureCbCr, "Color Texture (CbCr)", .rg8Unorm, 960,  720, 1)
+            let width  = Int(cameraMeasurements.imageResolution.width)
+            let height = Int(cameraMeasurements.imageResolution.height)
+            
+            bind(frame.capturedImage, to: &colorTextureY,    "Color Texture (Y)",    .r8Unorm,  width,      height,      0)
+            bind(frame.capturedImage, to: &colorTextureCbCr, "Color Texture (CbCr)", .rg8Unorm, width >> 1, height >> 1, 1)
             
             if usingLiDAR {
                 if allowingHandReconstruction {

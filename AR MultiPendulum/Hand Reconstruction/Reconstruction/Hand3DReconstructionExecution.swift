@@ -13,11 +13,12 @@ extension HandRenderer {
         var scale: simd_float2
         var translation: simd_float2
         
-        init(camera: ARCamera) {
+        init(camera: ARCamera, imageResolution: CGSize) {
             let intrinsics = camera.intrinsics
             let pixelSizeMultiplier = Float(simd_fast_recip(Double(intrinsics[0][0])))
             
-            scale       =  pixelSizeMultiplier * [1920, 1440]
+            let imageDimensions = simd_float2(Float(imageResolution.width), Float(imageResolution.height))
+            scale       =  pixelSizeMultiplier * imageDimensions
             translation = -pixelSizeMultiplier * simd_make_float2(intrinsics[2])
         }
         

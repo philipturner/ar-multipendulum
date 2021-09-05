@@ -45,7 +45,7 @@ extension HandRenderer2D {
                 rayOriginDuringSample = simd_make_float3(cameraToWorldTransform * headPosition)
                 
                 cameraToWorldTransformDuringSample = cameraToWorldTransform
-                pointProjectorDuringSample = PointProjector(camera: frame.camera)
+                pointProjectorDuringSample = PointProjector(camera: frame.camera, imageResolution: imageResolution)
                 
                 currentlyDetectingHand = true
                 locateHand(frame.capturedImage)

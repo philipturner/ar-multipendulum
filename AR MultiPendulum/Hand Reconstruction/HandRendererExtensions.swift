@@ -66,7 +66,7 @@ extension HandRenderer {
                 
                 cameraToWorldTransformDuringSample = cameraToWorldTransform
                 worldToCameraTransformDuringSample = worldToCameraTransform
-                pointProjectorDuringSample = PointProjector(camera: frame.camera)
+                pointProjectorDuringSample = PointProjector(camera: frame.camera, imageResolution: imageResolution)
                 
                 if !didWaitOnSegmentationTextureSemaphore {
                     didWaitOnSegmentationTextureSemaphore = true

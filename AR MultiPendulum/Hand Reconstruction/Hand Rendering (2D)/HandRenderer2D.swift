@@ -63,7 +63,7 @@ extension HandRenderer2D {
                 return
             }
             
-            var results = HandDetectionResults(observation: observation)
+            var results = HandDetectionResults(observation: observation, aspectRatio: renderer.cameraMeasurements.aspectRatio)
             
             if results.optionStorage & 14 != 0 {
                 results.isDetected = false

@@ -45,12 +45,13 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
             configuration.frameSemantics.insert(.sceneDepth)
             configuration.frameSemantics.insert(.personSegmentation)
             
-            if configuration.videoFormat.imageResolution != CGSize(width: 1920, height: 1440) ||
-               configuration.videoFormat.framesPerSecond != 60
-            {
+            func isCorrectAspectRatio(_ size: CGSize) -> Bool {
+                size.width * 3 == size.height * 4
+            }
+            
+            if !isCorrectAspectRatio(configuration.videoFormat.imageResolution) {
                 if let desiredFormat = ARWorldTrackingConfiguration.supportedVideoFormats.first(where: {
-                    $0.imageResolution == CGSize(width: 1920, height: 1440) &&
-                    $0.framesPerSecond == 60
+                    isCorrectAspectRatio($0.imageResolution)
                 }) {
                     configuration.videoFormat = desiredFormat
                 } else {

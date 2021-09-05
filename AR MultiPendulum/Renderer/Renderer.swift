@@ -22,6 +22,7 @@ final class Renderer {
     var frameIndex: Int = 0
     var renderIndex: Int = -1
     var renderSemaphore = DispatchSemaphore(value: numRenderBuffers)
+    
     var usingVertexAmplification: Bool
     var usingLiDAR: Bool
     
@@ -210,6 +211,8 @@ extension DelegateRenderer {
 }
 
 extension DelegateRenderer {
+    var imageResolution: CGSize { renderer.cameraMeasurements.imageResolution }
+    
     var cameraToWorldTransform: simd_float4x4 { renderer.cameraMeasurements.cameraToWorldTransform }
     var worldToCameraTransform: simd_float4x4 { renderer.cameraMeasurements.worldToCameraTransform }
     var modifiedPerspectiveToWorldTransform: simd_float4x4 { renderer.cameraMeasurements.modifiedPerspectiveToWorldTransform }

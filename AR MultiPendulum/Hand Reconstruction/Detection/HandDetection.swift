@@ -41,7 +41,7 @@ extension HandRenderer {
             optionStorage = 0
         }
         
-        init(observation: [simd_float2]) {
+        init(observation: [simd_float2], aspectRatio: Float) {
             var extremaCoords = simd_float4(lowHalf: [1, 1], highHalf: [0, 0])
             
             for point in observation {
@@ -65,7 +65,7 @@ extension HandRenderer {
             let axesAreCloseToEdge = extremaCoords.lowHalf  .< [0.06, 0.08]
                                   .| extremaCoords.highHalf .> [0.94, 0.92]
             
-            let flatness = getFlatness(observation.map{ $0 * [4.0 / 3, 1.0] })
+            let flatness = getFlatness(observation.map{ $0 * .init(aspectRatio, 1) })
             
             optionStorage = 65
             
@@ -120,7 +120,7 @@ extension HandRenderer {
             
             
             
-            var results = HandDetectionResults(observation: observation)
+            var results = HandDetectionResults(observation: observation, aspectRatio: renderer.cameraMeasurements.aspectRatio)
             
             if results.optionStorage & 14 != 0 {
                 results.isDetected = false

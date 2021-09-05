@@ -95,14 +95,19 @@ extension SceneRenderer2D: GeometryRenderer {
         renderEncoder.setVertexBytes(&projectionTransforms, length: projectionTransformsNumBytes, index: 0)
         
         struct VertexUniforms {
-            var pixelWidth: Float
+            var imageBounds: simd_float2
             var cameraPlaneDepth: Float
             var usingModifiedPerspective: Bool
         }
         
-        let pixelWidth = Float(renderer.cameraMeasurements.currentPixelWidth)
-        var vertexUniforms = VertexUniforms(pixelWidth: pixelWidth * cameraPlaneDepth,
-                                            cameraPlaneDepth: cameraPlaneDepth,
+        let pixelWidthHalf = Float(renderer.cameraMeasurements.currentPixelWidth) * 0.5
+        let imageBounds = simd_float2(
+            Float(imageResolution.width) * pixelWidthHalf,
+            Float(imageResolution.height) * pixelWidthHalf
+        )
+        
+        var vertexUniforms = VertexUniforms(imageBounds: imageBounds * cameraPlaneDepth,
+                                            cameraPlaneDepth: -cameraPlaneDepth,
                                             usingModifiedPerspective: usingModifiedPerspective)
         
         renderEncoder.setVertexBytes(&vertexUniforms, length: MemoryLayout<VertexUniforms>.stride, index: 1)

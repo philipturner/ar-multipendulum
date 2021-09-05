@@ -24,8 +24,10 @@ final class CameraMeasurements: DelegateUserSettings {
     var screenSize: simd_double2
     var wideCameraOffset: simd_double3
     
-    var cameraSpaceScreenCenter: simd_double3
+    var imageResolution: CGSize
+    var aspectRatio: Float
     var cameraToScreenAspectRatioMultiplier: Float
+    var cameraSpaceScreenCenter: simd_double3
     
     var cameraToWorldTransform = simd_float4x4(1)
     var worldToCameraTransform = simd_float4x4(1)
@@ -64,12 +66,15 @@ final class CameraMeasurements: DelegateUserSettings {
     init(userSettings: UserSettings, library: MTLLibrary) {
         self.userSettings = userSettings
         
+        imageResolution = ARWorldTrackingConfiguration.supportedVideoFormats.first!.imageResolution
+        aspectRatio = Float(imageResolution.width / imageResolution.height)
+        
         var device = Device.current
         let possibleDeviceSize = device.deviceSize
         
         let nativeBounds = UIScreen.main.nativeBounds
         let screenBounds = CGSize(width: nativeBounds.height, height: nativeBounds.width)
-        cameraToScreenAspectRatioMultiplier = Float((4.0 / 3) * screenBounds.height / screenBounds.width)
+        cameraToScreenAspectRatioMultiplier = aspectRatio * Float(screenBounds.height / screenBounds.width)
         
         if possibleDeviceSize == nil, UIDevice.current.userInterfaceIdiom == .phone {
             var device: FutureDevice

@@ -10,9 +10,9 @@
 using namespace metal;
 
 typedef struct {
-    float pixelWidth;
-    float cameraPlaneDepth;
-    bool  usingModifiedPerspective;
+    float2 imageBounds;
+    float  cameraPlaneDepth;
+    bool   usingModifiedPerspective;
 } VertexUniforms;
 
 
@@ -42,7 +42,7 @@ ushort vid [[ vertex_id ]]                                  \
 template <typename VertexInOut, bool usingVertexAmplification>
 VertexInOut scene2DVertexTransformCommon(SCENE_2D_VERTEX_TRANSFORM_PARAMS, ushort amp_id)
 {
-    float3 cameraSpacePosition(float2(960, 720) * vertexUniforms.pixelWidth, -vertexUniforms.cameraPlaneDepth);
+    float3 cameraSpacePosition(vertexUniforms.imageBounds, vertexUniforms.cameraPlaneDepth);
 
     bool isRight = any(ushort3(1, 2, 4) == vid);
     bool isTop   = any(ushort3(2, 4, 5) == vid);
