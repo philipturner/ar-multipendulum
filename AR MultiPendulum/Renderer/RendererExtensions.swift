@@ -36,12 +36,10 @@ extension Renderer: GeometryRenderer {
             timeSinceSettingsOpenAnimationStart = .min
         }
         
-        shouldRenderToDisplay = timeSinceSettingsOpenAnimationStart < Int(MainSettingsView.openAnimationDuration * 60 * 2)
-        
-        if coordinator.showingAppTutorial, showingFirstAppTutorial {
+        if coordinator.showingAppTutorial {
             shouldRenderToDisplay = false
         } else {
-            showingFirstAppTutorial = false
+            shouldRenderToDisplay = timeSinceSettingsOpenAnimationStart < Int(MainSettingsView.openAnimationDuration * 60 * 2)
         }
         
         

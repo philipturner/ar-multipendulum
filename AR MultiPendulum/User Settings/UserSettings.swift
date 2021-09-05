@@ -24,10 +24,6 @@ final class UserSettings: DelegateRenderer {
         
         storedSettings = Self.retrieveSettings() ?? .defaultSettings
         
-        if storedSettings.isFirstAppLaunch {
-            shouldSaveSettings = true
-        }
-        
         cameraMeasurements      = CameraMeasurements     (userSettings: self, library: library)
         lensDistortionCorrector = LensDistortionCorrector(userSettings: self, library: library)
     }

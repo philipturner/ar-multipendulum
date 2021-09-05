@@ -19,6 +19,10 @@ extension UserSettings {
         newStoredSettings.transferData(from: coordinator.interactionSettings)
         newStoredSettings.transferData(from: coordinator.lidarEnabledSettings)
         
+        if newStoredSettings.isFirstAppLaunch, !coordinator.showingAppTutorial {
+            newStoredSettings.isFirstAppLaunch = false
+        }
+        
         lensDistortionCorrector.pendingStoredSettings.caseSize = renderer.coordinator.caseSize
         
         if newStoredSettings != storedSettings {

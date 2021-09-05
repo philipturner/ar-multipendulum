@@ -11,17 +11,15 @@ import ARKit
 final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, ObservableObject {
     @Published var settingsIconIsHidden: Bool = false
     @Published var settingsAreShown: Bool = false
+    @Published var settingsShouldBeAnimated: Bool = false
+    @Published var showingAppTutorial: Bool = false
     
     var shouldImmediatelyHideSettingsIcon: Bool = false
     
     @Published var renderingSettings: RenderingSettings!
     @Published var interactionSettings: InteractionSettings!
     @Published var lidarEnabledSettings: LiDAREnabledSettings!
-    
     @Published var caseSize: LensDistortionCorrector.StoredSettings.CaseSize = .small
-    
-    @Published var showingAppTutorial: Bool = false
-    @Published var settingsShouldBeAnimated: Bool = false
     
     var session: ARSession!
     var view: MTKView!
@@ -45,13 +43,9 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
             configuration.frameSemantics.insert(.sceneDepth)
             configuration.frameSemantics.insert(.personSegmentation)
             
-            func isCorrectAspectRatio(_ size: CGSize) -> Bool {
-                size.width * 3 == size.height * 4
-            }
-            
-            if !isCorrectAspectRatio(configuration.videoFormat.imageResolution) {
+            if configuration.videoFormat.imageResolution != CGSize(width: 1920, height: 1440) {
                 if let desiredFormat = ARWorldTrackingConfiguration.supportedVideoFormats.first(where: {
-                    isCorrectAspectRatio($0.imageResolution)
+                    $0.imageResolution == CGSize(width: 1920, height: 1440)
                 }) {
                     configuration.videoFormat = desiredFormat
                 } else {
@@ -88,10 +82,7 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
         caseSize = renderer.userSettings.lensDistortionCorrector.storedSettings.caseSize
         
         if storedSettings.isFirstAppLaunch {
-            renderer.userSettings.storedSettings.isFirstAppLaunch = false
             showingAppTutorial = true
-            
-            renderer.showingFirstAppTutorial = true
         }
         
         func makeGestureRecognizer() -> UILongPressGestureRecognizer {

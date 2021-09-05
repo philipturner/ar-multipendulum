@@ -36,7 +36,6 @@ final class Renderer {
     
     var timeSinceSettingsOpenAnimationStart = Int.min
     var shouldRenderToDisplay = true
-    var showingFirstAppTutorial = false
     
     var doingMixedRealityRendering = false
     var usingModifiedPerspective = false

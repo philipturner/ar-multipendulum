@@ -14,12 +14,12 @@ struct AppTutorialView: View {
         VStack {
             
         }
-        .sheet(isPresented: $coordinator.showingAppTutorial) {
+        .fullScreenCover(isPresented: $coordinator.showingAppTutorial) {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
                     
                 }
-                .frame(height: 100)
+                .frame(height: 50)
                 
                 VStack {
                     VStack {
