@@ -1,6 +1,6 @@
 # AR MultiPendulum (Beta)
 
-## The public TestFlight beta is no longer available.
+## The public TestFlight beta is no longer available. This app will be available on the App Store soon.
 
 AR MultiPendulum allows users to interact with virtual objects directly with their hand instead of tapping an object's location on a touchscreen. It brings a mesmerizing multi-pendulum simulation into augmented reality. Users interact with this simulation through hand movements and modify it through a holographic interface.
 
