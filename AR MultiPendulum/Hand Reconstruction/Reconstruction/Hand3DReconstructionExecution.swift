@@ -17,8 +17,8 @@ extension HandRenderer {
             let intrinsics = camera.intrinsics
             let pixelSizeMultiplier = Float(simd_fast_recip(Double(intrinsics[0][0])))
             
-            scale       = [1920, 1440] *  pixelSizeMultiplier
-            translation = simd_make_float2(intrinsics[2]) * -pixelSizeMultiplier
+            scale       =  pixelSizeMultiplier * [1920, 1440]
+            translation = -pixelSizeMultiplier * simd_make_float2(intrinsics[2])
         }
         
         func findCameraSpaceXY(visionTexCoords: simd_float2) -> simd_float2 {

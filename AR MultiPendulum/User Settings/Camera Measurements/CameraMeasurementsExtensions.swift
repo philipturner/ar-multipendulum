@@ -14,6 +14,10 @@ extension CameraMeasurements {
         currentPixelWidth = simd_fast_recip(Double(frame.camera.intrinsics[0][0]))
         cameraPlaneWidthSampleCount += 1
         
+        if frame.camera.imageResolution.width != 1920 {
+            currentPixelWidth *= Double(frame.camera.imageResolution.width) * (1.0 / 1920)
+        }
+        
         if cameraPlaneWidthSampleCount > 0 {
             cameraPlaneWidthSum = fma(1920, currentPixelWidth, cameraPlaneWidthSum)
         }
