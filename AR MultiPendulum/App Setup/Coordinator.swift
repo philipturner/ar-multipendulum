@@ -14,7 +14,10 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
     @Published var settingsShouldBeAnimated: Bool = false
     @Published var showingAppTutorial: Bool = false
     
-    var shouldImmediatelyHideSettingsIcon: Bool = false
+    @Published var appTutorialCheck: AppTutorialView.Check = .init()
+    
+    var canCloseTutorial = true
+    var shouldImmediatelyHideSettingsIcon = false
     
     @Published var renderingSettings: RenderingSettings!
     @Published var interactionSettings: InteractionSettings!
@@ -83,6 +86,7 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
         
         if storedSettings.isFirstAppLaunch {
             showingAppTutorial = true
+            canCloseTutorial = false
         }
         
         func makeGestureRecognizer() -> UILongPressGestureRecognizer {
@@ -115,6 +119,11 @@ final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, Observabl
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
     
     func draw(in view: MTKView) {
+        if !appTutorialCheck.check1 {
+            if appTutorialCheck.check2 { appTutorialCheck.check2 = false }
+            if appTutorialCheck.check3 { appTutorialCheck.check3 = false }
+        }
+        
         if gestureRecognizer.state != .possible || separatorGestureRecognizer.state != .possible {
             renderer.pendingTap = .init()
             

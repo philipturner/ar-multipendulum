@@ -10,6 +10,12 @@ import SwiftUI
 struct AppTutorialView: View {
     @EnvironmentObject var coordinator: Coordinator
     
+    struct Check: Equatable {
+        var check1 = false
+        var check2 = false
+        var check3 = false
+    }
+    
     var body: some View {
         VStack {
             
@@ -78,10 +84,48 @@ struct AppTutorialView: View {
                         
                         """)
                         
+                        if !coordinator.canCloseTutorial {
+                            VStack(alignment: .leading) {
+                                VStack {
+                                    Toggle(isOn: $coordinator.appTutorialCheck.check1) {
+                                        Text("I read the above tutorial")
+                                    }
+                                    
+                                    Toggle(isOn: $coordinator.appTutorialCheck.check2) {
+                                        Text("I know how to access the settings panel")
+                                    }
+                                    .disabled(!coordinator.appTutorialCheck.check1)
+                                    
+                                    Toggle(isOn: $coordinator.appTutorialCheck.check3) {
+                                        Text("I know how to control the simulation with my on-screen hand")
+                                    }
+                                    .disabled(!coordinator.appTutorialCheck.check1)
+                                }
+                                .frame(maxWidth: UIScreen.main.bounds.width, alignment: .center)
+                                
+                                Text("You can access this tutorial at any time through the settings panel.")
+                                    .frame(alignment: .leading)
+                            }
+                            .padding(.bottom, 20)
+                        }
+                        
                         VStack {
                             Button("Close Tutorial") {
                                 coordinator.showingAppTutorial = false
+                                
+                                if !coordinator.canCloseTutorial {
+                                    coordinator.canCloseTutorial = true
+                                }
                             }
+                            .disabled({
+                                if coordinator.canCloseTutorial {
+                                    return false
+                                }
+                                
+                                let check = coordinator.appTutorialCheck
+                                
+                                return !check.check1 || !check.check2 || !check.check3
+                            }())
                         }
                         .frame(maxWidth: UIScreen.main.bounds.width, alignment: .center)
                     }
