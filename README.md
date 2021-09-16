@@ -9,6 +9,6 @@ Some of the latest iPhones and iPads have a built-in LiDAR scanner, which allows
 This app is available for free on the [App Store](https://apps.apple.com/app/ar-multipendulum/id1583322801).
 A browser version of the multi-pendulum simulation can be accessed [here](https://github.com/philipturner/multipendulum).
 
-This repository contains source code created during [this](https://github.com/philipturner/scene-color-reconstruction) research on scene color reconstruction. This source code uses the term "mixed reality" (MR) to differentiate code that generates the handheld experience from code that generates the headset experience. This term is a synonym for augmented reality often used to describe AR headset experiences.
+This repository contains source code created during [this](https://github.com/philipturner/scene-color-reconstruction) research on real-time scene color reconstruction. This source code uses the term "mixed reality" (MR) to differentiate code that generates the handheld experience from code that generates the headset experience. This term is a synonym for augmented reality often used to describe AR headset experiences.
 
 
