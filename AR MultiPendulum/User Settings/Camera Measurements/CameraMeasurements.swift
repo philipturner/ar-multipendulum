@@ -80,15 +80,13 @@ final class CameraMeasurements: DelegateUserSettings {
             var device: FutureDevice
             
             if screenBounds.width >= 2778 || screenBounds.height >= 1284 {
-                device = .iPhone13ProMax
+                device = .iPhone14ProMax
             } else if screenBounds.width >= 2532 || screenBounds.height >= 1170 {
                 if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-                    device = .iPhone13Pro
+                    device = .iPhone14Pro
                 } else {
-                    device = .iPhone13
+                    device = .iPhone14
                 }
-            } else if screenBounds.width >= 2340 || screenBounds.height >= 1080 {
-                device = .iPhone13Mini
             } else {
                 device = .iPhoneSE3
             }
@@ -106,10 +104,10 @@ final class CameraMeasurements: DelegateUserSettings {
                     device = .iPadPro11Inch3
                 } else if screenBounds.width >= 2360 || screenBounds.height >= 1640 {
                     device = .iPadAir4
-                } else if screenBounds.width >= 2160 || screenBounds.height >= 1620 {
-                    device = .iPad8
+                } else if screenBounds.width >= 2266 || screenBounds.height < 1620 {
+                    device = .iPadMini6
                 } else {
-                    device = .iPadMini5
+                    device = .iPad9
                 }
                 
                 deviceSize = device.deviceSize

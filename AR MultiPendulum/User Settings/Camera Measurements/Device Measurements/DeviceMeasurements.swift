@@ -42,11 +42,18 @@ extension Device: DeviceMeasurementProvider {
         case .iPhone12:       return 0.001 * [146.71, 71.52, 7.39]
         case .iPhone12Pro:    return 0.001 * [146.71, 71.52, 7.39]
         case .iPhone12ProMax: return 0.001 * [160.84, 78.07, 7.39]
+            
+        case .iPhone13Mini:   return 0.001 * [131.50, 64.21, 7.65]
+        case .iPhone13:       return 0.001 * [146.71, 71.52, 7.65]
+        case .iPhone13Pro:    return 0.001 * [146.71, 71.52, 7.65]
+        case .iPhone13ProMax: return 0.001 * [160.84, 78.07, 7.65]
         
         case .iPadMini5:      return 0.001 * [203.16, 134.75, 6.10]
+        case .iPadMini6:      return 0.001 * [195.40, 134.80, 6.30]
         
         case .iPad5, .iPad6:  return 0.001 * [240.00, 169.47, 7.50]
         case .iPad7, .iPad8:  return 0.001 * [250.59, 174.08, 7.50]
+        case .iPad9:          return 0.001 * [250.59, 174.08, 7.50]
         
         case .iPadAir3:       return 0.001 * [250.59, 174.08, 6.10]
         case .iPadAir4:       return 0.001 * [247.64, 178.51, 6.123]
@@ -94,11 +101,18 @@ extension Device: DeviceMeasurementProvider {
         case .iPhone12:       return 0.001 * [139.77, 64.58]
         case .iPhone12Pro:    return 0.001 * [139.77, 64.58]
         case .iPhone12ProMax: return 0.001 * [153.90, 71.13]
+            
+        case .iPhone13Mini:   return 0.001 * [124.96, 57.67]
+        case .iPhone13:       return 0.001 * [139.77, 64.58]
+        case .iPhone13Pro:    return 0.001 * [139.77, 64.58]
+        case .iPhone13ProMax: return 0.001 * [153.90, 71.13]
         
         case .iPadMini5:      return 0.001 * [160.74, 120.81]
+        case .iPadMini6:      return 0.001 * [160.74, 120.81]
         
         case .iPad5, .iPad6:  return 0.001 * [196.47, 147.39]
         case .iPad7, .iPad8:  return 0.001 * [207.36, 155.52]
+        case .iPad9:          return 0.001 * [207.36, 155.52]
         
         case .iPadAir3:       return 0.001 * [213.50, 160.13]
         case .iPadAir4:       return 0.001 * [227.56, 158.44]
@@ -129,14 +143,17 @@ extension Device: DeviceMeasurementProvider {
             
         case .iPhoneX, .iPhoneXR, .iPhoneXS, .iPhoneXSMax,
              .iPhone11, .iPhone11Pro, .iPhone11ProMax,
-             .iPhone12Mini, .iPhone12, .iPhone12Pro, .iPhone12ProMax:
+             .iPhone12Mini, .iPhone12, .iPhone12Pro, .iPhone12ProMax,
+             .iPhone13Mini, .iPhone13, .iPhone13Pro, .iPhone13ProMax:
             return true
         
-        case .iPadMini5, .iPad5, .iPad6, .iPad7, .iPad8, .iPadAir3,
+        case .iPadMini5, .iPadAir3,
+             .iPad5, .iPad6, .iPad7, .iPad8, .iPad9,
              .iPadPro9Inch, .iPadPro10Inch, .iPadPro12Inch, .iPadPro12Inch2:
             return false
             
-        case .iPadAir4, .iPadPro11Inch, .iPadPro11Inch2, .iPadPro11Inch3,
+        case .iPadMini6, .iPadAir4,
+             .iPadPro11Inch, .iPadPro11Inch2, .iPadPro11Inch3,
              .iPadPro12Inch3, .iPadPro12Inch4, .iPadPro12Inch5:
             return true
             
@@ -174,11 +191,18 @@ extension Device: DeviceMeasurementProvider {
         case .iPhone12:       return 0.001 * [27.01, 12.73, 5.01]
         case .iPhone12Pro:    return 0.001 * [12.16, 12.16, 5.51]
         case .iPhone12ProMax: return 0.001 * [30.90, 13.43, 5.91]
+            
+        case .iPhone13Mini:   return 0.001 * [24.00, 24.00, 5.91]
+        case .iPhone13:       return 0.001 * [24.00, 24.00, 5.91]
+        case .iPhone13Pro:    return 0.001 * [30.90, 13.43, 5.91]
+        case .iPhone13ProMax: return 0.001 * [30.90, 13.43, 5.91]
         
         case .iPadMini5:      return 0.001 * [10.23, 10.23, 2.83]
+        case .iPadMini6:      return 0.001 * [10.23, 10.23, 2.83]
         
         case .iPad5, .iPad6:  return 0.001 * [11.68, 14.37, 4.23]
         case .iPad7, .iPad8:  return 0.001 * [11.66, 14.37, 4.23]
+        case .iPad9:          return 0.001 * [11.66, 14.37, 4.23]
         
         case .iPadAir3:       return 0.001 * [10.23, 10.23, 2.80]
         case .iPadAir4:       return 0.001 * [12.70, 12.69, 6.18]
@@ -208,20 +232,24 @@ extension Device: DeviceMeasurementProvider {
              .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2,
              .iPhone12Pro:
             return .topLeft
-            
-        case .iPhone12Mini, .iPhone12, .iPhone12ProMax:
+        
+        case .iPhone12Mini, .iPhone12, .iPhone12ProMax,
+             .iPhone13Pro, .iPhone13ProMax:
             return .bottomLeft
-            
-        case .iPadMini5,
-             .iPad5, .iPad6, .iPad7, .iPad8,
+        
+        case .iPadMini5, .iPadMini6,
+             .iPad5, .iPad6, .iPad7, .iPad8, .iPad9,
              .iPadAir3, .iPadAir4,
              .iPadPro9Inch,  .iPadPro10Inch,  .iPadPro11Inch,
              .iPadPro12Inch, .iPadPro12Inch2, .iPadPro12Inch3:
             return .topLeft
-            
+        
         case .iPadPro11Inch2, .iPadPro11Inch3,
              .iPadPro12Inch4, .iPadPro12Inch5:
             return .bottomLeft
+        
+        case .iPhone13Mini, .iPhone13:
+            return .bottomRight
         
         default:
             return nil
