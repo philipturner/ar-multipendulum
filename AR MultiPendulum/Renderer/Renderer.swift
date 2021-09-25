@@ -44,7 +44,6 @@ final class Renderer {
     
     var allowingSceneReconstruction = true
     var allowingHandReconstruction = true
-    var allowingFaceTracking = true
     
     var ambientLightColor: simd_half3!
     var directionalLightColor: simd_half3!
