@@ -19,7 +19,6 @@ final class Renderer {
     
     static let numRenderBuffers = 3
     
-    var frameIndex: Int = 0
     var renderIndex: Int = -1
     var renderSemaphore = DispatchSemaphore(value: numRenderBuffers)
     
