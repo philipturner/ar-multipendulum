@@ -49,9 +49,9 @@ enum FutureDevice: DeviceMeasurementProvider {
     
     var wideCameraOffset: simd_double3! {
         switch self {
-        case .iPhone14:       return 0.001 * [24.00, 24.00, 5.91]
-        case .iPhone14Pro:    return 0.001 * [30.90, 13.43, 5.91]
-        case .iPhone14ProMax: return 0.001 * [30.90, 13.43, 5.91]
+        case .iPhone14:       return 0.001 * [24.24, 24.24, 6.33]
+        case .iPhone14Pro:    return 0.001 * [31.35, 13.43, 7.27]
+        case .iPhone14ProMax: return 0.001 * [31.35, 13.43, 7.27]
         case .iPhoneSE3:      return 0.001 * [10.24, 10.44, 5.31]
         }
     }
