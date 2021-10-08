@@ -11,12 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: MultiPendulum traffic
+    - name: AR MultiPendulum traffic
       uses: sangonzal/repository-traffic-action@v0.1.4
       env:
         TRAFFIC_ACTION_TOKEN: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
     
-    - name: Store MultiPendulum traffic
+    - name: Store AR MultiPendulum traffic
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
