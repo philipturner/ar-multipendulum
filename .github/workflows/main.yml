@@ -1,6 +1,7 @@
 on:
-  schedule:
-     - cron: "0 12 * * SUN"
+  workflow_dispatch
+#   schedule:
+#      - cron: "0 12 * * SUN"
 
 # Store traffic data for more than 14 days
 
