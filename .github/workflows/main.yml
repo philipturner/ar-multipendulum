@@ -1,6 +1,7 @@
 on:
-  schedule:
-    - cron: "0 12 * * SUN"
+  workflow_dispatch
+#   schedule:
+#     - cron: "0 12 * * SUN"
 
 # Store traffic data for more than 14 days
 
@@ -17,7 +18,7 @@ jobs:
         TRAFFIC_ACTION_TOKEN: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
     
     - name: Store AR MultiPendulum traffic
-      uses: dmnemec/copy_file_to_another_repo_action@main
+      uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
       env:
         API_TOKEN_GITHUB: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
       with:
