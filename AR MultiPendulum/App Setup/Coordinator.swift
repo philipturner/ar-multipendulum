@@ -2,136 +2,54 @@
 //  Coordinator.swift
 //  AR MultiPendulum
 //
-//  Created by Philip Turner on 4/13/21.
+//  Created by Philip Turner on 10/5/21.
 //
 
-import MetalKit
-import ARKit
+import ARHeadsetKit
+import SwiftUI
 
-final class Coordinator: NSObject, MTKViewDelegate, ARSessionDelegate, ObservableObject {
-    @Published var settingsIconIsHidden: Bool = false
-    @Published var settingsAreShown: Bool = false
-    @Published var settingsShouldBeAnimated: Bool = false
-    @Published var showingAppTutorial: Bool = false
+class Coordinator: AppCoordinator {
+    @Published var doingTwoSidedPendulums: Bool = false
     
-    @Published var appTutorialCheck: AppTutorialView.Check = .init()
+    override var makeMainRenderer: MainRendererInitializer {
+        AR_MultiPendulumRenderer.init
+    }
     
-    var canCloseTutorial = true
-    var shouldImmediatelyHideSettingsIcon = false
+    static func createAppDescription() -> AppDescription {
+        let name = "AR MultiPendulum"
+        
+        let summary = """
+        AR MultiPendulum allows you to interact with virtual objects directly with your hand instead of tapping their location on a touchscreen. It brings a mesmerizing multi-pendulum simulation into augmented reality. You interact with this simulation through hand movements and modify it through a holographic interface.
+        
+        Not only does this app bring augmented reality to a pendulum simulation, it is also the first app to simulate more than three pendulums. Additionally, by repurposing a VR headset for AR, this is the first app that gives users an affordable AR headset experience.
+        """
+        
+        let controlInterfaceColor = "blue"
+        
+        let tutorialExtension = """
+        To relocate the blue control interface, highlight the gray anchor (located near the top) with your on-screen hand. With the clicking hand, press and hold anywhere on your device's touchscreen while dragging the anchor with your on-screen hand.
+        
+        To initiate interaction with the simulated pendulums, place your on-screen hand in the area where they are swinging and press and hold anywhere on the touchscreen with your clicking hand. Wait until they swing in the direction you are pointing and the simulation pauses. Move your on-screen hand and the pendulums will rotate and follow it. When you release your clicking hand, the simulation will resume.
+        
+        After activating the "Move Simulation" button in the blue control interface, the simulation will move with the position of your on-screen hand. It will follow your on-screen hand even though your clicking hand is not in contact with the screen, which is different behavior from the other interactions in this app. To end the "Move Simulation" interaction, tap anywhere on the touchscreen once with your clicking hand.
+        """
+        
+        let mainActivity = "control the simulation"
+        
+        return AppDescription(name:              name,
+                              summary:           summary,
+                              controlInterfaceColor: controlInterfaceColor,
+                              tutorialExtension: tutorialExtension,
+                              mainActivity:      mainActivity)
+    }
     
-    @Published var renderingSettings: RenderingSettings!
-    @Published var interactionSettings: InteractionSettings!
-    @Published var lidarEnabledSettings: LiDAREnabledSettings!
-    @Published var caseSize: LensDistortionCorrector.StoredSettings.CaseSize = .small
-    
-    var session: ARSession!
-    var view: MTKView!
-    var renderer: Renderer!
-    private var gestureRecognizer: UILongPressGestureRecognizer!
-    
-    var separatorView: UIView!
-    private var separatorGestureRecognizer: UILongPressGestureRecognizer!
-    
-    var disablingLiDAR = false
-    
-    override init() {
-        super.init()
-        session = ARSession()
-        session.delegate = self
-        
-        let configuration = ARWorldTrackingConfiguration()
-        
-        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-            configuration.sceneReconstruction = .mesh
-            configuration.frameSemantics.insert(.sceneDepth)
-            configuration.frameSemantics.insert(.personSegmentation)
-            
-            if configuration.videoFormat.imageResolution != CGSize(width: 1920, height: 1440) {
-                if let desiredFormat = ARWorldTrackingConfiguration.supportedVideoFormats.first(where: {
-                    $0.imageResolution == CGSize(width: 1920, height: 1440)
-                }) {
-                    configuration.videoFormat = desiredFormat
-                } else {
-                    disablingLiDAR = true
-                }
-            }
-        }
-        
-        session.run(configuration)
-        
-        view = MTKView()
-        
-        let nativeBounds = UIScreen.main.nativeBounds
-        view.drawableSize = .init(width: nativeBounds.height, height: nativeBounds.width)
-        view.autoResizeDrawable = false
-        (view.layer as! CAMetalLayer).framebufferOnly = false
-        
-        view.device = MTLCreateSystemDefaultDevice()!
-        view.colorPixelFormat = .bgr10_xr
-        view.delegate = self
-        
-        renderer = Renderer(session: session, view: view, coordinator: self)
-        
-        
-        
-        var storedSettings: UserSettings.StoredSettings {
-            renderer.userSettings.storedSettings
-        }
-        
-        renderingSettings = .init(storedSettings)
-        interactionSettings = .init(storedSettings)
-        lidarEnabledSettings = .init(storedSettings)
-        
-        caseSize = renderer.userSettings.lensDistortionCorrector.storedSettings.caseSize
-        
-        if storedSettings.isFirstAppLaunch {
-            showingAppTutorial = true
-            canCloseTutorial = false
-        }
-        
-        func makeGestureRecognizer() -> UILongPressGestureRecognizer {
-            let output = UILongPressGestureRecognizer()
-            output.allowableMovement = .greatestFiniteMagnitude
-            output.minimumPressDuration = 0
-            return output
-        }
-        
-        gestureRecognizer = makeGestureRecognizer()
-        view.addGestureRecognizer(gestureRecognizer)
-        
-        separatorGestureRecognizer = makeGestureRecognizer()
-        separatorView = MRViewSeparator.separatorView
-        separatorView.addGestureRecognizer(separatorGestureRecognizer)
-        
-        DispatchQueue.global(qos: .background).async { [session] in
-            while true {
-                usleep(5_000_000)
-                
-                if let frame = session!.currentFrame,
-                   let cameraGrainTexture = frame.cameraGrainTexture {
-                    cameraGrainTexture.setPurgeableState(.empty)
-                    return
-                }
-            }
+    override func initializeCustomSettings(from storedSettings: [String : String]) {
+        if storedSettings["doingTwoSidedPendulums"] == String(true) {
+            doingTwoSidedPendulums = true
         }
     }
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
-    
-    func draw(in view: MTKView) {
-        if !appTutorialCheck.check1 {
-            if appTutorialCheck.check2 { appTutorialCheck.check2 = false }
-            if appTutorialCheck.check3 { appTutorialCheck.check3 = false }
-        }
-        
-        if gestureRecognizer.state != .possible || separatorGestureRecognizer.state != .possible {
-            renderer.pendingTap = .init()
-            
-            if interactionSettings.canHideSettingsIcon, !settingsIconIsHidden, !settingsAreShown {
-                settingsIconIsHidden = true
-            }
-        }
-        
-        renderer.update()
+    override func modifyCustomSettings(customSettings: inout [String : String]) {
+        customSettings["doingTwoSidedPendulums"] = String(doingTwoSidedPendulums)
     }
 }
