@@ -39,6 +39,8 @@
 		9888545D270E55400066E7EA /* PendulumRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544C270E55400066E7EA /* PendulumRendering.metal */; };
 		9888545F270E55400066E7EA /* PendulumRectangleUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544F270E55400066E7EA /* PendulumRectangleUtilities.metal */; };
 		98885460270E55400066E7EA /* PendulumRectangleConstruction.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98885450270E55400066E7EA /* PendulumRectangleConstruction.metal */; };
+		98BA9E2A271E4D460053BE2F /* ARHeadsetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; platformFilter = ios; };
+		98BA9E2B271E4D460053BE2F /* ARHeadsetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		98ECC3BB270F0045008BACD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98ECC3BA270F0045008BACD3 /* Preview Assets.xcassets */; };
 		98ECC3DB270FCEC1008BACD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ECC3DA270FCEC1008BACD3 /* ContentView.swift */; };
 		98EDDDB3270D0C8E006F9F44 /* AR_MultiPendulumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDB2270D0C8E006F9F44 /* AR_MultiPendulumApp.swift */; };
@@ -48,8 +50,6 @@
 		98EDDDEE270D29EA006F9F44 /* PendulumSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDED270D29EA006F9F44 /* PendulumSettingsView.swift */; };
 		98FDEEA4271E000000FD7F25 /* Metal_Utilities_Combined.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98FDEEA3271E000000FD7F25 /* Metal_Utilities_Combined.metal */; };
 		98FDEEA6271E000400FD7F25 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDEEA5271E000400FD7F25 /* Launch Screen.storyboard */; };
-		98FDEEA7271E001900FD7F25 /* ARHeadsetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; platformFilter = ios; };
-		98FDEEA8271E001900FD7F25 /* ARHeadsetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		98EDDDC9270D100C006F9F44 /* Embed Frameworks */ = {
+		98BA9E2C271E4D460053BE2F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				98FDEEA8271E001900FD7F25 /* ARHeadsetKit.framework in Embed Frameworks */,
+				98BA9E2B271E4D460053BE2F /* ARHeadsetKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98FDEEA7271E001900FD7F25 /* ARHeadsetKit.framework in Frameworks */,
+				98BA9E2A271E4D460053BE2F /* ARHeadsetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +351,7 @@
 				98EDDDAB270D0C8E006F9F44 /* Sources */,
 				98EDDDAC270D0C8E006F9F44 /* Frameworks */,
 				98EDDDAD270D0C8E006F9F44 /* Resources */,
-				98EDDDC9270D100C006F9F44 /* Embed Frameworks */,
+				98BA9E2C271E4D460053BE2F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

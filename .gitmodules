@@ -1,0 +1,3 @@
+[submodule "ARHeadsetKit"]
+	path = ARHeadsetKit
+	url = https://github.com/philipturner/ARHeadsetKit
