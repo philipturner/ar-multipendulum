@@ -3,1410 +3,490 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9801AAE226A0D99100270F3E /* MemoryUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9801AAE126A0D99100270F3E /* MemoryUtilities.metal */; };
-		9801AAE526A0D99C00270F3E /* MemoryUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9801AAE426A0D99C00270F3E /* MemoryUtilities.metal */; };
-		9801D82D2661956200D350D0 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9801D82C2661956200D350D0 /* Kernels.metal */; };
-		9801D83626619E6200D350D0 /* Types.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9801D83526619E6200D350D0 /* Types.metal */; };
-		9801D83A2662991200D350D0 /* OpticalFlowMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9801D8392662991200D350D0 /* OpticalFlowMeasurer.swift */; };
-		9801D83E2662A46600D350D0 /* OpticalFlowMeasurementExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9801D83D2662A46600D350D0 /* OpticalFlowMeasurementExecution.swift */; };
-		9802C7D5268A376F00885EED /* CentralObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802C7D4268A376F00885EED /* CentralObjectExtensions.swift */; };
-		9802C7D8268A387A00885EED /* RayTracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802C7D7268A387A00885EED /* RayTracing.swift */; };
-		980B0CE226C6CF9D00CA0AA0 /* SceneRenderer2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B0CE126C6CF9D00CA0AA0 /* SceneRenderer2D.swift */; };
-		980B0CE826C6CFC000CA0AA0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 980B0CE726C6CFC000CA0AA0 /* Shaders.metal */; };
-		980B0CEC26C709F700CA0AA0 /* HandRenderer2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B0CEB26C709F700CA0AA0 /* HandRenderer2D.swift */; };
-		980B0CEF26C70A5000CA0AA0 /* HandRenderer2DExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B0CEE26C70A5000CA0AA0 /* HandRenderer2DExtensions.swift */; };
-		981464552698EBCB00C4F8D2 /* Utilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 981464542698EBCB00C4F8D2 /* Utilities.metal */; };
-		981464592698EBE700C4F8D2 /* Utilities_Implementation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 981464582698EBE700C4F8D2 /* Utilities_Implementation.metal */; };
-		9819D6852682954E00BDA89E /* Types.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6842682954E00BDA89E /* Types.metal */; };
-		9819D6882682955500BDA89E /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6872682955500BDA89E /* Kernels.metal */; };
-		9819D6902685083900BDA89E /* ColorUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9819D68F2685083900BDA89E /* ColorUtilities.metal */; };
-		9819D6932685084A00BDA89E /* ColorUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6922685084A00BDA89E /* ColorUtilities.metal */; };
-		9819D696268543DC00BDA89E /* HandColorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819D695268543DC00BDA89E /* HandColorTracker.swift */; };
-		9819D6A126866ABC00BDA89E /* HandParityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6A026866ABC00BDA89E /* HandParityTracker.swift */; };
-		9819D6A426875C4200BDA89E /* HandSamplingRateTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6A326875C4200BDA89E /* HandSamplingRateTracker.swift */; };
-		9819D6BA2688F04300BDA89E /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819D6B92688F04300BDA89E /* Hand.swift */; };
-		982CE9A2269B92A6009947B0 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 982CE9A1269B92A6009947B0 /* Kernels.metal */; };
-		982CE9A5269B957B009947B0 /* CentralObjectUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 982CE9A4269B957B009947B0 /* CentralObjectUtilities.metal */; };
-		982CE9A8269B9588009947B0 /* CentralObjectUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 982CE9A7269B9588009947B0 /* CentralObjectUtilities.metal */; };
-		982CE9AC269DBD0D009947B0 /* Utilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 982CE9AB269DBD0D009947B0 /* Utilities.metal */; };
-		982CE9AF269DBD19009947B0 /* Utilities_Implementation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 982CE9AE269DBD19009947B0 /* Utilities_Implementation.metal */; };
-		982EE05026D3EF0F00503C0B /* LiDAREnabledSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982EE04F26D3EF0F00503C0B /* LiDAREnabledSettingsView.swift */; };
-		98328DCF26C2D039008B627A /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 98328DCE26C2D039008B627A /* DeviceKit */; };
-		98328DD326C2D0B1008B627A /* LensDistortionCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DD226C2D0B1008B627A /* LensDistortionCorrector.swift */; };
-		98328DE326C2DFEA008B627A /* LensDistortionPipelineCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DE226C2DFEA008B627A /* LensDistortionPipelineCreation.swift */; };
-		98328DE626C2DFFD008B627A /* VRRMapPartitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DE526C2DFFD008B627A /* VRRMapPartitioning.swift */; };
-		98328DEA26C2E46E008B627A /* LensDistortionUniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DE926C2E46E008B627A /* LensDistortionUniforms.swift */; };
-		98328DEF26C2E5D6008B627A /* DeviceMeasurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DEE26C2E5D6008B627A /* DeviceMeasurements.swift */; };
-		98328DF326C2E5E3008B627A /* FutureDeviceMeasurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DF226C2E5E3008B627A /* FutureDeviceMeasurements.swift */; };
-		98328DF626C2E685008B627A /* DeviceMeasurementProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DF526C2E685008B627A /* DeviceMeasurementProtocols.swift */; };
-		98328DFA26C2E8EA008B627A /* LensDistortionCorrectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DF926C2E8EA008B627A /* LensDistortionCorrectorExtensions.swift */; };
-		98328DFE26C2E93A008B627A /* LensDistortionCorrectionExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328DFD26C2E93A008B627A /* LensDistortionCorrectionExecution.swift */; };
-		98328E0726C41A16008B627A /* CameraMeasurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328E0626C41A16008B627A /* CameraMeasurements.swift */; };
-		98328E0B26C41B4B008B627A /* CameraMeasurementsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328E0A26C41B4B008B627A /* CameraMeasurementsExtensions.swift */; };
-		98328E1426C5FA9D008B627A /* InterfaceParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328E1326C5FA9D008B627A /* InterfaceParagraph.swift */; };
-		98328E1826C60212008B627A /* InterfaceParagraphCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98328E1726C60212008B627A /* InterfaceParagraphCreation.swift */; };
-		9838883F2667FC0400DCA879 /* MultiLevelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9838883E2667FC0400DCA879 /* MultiLevelBuffer.swift */; };
-		98426FAB26B8643D007C5D4C /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98426FAA26B8643D007C5D4C /* Kernels.metal */; };
-		9842EB00265B098E00D0173B /* HandAngleTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842EAFF265B098E00D0173B /* HandAngleTracker.swift */; };
-		985632B826D194CE0078578E /* UserSettingsSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985632B726D194CE0078578E /* UserSettingsSerialization.swift */; };
-		985632BC26D194EE0078578E /* LensDistortionSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985632BB26D194EE0078578E /* LensDistortionSerialization.swift */; };
-		985632C026D19F500078578E /* DebuggingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985632BF26D19F500078578E /* DebuggingUtilities.swift */; };
-		9862D2A92658841F00010945 /* HandOrientationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862D2A82658841F00010945 /* HandOrientationTracker.swift */; };
-		987D802E266C470C00309DCD /* MetalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D802D266C470C00309DCD /* MetalExtensions.swift */; };
-		98898FD82676B1EB000A61CA /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98898FD72676B1EB000A61CA /* UserSettings.swift */; };
-		9889900C267A2C66000A61CA /* CentralSquarePyramid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9889900B267A2C66000A61CA /* CentralSquarePyramid.swift */; };
-		98899010267A339C000A61CA /* CentralOctahedron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9889900F267A339C000A61CA /* CentralOctahedron.swift */; };
-		988C5F0C2626377200DBAFF4 /* HandRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988C5F0B2626377200DBAFF4 /* HandRenderer.swift */; };
-		988C5F1226263D5100DBAFF4 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 988C5F1126263D5100DBAFF4 /* Kernels.metal */; };
-		988C5F162627516D00DBAFF4 /* HandRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988C5F152627516D00DBAFF4 /* HandRendererExtensions.swift */; };
-		988C5F1F2627526500DBAFF4 /* HandDetectionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988C5F1E2627526500DBAFF4 /* HandDetectionUtilities.swift */; };
-		988DD56B26D2EF07002F5895 /* SettingsIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988DD56A26D2EF07002F5895 /* SettingsIconView.swift */; };
-		9894CA73264C160A00E451E2 /* HandModelFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894CA72264C160A00E451E2 /* HandModelFitter.swift */; };
-		9894CA77264C4A1800E451E2 /* HandLengths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894CA76264C4A1800E451E2 /* HandLengths.swift */; };
-		98A0175C26739CA400AE3355 /* RendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0175B26739CA400AE3355 /* RendererExtensions.swift */; };
-		98A0176326739E0500AE3355 /* RenderingExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0176226739E0500AE3355 /* RenderingExecution.swift */; };
-		98A78BA22628D5E900217444 /* HandDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A78BA12628D5E900217444 /* HandDetection.swift */; };
-		98A78BA82628D73D00217444 /* Hand3DReconstructionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A78BA72628D73D00217444 /* Hand3DReconstructionTypes.swift */; };
-		98A78BAC2628D74B00217444 /* Hand3DReconstructionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A78BAB2628D74B00217444 /* Hand3DReconstructionUtilities.swift */; };
-		98A78BAF2628D75A00217444 /* Hand3DReconstructionExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A78BAE2628D75A00217444 /* Hand3DReconstructionExecution.swift */; };
-		98A88F922625FE7B00BA7E0F /* AR_MultiPendulumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88F912625FE7B00BA7E0F /* AR_MultiPendulumApp.swift */; };
-		98A88F942625FE7B00BA7E0F /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88F932625FE7B00BA7E0F /* Views.swift */; };
-		98A88F962625FE7C00BA7E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A88F952625FE7C00BA7E0F /* Assets.xcassets */; };
-		98A88FAD2626043E00BA7E0F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FAC2626043E00BA7E0F /* Coordinator.swift */; };
-		98A88FB02626045D00BA7E0F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FAF2626045D00BA7E0F /* Renderer.swift */; };
-		98A88FB32626048F00BA7E0F /* MathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FB22626048F00BA7E0F /* MathUtilities.swift */; };
-		98A88FB92626059600BA7E0F /* SIMDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FB82626059600BA7E0F /* SIMDExtensions.swift */; };
-		98A88FC7262606AA00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FC6262606AA00BA7E0F /* Kernels.metal */; };
-		98A88FCD2626078700BA7E0F /* SceneRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FCC2626078700BA7E0F /* SceneRenderer.swift */; };
-		98A88FD02626079300BA7E0F /* SceneRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FCF2626079300BA7E0F /* SceneRendererExtensions.swift */; };
-		98A88FDD2626083200BA7E0F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FDC2626083200BA7E0F /* Shaders.metal */; };
-		98A88FE02626085C00BA7E0F /* SceneOcclusionTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FDF2626085C00BA7E0F /* SceneOcclusionTester.swift */; };
-		98A88FE62626087200BA7E0F /* SceneOcclusionTestingExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FE52626087200BA7E0F /* SceneOcclusionTestingExecution.swift */; };
-		98A88FE92626087A00BA7E0F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FE82626087A00BA7E0F /* Shaders.metal */; };
-		98A88FEC2626088300BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FEB2626088300BA7E0F /* Kernels.metal */; };
-		98A88FF02626092100BA7E0F /* SceneCuller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FEF2626092100BA7E0F /* SceneCuller.swift */; };
-		98A88FF62626094600BA7E0F /* SceneCullingExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FF52626094600BA7E0F /* SceneCullingExecution.swift */; };
-		98A88FF92626094D00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FF82626094D00BA7E0F /* Kernels.metal */; };
-		98A88FFC2626098C00BA7E0F /* SceneTexelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FFB2626098C00BA7E0F /* SceneTexelManager.swift */; };
-		98A88FFF2626099800BA7E0F /* SceneTexelManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A88FFE2626099800BA7E0F /* SceneTexelManagerExtensions.swift */; };
-		98A89002262609A400BA7E0F /* SceneTexelManagementExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89001262609A400BA7E0F /* SceneTexelManagementExecution.swift */; };
-		98A89005262609AD00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A89004262609AD00BA7E0F /* Kernels.metal */; };
-		98A89008262609EF00BA7E0F /* SceneTexelRasterizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A89007262609EF00BA7E0F /* SceneTexelRasterizer.swift */; };
-		98A8900E26260A0500BA7E0F /* SceneTexelRasterizationExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8900D26260A0500BA7E0F /* SceneTexelRasterizationExecution.swift */; };
-		98A8901126260A2000BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8901026260A2000BA7E0F /* Kernels.metal */; };
-		98A8901426260A4500BA7E0F /* SceneMeshMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8901326260A4500BA7E0F /* SceneMeshMatcher.swift */; };
-		98A8901726260A4F00BA7E0F /* SceneMeshMatcherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8901626260A4F00BA7E0F /* SceneMeshMatcherExtensions.swift */; };
-		98A8901A26260A5A00BA7E0F /* SceneMeshMatchingExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8901926260A5A00BA7E0F /* SceneMeshMatchingExecution.swift */; };
-		98A8901D26260A6000BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8901C26260A6000BA7E0F /* Kernels.metal */; };
-		98A8902126260A8600BA7E0F /* Types.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902026260A8600BA7E0F /* Types.metal */; };
-		98A8902426260A8A00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902326260A8A00BA7E0F /* Kernels.metal */; };
-		98A8902726260B9600BA7E0F /* SceneDuplicateRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902626260B9600BA7E0F /* SceneDuplicateRemover.swift */; };
-		98A8902A26260BA000BA7E0F /* SceneDuplicateRemoverExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902926260BA000BA7E0F /* SceneDuplicateRemoverExtensions.swift */; };
-		98A8902D26260BAB00BA7E0F /* SceneDuplicateRemovalExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902C26260BAB00BA7E0F /* SceneDuplicateRemovalExecution.swift */; };
-		98A8903026260BB200BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8902F26260BB200BA7E0F /* Kernels.metal */; };
-		98A8903326260BD800BA7E0F /* SceneSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8903226260BD800BA7E0F /* SceneSorter.swift */; };
-		98A8903626260BE100BA7E0F /* SceneSorterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8903526260BE100BA7E0F /* SceneSorterExtensions.swift */; };
-		98A8903E26260C1100BA7E0F /* FourthSceneSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8903D26260C1100BA7E0F /* FourthSceneSorter.swift */; };
-		98A8904526260C2500BA7E0F /* FourthSceneSortExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8904426260C2500BA7E0F /* FourthSceneSortExecution.swift */; };
-		98A8904826260C2A00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8904726260C2A00BA7E0F /* Kernels.metal */; };
-		98A8904B26260C3500BA7E0F /* ThirdSceneSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8904A26260C3500BA7E0F /* ThirdSceneSorter.swift */; };
-		98A8905126260C4900BA7E0F /* ThirdSceneSortExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8905026260C4900BA7E0F /* ThirdSceneSortExecution.swift */; };
-		98A8905426260C4E00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8905326260C4E00BA7E0F /* Kernels.metal */; };
-		98A8905726260C5600BA7E0F /* SecondSceneSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8905626260C5600BA7E0F /* SecondSceneSorter.swift */; };
-		98A8905D26260C6600BA7E0F /* SecondSceneSortExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8905C26260C6600BA7E0F /* SecondSceneSortExecution.swift */; };
-		98A8906026260C6C00BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8905F26260C6C00BA7E0F /* Kernels.metal */; };
-		98A8906326260C7500BA7E0F /* FirstSceneSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8906226260C7500BA7E0F /* FirstSceneSorter.swift */; };
-		98A8906926260C8300BA7E0F /* FirstSceneSortExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8906826260C8300BA7E0F /* FirstSceneSortExecution.swift */; };
-		98A8906C26260C8900BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8906B26260C8900BA7E0F /* Kernels.metal */; };
-		98A8906F26260C8F00BA7E0F /* OctreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8906E26260C8F00BA7E0F /* OctreeNode.swift */; };
-		98A8907226260C9800BA7E0F /* OctreeNodeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8907126260C9800BA7E0F /* OctreeNodeExtensions.swift */; };
-		98A8907526260D3F00BA7E0F /* SceneMeshReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8907426260D3F00BA7E0F /* SceneMeshReducer.swift */; };
-		98A8907826260D4700BA7E0F /* SceneMeshReducerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8907726260D4700BA7E0F /* SceneMeshReducerExtensions.swift */; };
-		98A8907B26260D5200BA7E0F /* SceneMeshReductionExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8907A26260D5200BA7E0F /* SceneMeshReductionExecution.swift */; };
-		98A8907E26260D5800BA7E0F /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98A8907D26260D5800BA7E0F /* Kernels.metal */; };
-		98B6221826D3C11A00BD4435 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6221726D3C11A00BD4435 /* MainSettingsView.swift */; };
-		98D3525626CAB77A00B67901 /* PendulumInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3525526CAB77A00B67901 /* PendulumInterface.swift */; };
-		98D3525926CAB89F00B67901 /* PendulumInterfaceParagraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3525826CAB89F00B67901 /* PendulumInterfaceParagraphs.swift */; };
-		98D3525C26CABD4F00B67901 /* PendulumInterfaceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3525B26CABD4F00B67901 /* PendulumInterfaceExtensions.swift */; };
-		98D3526126CAFAF200B67901 /* InterfaceSurfaceMeshIndices.data in Resources */ = {isa = PBXBuildFile; fileRef = 98D3526026CAFAF200B67901 /* InterfaceSurfaceMeshIndices.data */; };
-		98D3526926CC1DAA00B67901 /* PendulumInterfaceAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3526826CC1DAA00B67901 /* PendulumInterfaceAnchor.swift */; };
-		98D3526E26CC21DE00B67901 /* PendulumInterfacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3526D26CC21DE00B67901 /* PendulumInterfacePicker.swift */; };
-		98D3527326CC22C700B67901 /* PendulumPropertyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3527226CC22C700B67901 /* PendulumPropertyPicker.swift */; };
-		98D3527B26CD3AB900B67901 /* PendulumInterfaceBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3527A26CD3AB900B67901 /* PendulumInterfaceBackButton.swift */; };
-		98D3528026CD4D4B00B67901 /* PendulumLengthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3527F26CD4D4B00B67901 /* PendulumLengthPicker.swift */; };
-		98D3528326CD4D5700B67901 /* PendulumMassPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3528226CD4D5700B67901 /* PendulumMassPicker.swift */; };
-		98D3528626CD4D6200B67901 /* PendulumAnglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3528526CD4D6200B67901 /* PendulumAnglePicker.swift */; };
-		98D3528926CD4DC600B67901 /* PendulumAngularVelocityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3528826CD4DC600B67901 /* PendulumAngularVelocityPicker.swift */; };
-		98D3528D26CD6B9500B67901 /* PendulumInterfaceRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3528C26CD6B9500B67901 /* PendulumInterfaceRendering.swift */; };
-		98D3529326CD891E00B67901 /* PendulumInterfaceCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3529226CD891E00B67901 /* PendulumInterfaceCounter.swift */; };
-		98D3529926CECD8900B67901 /* PendulumFailureTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3529826CECD8900B67901 /* PendulumFailureTrajectory.swift */; };
-		98D3529D26CF229E00B67901 /* PendulumStandRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3529C26CF229E00B67901 /* PendulumStandRendering.swift */; };
-		98D4564C26B1804D00598F61 /* InterfaceRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4564B26B1804D00598F61 /* InterfaceRenderer.swift */; };
-		98D4564F26B1806000598F61 /* InterfaceRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4564E26B1806000598F61 /* InterfaceRendererExtensions.swift */; };
-		98D4565526B1A0BD00598F61 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98D4565426B1A0BD00598F61 /* Shaders.metal */; };
-		98D4565826B1D57600598F61 /* InterfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4565726B1D57600598F61 /* InterfaceElement.swift */; };
-		98DBB65026B30CC200479FFD /* InterfaceFontHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB64F26B30CC200479FFD /* InterfaceFontHandle.swift */; };
-		98DBB65426B30D3100479FFD /* InterfaceFontCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB65326B30D3100479FFD /* InterfaceFontCreation.swift */; };
-		98DBB65826B30D5C00479FFD /* InterfaceFontSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB65726B30D5C00479FFD /* InterfaceFontSerialization.swift */; };
-		98DBB65D26B3256B00479FFD /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB65C26B3256B00479FFD /* Kernels.metal */; };
-		98DF198C26AA50FC00F12550 /* CoreVideoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF198B26AA50FC00F12550 /* CoreVideoExtensions.swift */; };
-		98DF198F26AA510A00F12550 /* CoreTextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF198E26AA510A00F12550 /* CoreTextExtensions.swift */; };
-		98E624AE262B5441006B6B69 /* CentralRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624AD262B5441006B6B69 /* CentralRenderer.swift */; };
-		98E624B2262B54EF006B6B69 /* CentralCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624B1262B54EF006B6B69 /* CentralCube.swift */; };
-		98E624B6262B54F8006B6B69 /* CentralSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624B5262B54F8006B6B69 /* CentralSphere.swift */; };
-		98E624B9262B54FF006B6B69 /* CentralCylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624B8262B54FF006B6B69 /* CentralCylinder.swift */; };
-		98E624BC262B5504006B6B69 /* CentralCone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624BB262B5504006B6B69 /* CentralCone.swift */; };
-		98E624C0262B55A4006B6B69 /* CentralShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624BF262B55A4006B6B69 /* CentralShape.swift */; };
-		98E624E2262C9EEB006B6B69 /* CentralShapeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624E1262C9EEB006B6B69 /* CentralShapeContainer.swift */; };
-		98E624E6262CA0FB006B6B69 /* CentralObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624E5262CA0FB006B6B69 /* CentralObject.swift */; };
-		98E624E9262CDD75006B6B69 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98E624E8262CDD75006B6B69 /* Shaders.metal */; };
-		98E624F5262DD60B006B6B69 /* CentralShapeContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624F4262DD60B006B6B69 /* CentralShapeContainerExtensions.swift */; };
-		98E624F8262DD99C006B6B69 /* CentralRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E624F7262DD99C006B6B69 /* CentralRendererExtensions.swift */; };
-		98EB9A3926A4E3BE00B04F09 /* Types.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98EB9A3826A4E3BE00B04F09 /* Types.metal */; };
-		98EB9A3C26A4E3CC00B04F09 /* Types.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98EB9A3B26A4E3CC00B04F09 /* Types.metal */; };
-		98EB9A4026A8BF7500B04F09 /* MemoryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB9A3F26A8BF7500B04F09 /* MemoryUtilities.swift */; };
-		98ECD335267B86DC00421062 /* SecondSceneMeshMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ECD334267B86DC00421062 /* SecondSceneMeshMatch.swift */; };
-		98ECD33B267B9B0100421062 /* ThirdSceneMeshMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ECD33A267B9B0100421062 /* ThirdSceneMeshMatch.swift */; };
-		98EF71C526D5F1E5006A97AA /* ZippyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 98EF71C426D5F1E5006A97AA /* ZippyJSON */; };
-		98F0C8782695E89C00C1EE48 /* PendulumMeshConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0C8772695E89C00C1EE48 /* PendulumMeshConstructor.swift */; };
-		98F0C87F2695E8C300C1EE48 /* PendulumMeshConstructorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0C87E2695E8C300C1EE48 /* PendulumMeshConstructorExtensions.swift */; };
-		98F0C8822695E8CC00C1EE48 /* PendulumMeshConstructionExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0C8812695E8CC00C1EE48 /* PendulumMeshConstructionExecution.swift */; };
-		98F0C89426976CE500C1EE48 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98F0C89326976CE500C1EE48 /* Kernels.metal */; };
-		98F0C89B2697960F00C1EE48 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98F0C89A2697960F00C1EE48 /* Shaders.metal */; };
-		98F3448926D44B0400544D05 /* InteractionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3448826D44B0400544D05 /* InteractionSettingsView.swift */; };
-		98F3448F26D44B8F00544D05 /* RenderingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3448E26D44B8F00544D05 /* RenderingSettingsView.swift */; };
-		98F3449326D4566900544D05 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3449226D4566900544D05 /* SwiftUIExtensions.swift */; };
-		98F3449726D45BD000544D05 /* MRViewSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3449626D45BD000544D05 /* MRViewSeparator.swift */; };
-		98F3449D26D474F900544D05 /* FlyingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3449C26D474F900544D05 /* FlyingTutorialView.swift */; };
-		98F344A026D476E600544D05 /* HeadsetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3449F26D476E600544D05 /* HeadsetTutorialView.swift */; };
-		98F344A526D5672E00544D05 /* AppTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F344A426D5672E00544D05 /* AppTutorialView.swift */; };
-		98F344AB26D5CB0A00544D05 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F344AA26D5CB0A00544D05 /* Launch Screen.storyboard */; };
-		98F55F68268F5B610094194F /* PendulumRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F67268F5B610094194F /* PendulumRenderer.swift */; };
-		98F55F6B268F5B6E0094194F /* PendulumRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F6A268F5B6E0094194F /* PendulumRendererExtensions.swift */; };
-		98F55F73268F5BBC0094194F /* PendulumTimeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F72268F5BBC0094194F /* PendulumTimeStepper.swift */; };
-		98F55F76268F5BCA0094194F /* PendulumTimeStepperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F75268F5BCA0094194F /* PendulumTimeStepperExtensions.swift */; };
-		98F55F79268F5BE30094194F /* PendulumStateEquations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F78268F5BE30094194F /* PendulumStateEquations.swift */; };
-		98F55F7C268F5C040094194F /* PendulumStateEquationsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F7B268F5C040094194F /* PendulumStateEquationsExtensions.swift */; };
-		98F55F7F268F5C120094194F /* PendulumMatrixSolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F7E268F5C120094194F /* PendulumMatrixSolving.swift */; };
-		98F55F83268F5D1A0094194F /* PendulumState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F82268F5D1A0094194F /* PendulumState.swift */; };
-		98F55F91268F5D880094194F /* PendulumSimulationPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F90268F5D880094194F /* PendulumSimulationPrototype.swift */; };
-		98F55F95268F5D950094194F /* PendulumSimulationPrototypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55F94268F5D950094194F /* PendulumSimulationPrototypeExtensions.swift */; };
+		988853D3270E52A10066E7EA /* PendulumMatrixSolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853D0270E52A10066E7EA /* PendulumMatrixSolving.swift */; };
+		988853D4270E52A10066E7EA /* PendulumStateEquations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853D1270E52A10066E7EA /* PendulumStateEquations.swift */; };
+		988853D5270E52A10066E7EA /* PendulumStateEquationsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853D2270E52A10066E7EA /* PendulumStateEquationsExtensions.swift */; };
+		988853D8270E52A90066E7EA /* PendulumTimeStepperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853D6270E52A90066E7EA /* PendulumTimeStepperExtensions.swift */; };
+		988853D9270E52A90066E7EA /* PendulumTimeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853D7270E52A90066E7EA /* PendulumTimeStepper.swift */; };
+		988853DB270E52BC0066E7EA /* PendulumFailureTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853DA270E52BC0066E7EA /* PendulumFailureTrajectory.swift */; };
+		988853DD270E52C10066E7EA /* PendulumState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853DC270E52C00066E7EA /* PendulumState.swift */; };
+		988853DF270E52C70066E7EA /* PendulumStandRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853DE270E52C70066E7EA /* PendulumStandRendering.swift */; };
+		988853E1270E52CD0066E7EA /* PendulumRendererExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853E0270E52CD0066E7EA /* PendulumRendererExtensions.swift */; };
+		988853E5270E52E40066E7EA /* PendulumSimulationPrototypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853E3270E52E40066E7EA /* PendulumSimulationPrototypeExtensions.swift */; };
+		988853E6270E52E40066E7EA /* PendulumSimulationPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988853E4270E52E40066E7EA /* PendulumSimulationPrototype.swift */; };
+		98885426270E53250066E7EA /* PendulumInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885422270E53240066E7EA /* PendulumInterface.swift */; };
+		98885427270E53250066E7EA /* PendulumInterfaceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885423270E53240066E7EA /* PendulumInterfaceExtensions.swift */; };
+		98885428270E53250066E7EA /* PendulumInterfaceParagraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885424270E53250066E7EA /* PendulumInterfaceParagraphs.swift */; };
+		98885429270E53250066E7EA /* PendulumInterfaceRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885425270E53250066E7EA /* PendulumInterfaceRendering.swift */; };
+		9888542E270E53340066E7EA /* PendulumInterfacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888542A270E53340066E7EA /* PendulumInterfacePicker.swift */; };
+		9888542F270E53340066E7EA /* PendulumInterfaceCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888542B270E53340066E7EA /* PendulumInterfaceCounter.swift */; };
+		98885430270E53340066E7EA /* PendulumInterfaceBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888542C270E53340066E7EA /* PendulumInterfaceBackButton.swift */; };
+		98885431270E53340066E7EA /* PendulumInterfaceAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888542D270E53340066E7EA /* PendulumInterfaceAnchor.swift */; };
+		98885437270E53450066E7EA /* PendulumMassPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885432270E53440066E7EA /* PendulumMassPicker.swift */; };
+		98885438270E53450066E7EA /* PendulumPropertyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885433270E53440066E7EA /* PendulumPropertyPicker.swift */; };
+		98885439270E53450066E7EA /* PendulumLengthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885434270E53440066E7EA /* PendulumLengthPicker.swift */; };
+		9888543A270E53450066E7EA /* PendulumAnglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885435270E53450066E7EA /* PendulumAnglePicker.swift */; };
+		9888543B270E53450066E7EA /* PendulumAngularVelocityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885436270E53450066E7EA /* PendulumAngularVelocityPicker.swift */; };
+		98885451270E55400066E7EA /* PendulumMeshConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888543C270E55400066E7EA /* PendulumMeshConstructor.swift */; };
+		98885458270E55400066E7EA /* PendulumMeshConstructorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885446270E55400066E7EA /* PendulumMeshConstructorExtensions.swift */; };
+		98885459270E55400066E7EA /* PendulumMeshConstructionExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98885447270E55400066E7EA /* PendulumMeshConstructionExecution.swift */; };
+		9888545B270E55400066E7EA /* PendulumJointUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544A270E55400066E7EA /* PendulumJointUtilities.metal */; };
+		9888545C270E55400066E7EA /* PendulumJointConstruction.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544B270E55400066E7EA /* PendulumJointConstruction.metal */; };
+		9888545D270E55400066E7EA /* PendulumRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544C270E55400066E7EA /* PendulumRendering.metal */; };
+		9888545F270E55400066E7EA /* PendulumRectangleUtilities.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9888544F270E55400066E7EA /* PendulumRectangleUtilities.metal */; };
+		98885460270E55400066E7EA /* PendulumRectangleConstruction.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98885450270E55400066E7EA /* PendulumRectangleConstruction.metal */; };
+		98ECC3BB270F0045008BACD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98ECC3BA270F0045008BACD3 /* Preview Assets.xcassets */; };
+		98ECC3DB270FCEC1008BACD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ECC3DA270FCEC1008BACD3 /* ContentView.swift */; };
+		98EDDDB3270D0C8E006F9F44 /* AR_MultiPendulumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDB2270D0C8E006F9F44 /* AR_MultiPendulumApp.swift */; };
+		98EDDDB7270D0C8F006F9F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98EDDDB6270D0C8F006F9F44 /* Assets.xcassets */; };
+		98EDDDE8270D28B7006F9F44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDE7270D28B7006F9F44 /* Coordinator.swift */; };
+		98EDDDEA270D28BD006F9F44 /* PendulumRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDE9270D28BD006F9F44 /* PendulumRenderer.swift */; };
+		98EDDDEE270D29EA006F9F44 /* PendulumSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDDDED270D29EA006F9F44 /* PendulumSettingsView.swift */; };
+		98FDEEA4271E000000FD7F25 /* Metal_Utilities_Combined.metal in Sources */ = {isa = PBXBuildFile; fileRef = 98FDEEA3271E000000FD7F25 /* Metal_Utilities_Combined.metal */; };
+		98FDEEA6271E000400FD7F25 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDEEA5271E000400FD7F25 /* Launch Screen.storyboard */; };
+		98FDEEA7271E001900FD7F25 /* ARHeadsetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; platformFilter = ios; };
+		98FDEEA8271E001900FD7F25 /* ARHeadsetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		98FDEE9F271DFFD700FD7F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98FDEE9A271DFFD700FD7F25 /* ARHeadsetKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 98AACFF926FD54270011546A;
+			remoteInfo = ARHeadsetKit;
+		};
+		98FDEEA1271DFFD700FD7F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98FDEE9A271DFFD700FD7F25 /* ARHeadsetKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9876B0BC2718E36F004BD3A2;
+			remoteInfo = ARHeadsetKit_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		98EDDDC9270D100C006F9F44 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				98FDEEA8271E001900FD7F25 /* ARHeadsetKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		9801AAE126A0D99100270F3E /* MemoryUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MemoryUtilities.metal; sourceTree = "<group>"; };
-		9801AAE426A0D99C00270F3E /* MemoryUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MemoryUtilities.metal; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.metal; };
-		9801AAF326A0F95500270F3E /* ReduceSubmeshesLibrary.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ReduceSubmeshesLibrary.metallib; sourceTree = "<group>"; };
-		9801D82C2661956200D350D0 /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		9801D83526619E6200D350D0 /* Types.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Types.metal; sourceTree = "<group>"; };
-		9801D8392662991200D350D0 /* OpticalFlowMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticalFlowMeasurer.swift; sourceTree = "<group>"; };
-		9801D83D2662A46600D350D0 /* OpticalFlowMeasurementExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticalFlowMeasurementExecution.swift; sourceTree = "<group>"; };
-		9802C7D4268A376F00885EED /* CentralObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralObjectExtensions.swift; sourceTree = "<group>"; };
-		9802C7D7268A387A00885EED /* RayTracing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracing.swift; sourceTree = "<group>"; };
-		980B0CE126C6CF9D00CA0AA0 /* SceneRenderer2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRenderer2D.swift; sourceTree = "<group>"; };
-		980B0CE726C6CFC000CA0AA0 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		980B0CEB26C709F700CA0AA0 /* HandRenderer2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRenderer2D.swift; sourceTree = "<group>"; };
-		980B0CEE26C70A5000CA0AA0 /* HandRenderer2DExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRenderer2DExtensions.swift; sourceTree = "<group>"; };
-		981464542698EBCB00C4F8D2 /* Utilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Utilities.metal; sourceTree = "<group>"; };
-		981464582698EBE700C4F8D2 /* Utilities_Implementation.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Utilities_Implementation.metal; sourceTree = "<group>"; };
-		9819D6842682954E00BDA89E /* Types.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Types.metal; sourceTree = "<group>"; };
-		9819D6872682955500BDA89E /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		9819D68F2685083900BDA89E /* ColorUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorUtilities.metal; sourceTree = "<group>"; };
-		9819D6922685084A00BDA89E /* ColorUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorUtilities.metal; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.metal; };
-		9819D695268543DC00BDA89E /* HandColorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandColorTracker.swift; sourceTree = "<group>"; };
-		9819D6A026866ABC00BDA89E /* HandParityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandParityTracker.swift; sourceTree = "<group>"; };
-		9819D6A326875C4200BDA89E /* HandSamplingRateTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSamplingRateTracker.swift; sourceTree = "<group>"; };
-		9819D6B92688F04300BDA89E /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
-		982CE9A1269B92A6009947B0 /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		982CE9A4269B957B009947B0 /* CentralObjectUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CentralObjectUtilities.metal; sourceTree = "<group>"; };
-		982CE9A7269B9588009947B0 /* CentralObjectUtilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CentralObjectUtilities.metal; sourceTree = "<group>"; };
-		982CE9AB269DBD0D009947B0 /* Utilities.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Utilities.metal; sourceTree = "<group>"; };
-		982CE9AE269DBD19009947B0 /* Utilities_Implementation.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Utilities_Implementation.metal; sourceTree = "<group>"; };
-		982EE04F26D3EF0F00503C0B /* LiDAREnabledSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiDAREnabledSettingsView.swift; sourceTree = "<group>"; };
-		98328DD226C2D0B1008B627A /* LensDistortionCorrector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionCorrector.swift; sourceTree = "<group>"; };
-		98328DE226C2DFEA008B627A /* LensDistortionPipelineCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionPipelineCreation.swift; sourceTree = "<group>"; };
-		98328DE526C2DFFD008B627A /* VRRMapPartitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRRMapPartitioning.swift; sourceTree = "<group>"; };
-		98328DE926C2E46E008B627A /* LensDistortionUniforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionUniforms.swift; sourceTree = "<group>"; };
-		98328DEE26C2E5D6008B627A /* DeviceMeasurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeasurements.swift; sourceTree = "<group>"; };
-		98328DF226C2E5E3008B627A /* FutureDeviceMeasurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureDeviceMeasurements.swift; sourceTree = "<group>"; };
-		98328DF526C2E685008B627A /* DeviceMeasurementProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeasurementProtocols.swift; sourceTree = "<group>"; };
-		98328DF926C2E8EA008B627A /* LensDistortionCorrectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionCorrectorExtensions.swift; sourceTree = "<group>"; };
-		98328DFD26C2E93A008B627A /* LensDistortionCorrectionExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionCorrectionExecution.swift; sourceTree = "<group>"; };
-		98328E0626C41A16008B627A /* CameraMeasurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMeasurements.swift; sourceTree = "<group>"; };
-		98328E0A26C41B4B008B627A /* CameraMeasurementsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMeasurementsExtensions.swift; sourceTree = "<group>"; };
-		98328E1326C5FA9D008B627A /* InterfaceParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceParagraph.swift; sourceTree = "<group>"; };
-		98328E1726C60212008B627A /* InterfaceParagraphCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceParagraphCreation.swift; sourceTree = "<group>"; };
-		9838883E2667FC0400DCA879 /* MultiLevelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLevelBuffer.swift; sourceTree = "<group>"; };
-		98426FAA26B8643D007C5D4C /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		9842EAFF265B098E00D0173B /* HandAngleTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandAngleTracker.swift; sourceTree = "<group>"; };
-		985632B726D194CE0078578E /* UserSettingsSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsSerialization.swift; sourceTree = "<group>"; };
-		985632BB26D194EE0078578E /* LensDistortionSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensDistortionSerialization.swift; sourceTree = "<group>"; };
-		985632BF26D19F500078578E /* DebuggingUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingUtilities.swift; sourceTree = "<group>"; };
-		9862D2A82658841F00010945 /* HandOrientationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandOrientationTracker.swift; sourceTree = "<group>"; };
-		987D802D266C470C00309DCD /* MetalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalExtensions.swift; sourceTree = "<group>"; };
-		98898FD72676B1EB000A61CA /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		9889900B267A2C66000A61CA /* CentralSquarePyramid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralSquarePyramid.swift; sourceTree = "<group>"; };
-		9889900F267A339C000A61CA /* CentralOctahedron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralOctahedron.swift; sourceTree = "<group>"; };
-		988C5F0B2626377200DBAFF4 /* HandRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRenderer.swift; sourceTree = "<group>"; };
-		988C5F1126263D5100DBAFF4 /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		988C5F152627516D00DBAFF4 /* HandRendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRendererExtensions.swift; sourceTree = "<group>"; };
-		988C5F1E2627526500DBAFF4 /* HandDetectionUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetectionUtilities.swift; sourceTree = "<group>"; };
-		988DD56A26D2EF07002F5895 /* SettingsIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsIconView.swift; sourceTree = "<group>"; };
-		9894CA72264C160A00E451E2 /* HandModelFitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandModelFitter.swift; sourceTree = "<group>"; };
-		9894CA76264C4A1800E451E2 /* HandLengths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandLengths.swift; sourceTree = "<group>"; };
-		98A0175B26739CA400AE3355 /* RendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererExtensions.swift; sourceTree = "<group>"; };
-		98A0176226739E0500AE3355 /* RenderingExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingExecution.swift; sourceTree = "<group>"; };
-		98A78BA12628D5E900217444 /* HandDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetection.swift; sourceTree = "<group>"; };
-		98A78BA72628D73D00217444 /* Hand3DReconstructionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand3DReconstructionTypes.swift; sourceTree = "<group>"; };
-		98A78BAB2628D74B00217444 /* Hand3DReconstructionUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand3DReconstructionUtilities.swift; sourceTree = "<group>"; };
-		98A78BAE2628D75A00217444 /* Hand3DReconstructionExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand3DReconstructionExecution.swift; sourceTree = "<group>"; };
-		98A88F8E2625FE7B00BA7E0F /* AR MultiPendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR MultiPendulum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		98A88F912625FE7B00BA7E0F /* AR_MultiPendulumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_MultiPendulumApp.swift; sourceTree = "<group>"; };
-		98A88F932625FE7B00BA7E0F /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
-		98A88F952625FE7C00BA7E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		98A88F9A2625FE7C00BA7E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98A88FAC2626043E00BA7E0F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		98A88FAF2626045D00BA7E0F /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		98A88FB22626048F00BA7E0F /* MathUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilities.swift; sourceTree = "<group>"; };
-		98A88FB82626059600BA7E0F /* SIMDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIMDExtensions.swift; sourceTree = "<group>"; };
-		98A88FC6262606AA00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A88FCC2626078700BA7E0F /* SceneRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRenderer.swift; sourceTree = "<group>"; };
-		98A88FCF2626079300BA7E0F /* SceneRendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRendererExtensions.swift; sourceTree = "<group>"; };
-		98A88FDC2626083200BA7E0F /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		98A88FDF2626085C00BA7E0F /* SceneOcclusionTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOcclusionTester.swift; sourceTree = "<group>"; };
-		98A88FE52626087200BA7E0F /* SceneOcclusionTestingExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOcclusionTestingExecution.swift; sourceTree = "<group>"; };
-		98A88FE82626087A00BA7E0F /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		98A88FEB2626088300BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A88FEF2626092100BA7E0F /* SceneCuller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCuller.swift; sourceTree = "<group>"; };
-		98A88FF52626094600BA7E0F /* SceneCullingExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCullingExecution.swift; sourceTree = "<group>"; };
-		98A88FF82626094D00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A88FFB2626098C00BA7E0F /* SceneTexelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTexelManager.swift; sourceTree = "<group>"; };
-		98A88FFE2626099800BA7E0F /* SceneTexelManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTexelManagerExtensions.swift; sourceTree = "<group>"; };
-		98A89001262609A400BA7E0F /* SceneTexelManagementExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTexelManagementExecution.swift; sourceTree = "<group>"; };
-		98A89004262609AD00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A89007262609EF00BA7E0F /* SceneTexelRasterizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTexelRasterizer.swift; sourceTree = "<group>"; };
-		98A8900D26260A0500BA7E0F /* SceneTexelRasterizationExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTexelRasterizationExecution.swift; sourceTree = "<group>"; };
-		98A8901026260A2000BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8901326260A4500BA7E0F /* SceneMeshMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshMatcher.swift; sourceTree = "<group>"; };
-		98A8901626260A4F00BA7E0F /* SceneMeshMatcherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshMatcherExtensions.swift; sourceTree = "<group>"; };
-		98A8901926260A5A00BA7E0F /* SceneMeshMatchingExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshMatchingExecution.swift; sourceTree = "<group>"; };
-		98A8901C26260A6000BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8902026260A8600BA7E0F /* Types.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Types.metal; sourceTree = "<group>"; };
-		98A8902326260A8A00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8902626260B9600BA7E0F /* SceneDuplicateRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDuplicateRemover.swift; sourceTree = "<group>"; };
-		98A8902926260BA000BA7E0F /* SceneDuplicateRemoverExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDuplicateRemoverExtensions.swift; sourceTree = "<group>"; };
-		98A8902C26260BAB00BA7E0F /* SceneDuplicateRemovalExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDuplicateRemovalExecution.swift; sourceTree = "<group>"; };
-		98A8902F26260BB200BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8903226260BD800BA7E0F /* SceneSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSorter.swift; sourceTree = "<group>"; };
-		98A8903526260BE100BA7E0F /* SceneSorterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSorterExtensions.swift; sourceTree = "<group>"; };
-		98A8903D26260C1100BA7E0F /* FourthSceneSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthSceneSorter.swift; sourceTree = "<group>"; };
-		98A8904426260C2500BA7E0F /* FourthSceneSortExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthSceneSortExecution.swift; sourceTree = "<group>"; };
-		98A8904726260C2A00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8904A26260C3500BA7E0F /* ThirdSceneSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSceneSorter.swift; sourceTree = "<group>"; };
-		98A8905026260C4900BA7E0F /* ThirdSceneSortExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSceneSortExecution.swift; sourceTree = "<group>"; };
-		98A8905326260C4E00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8905626260C5600BA7E0F /* SecondSceneSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSceneSorter.swift; sourceTree = "<group>"; };
-		98A8905C26260C6600BA7E0F /* SecondSceneSortExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSceneSortExecution.swift; sourceTree = "<group>"; };
-		98A8905F26260C6C00BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8906226260C7500BA7E0F /* FirstSceneSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneSorter.swift; sourceTree = "<group>"; };
-		98A8906826260C8300BA7E0F /* FirstSceneSortExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneSortExecution.swift; sourceTree = "<group>"; };
-		98A8906B26260C8900BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98A8906E26260C8F00BA7E0F /* OctreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctreeNode.swift; sourceTree = "<group>"; };
-		98A8907126260C9800BA7E0F /* OctreeNodeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctreeNodeExtensions.swift; sourceTree = "<group>"; };
-		98A8907426260D3F00BA7E0F /* SceneMeshReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshReducer.swift; sourceTree = "<group>"; };
-		98A8907726260D4700BA7E0F /* SceneMeshReducerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshReducerExtensions.swift; sourceTree = "<group>"; };
-		98A8907A26260D5200BA7E0F /* SceneMeshReductionExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMeshReductionExecution.swift; sourceTree = "<group>"; };
-		98A8907D26260D5800BA7E0F /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98B6221726D3C11A00BD4435 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
-		98D3525526CAB77A00B67901 /* PendulumInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterface.swift; sourceTree = "<group>"; };
-		98D3525826CAB89F00B67901 /* PendulumInterfaceParagraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceParagraphs.swift; sourceTree = "<group>"; };
-		98D3525B26CABD4F00B67901 /* PendulumInterfaceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceExtensions.swift; sourceTree = "<group>"; };
-		98D3526026CAFAF200B67901 /* InterfaceSurfaceMeshIndices.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterfaceSurfaceMeshIndices.data; sourceTree = "<group>"; };
-		98D3526826CC1DAA00B67901 /* PendulumInterfaceAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceAnchor.swift; sourceTree = "<group>"; };
-		98D3526D26CC21DE00B67901 /* PendulumInterfacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfacePicker.swift; sourceTree = "<group>"; };
-		98D3527226CC22C700B67901 /* PendulumPropertyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumPropertyPicker.swift; sourceTree = "<group>"; };
-		98D3527A26CD3AB900B67901 /* PendulumInterfaceBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceBackButton.swift; sourceTree = "<group>"; };
-		98D3527F26CD4D4B00B67901 /* PendulumLengthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumLengthPicker.swift; sourceTree = "<group>"; };
-		98D3528226CD4D5700B67901 /* PendulumMassPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumMassPicker.swift; sourceTree = "<group>"; };
-		98D3528526CD4D6200B67901 /* PendulumAnglePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumAnglePicker.swift; sourceTree = "<group>"; };
-		98D3528826CD4DC600B67901 /* PendulumAngularVelocityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumAngularVelocityPicker.swift; sourceTree = "<group>"; };
-		98D3528C26CD6B9500B67901 /* PendulumInterfaceRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceRendering.swift; sourceTree = "<group>"; };
-		98D3529226CD891E00B67901 /* PendulumInterfaceCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceCounter.swift; sourceTree = "<group>"; };
-		98D3529826CECD8900B67901 /* PendulumFailureTrajectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumFailureTrajectory.swift; sourceTree = "<group>"; };
-		98D3529C26CF229E00B67901 /* PendulumStandRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumStandRendering.swift; sourceTree = "<group>"; };
-		98D4564B26B1804D00598F61 /* InterfaceRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceRenderer.swift; sourceTree = "<group>"; };
-		98D4564E26B1806000598F61 /* InterfaceRendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceRendererExtensions.swift; sourceTree = "<group>"; };
-		98D4565426B1A0BD00598F61 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		98D4565726B1D57600598F61 /* InterfaceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceElement.swift; sourceTree = "<group>"; };
-		98DBB64F26B30CC200479FFD /* InterfaceFontHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceFontHandle.swift; sourceTree = "<group>"; };
-		98DBB65326B30D3100479FFD /* InterfaceFontCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceFontCreation.swift; sourceTree = "<group>"; };
-		98DBB65726B30D5C00479FFD /* InterfaceFontSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceFontSerialization.swift; sourceTree = "<group>"; };
-		98DBB65C26B3256B00479FFD /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98DF198B26AA50FC00F12550 /* CoreVideoExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreVideoExtensions.swift; sourceTree = "<group>"; };
-		98DF198E26AA510A00F12550 /* CoreTextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTextExtensions.swift; sourceTree = "<group>"; };
-		98E624AD262B5441006B6B69 /* CentralRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralRenderer.swift; sourceTree = "<group>"; };
-		98E624B1262B54EF006B6B69 /* CentralCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralCube.swift; sourceTree = "<group>"; };
-		98E624B5262B54F8006B6B69 /* CentralSphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralSphere.swift; sourceTree = "<group>"; };
-		98E624B8262B54FF006B6B69 /* CentralCylinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralCylinder.swift; sourceTree = "<group>"; };
-		98E624BB262B5504006B6B69 /* CentralCone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralCone.swift; sourceTree = "<group>"; };
-		98E624BF262B55A4006B6B69 /* CentralShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralShape.swift; sourceTree = "<group>"; };
-		98E624E1262C9EEB006B6B69 /* CentralShapeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralShapeContainer.swift; sourceTree = "<group>"; };
-		98E624E5262CA0FB006B6B69 /* CentralObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralObject.swift; sourceTree = "<group>"; };
-		98E624E8262CDD75006B6B69 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		98E624F4262DD60B006B6B69 /* CentralShapeContainerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralShapeContainerExtensions.swift; sourceTree = "<group>"; };
-		98E624F7262DD99C006B6B69 /* CentralRendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralRendererExtensions.swift; sourceTree = "<group>"; };
-		98EB9A3826A4E3BE00B04F09 /* Types.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Types.metal; sourceTree = "<group>"; };
-		98EB9A3B26A4E3CC00B04F09 /* Types.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Types.metal; sourceTree = "<group>"; };
-		98EB9A3F26A8BF7500B04F09 /* MemoryUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryUtilities.swift; sourceTree = "<group>"; };
-		98ECD334267B86DC00421062 /* SecondSceneMeshMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSceneMeshMatch.swift; sourceTree = "<group>"; };
-		98ECD33A267B9B0100421062 /* ThirdSceneMeshMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSceneMeshMatch.swift; sourceTree = "<group>"; };
-		98F0C8772695E89C00C1EE48 /* PendulumMeshConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructor.swift; sourceTree = "<group>"; };
-		98F0C87E2695E8C300C1EE48 /* PendulumMeshConstructorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructorExtensions.swift; sourceTree = "<group>"; };
-		98F0C8812695E8CC00C1EE48 /* PendulumMeshConstructionExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructionExecution.swift; sourceTree = "<group>"; };
-		98F0C89326976CE500C1EE48 /* Kernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
-		98F0C89A2697960F00C1EE48 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		98F3448826D44B0400544D05 /* InteractionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionSettingsView.swift; sourceTree = "<group>"; };
-		98F3448E26D44B8F00544D05 /* RenderingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingSettingsView.swift; sourceTree = "<group>"; };
-		98F3449226D4566900544D05 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
-		98F3449626D45BD000544D05 /* MRViewSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRViewSeparator.swift; sourceTree = "<group>"; };
-		98F3449C26D474F900544D05 /* FlyingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingTutorialView.swift; sourceTree = "<group>"; };
-		98F3449F26D476E600544D05 /* HeadsetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsetTutorialView.swift; sourceTree = "<group>"; };
-		98F344A426D5672E00544D05 /* AppTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTutorialView.swift; sourceTree = "<group>"; };
-		98F344AA26D5CB0A00544D05 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		98F55F67268F5B610094194F /* PendulumRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumRenderer.swift; sourceTree = "<group>"; };
-		98F55F6A268F5B6E0094194F /* PendulumRendererExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumRendererExtensions.swift; sourceTree = "<group>"; };
-		98F55F72268F5BBC0094194F /* PendulumTimeStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumTimeStepper.swift; sourceTree = "<group>"; };
-		98F55F75268F5BCA0094194F /* PendulumTimeStepperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumTimeStepperExtensions.swift; sourceTree = "<group>"; };
-		98F55F78268F5BE30094194F /* PendulumStateEquations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumStateEquations.swift; sourceTree = "<group>"; };
-		98F55F7B268F5C040094194F /* PendulumStateEquationsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumStateEquationsExtensions.swift; sourceTree = "<group>"; };
-		98F55F7E268F5C120094194F /* PendulumMatrixSolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumMatrixSolving.swift; sourceTree = "<group>"; };
-		98F55F82268F5D1A0094194F /* PendulumState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumState.swift; sourceTree = "<group>"; };
-		98F55F90268F5D880094194F /* PendulumSimulationPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumSimulationPrototype.swift; sourceTree = "<group>"; };
-		98F55F94268F5D950094194F /* PendulumSimulationPrototypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumSimulationPrototypeExtensions.swift; sourceTree = "<group>"; };
+		988853D0270E52A10066E7EA /* PendulumMatrixSolving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumMatrixSolving.swift; sourceTree = "<group>"; };
+		988853D1270E52A10066E7EA /* PendulumStateEquations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumStateEquations.swift; sourceTree = "<group>"; };
+		988853D2270E52A10066E7EA /* PendulumStateEquationsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumStateEquationsExtensions.swift; sourceTree = "<group>"; };
+		988853D6270E52A90066E7EA /* PendulumTimeStepperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumTimeStepperExtensions.swift; sourceTree = "<group>"; };
+		988853D7270E52A90066E7EA /* PendulumTimeStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumTimeStepper.swift; sourceTree = "<group>"; };
+		988853DA270E52BC0066E7EA /* PendulumFailureTrajectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumFailureTrajectory.swift; sourceTree = "<group>"; };
+		988853DC270E52C00066E7EA /* PendulumState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumState.swift; sourceTree = "<group>"; };
+		988853DE270E52C70066E7EA /* PendulumStandRendering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumStandRendering.swift; sourceTree = "<group>"; };
+		988853E0270E52CD0066E7EA /* PendulumRendererExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumRendererExtensions.swift; sourceTree = "<group>"; };
+		988853E3270E52E40066E7EA /* PendulumSimulationPrototypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumSimulationPrototypeExtensions.swift; sourceTree = "<group>"; };
+		988853E4270E52E40066E7EA /* PendulumSimulationPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumSimulationPrototype.swift; sourceTree = "<group>"; };
+		98885422270E53240066E7EA /* PendulumInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterface.swift; sourceTree = "<group>"; };
+		98885423270E53240066E7EA /* PendulumInterfaceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceExtensions.swift; sourceTree = "<group>"; };
+		98885424270E53250066E7EA /* PendulumInterfaceParagraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceParagraphs.swift; sourceTree = "<group>"; };
+		98885425270E53250066E7EA /* PendulumInterfaceRendering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceRendering.swift; sourceTree = "<group>"; };
+		9888542A270E53340066E7EA /* PendulumInterfacePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfacePicker.swift; sourceTree = "<group>"; };
+		9888542B270E53340066E7EA /* PendulumInterfaceCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceCounter.swift; sourceTree = "<group>"; };
+		9888542C270E53340066E7EA /* PendulumInterfaceBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceBackButton.swift; sourceTree = "<group>"; };
+		9888542D270E53340066E7EA /* PendulumInterfaceAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumInterfaceAnchor.swift; sourceTree = "<group>"; };
+		98885432270E53440066E7EA /* PendulumMassPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumMassPicker.swift; sourceTree = "<group>"; };
+		98885433270E53440066E7EA /* PendulumPropertyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumPropertyPicker.swift; sourceTree = "<group>"; };
+		98885434270E53440066E7EA /* PendulumLengthPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumLengthPicker.swift; sourceTree = "<group>"; };
+		98885435270E53450066E7EA /* PendulumAnglePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumAnglePicker.swift; sourceTree = "<group>"; };
+		98885436270E53450066E7EA /* PendulumAngularVelocityPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumAngularVelocityPicker.swift; sourceTree = "<group>"; };
+		9888543C270E55400066E7EA /* PendulumMeshConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructor.swift; sourceTree = "<group>"; };
+		98885446270E55400066E7EA /* PendulumMeshConstructorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructorExtensions.swift; sourceTree = "<group>"; };
+		98885447270E55400066E7EA /* PendulumMeshConstructionExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendulumMeshConstructionExecution.swift; sourceTree = "<group>"; };
+		98885449270E55400066E7EA /* PendulumJointUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.metal; fileEncoding = 4; path = PendulumJointUtilities.h; sourceTree = "<group>"; };
+		9888544A270E55400066E7EA /* PendulumJointUtilities.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PendulumJointUtilities.metal; sourceTree = "<group>"; };
+		9888544B270E55400066E7EA /* PendulumJointConstruction.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PendulumJointConstruction.metal; sourceTree = "<group>"; };
+		9888544C270E55400066E7EA /* PendulumRendering.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PendulumRendering.metal; sourceTree = "<group>"; };
+		9888544E270E55400066E7EA /* PendulumRectangleUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.metal; fileEncoding = 4; path = PendulumRectangleUtilities.h; sourceTree = "<group>"; };
+		9888544F270E55400066E7EA /* PendulumRectangleUtilities.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PendulumRectangleUtilities.metal; sourceTree = "<group>"; };
+		98885450270E55400066E7EA /* PendulumRectangleConstruction.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PendulumRectangleConstruction.metal; sourceTree = "<group>"; };
+		98ECC3BA270F0045008BACD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98ECC3DA270FCEC1008BACD3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98EDDDAF270D0C8E006F9F44 /* AR MultiPendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR MultiPendulum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98EDDDB2270D0C8E006F9F44 /* AR_MultiPendulumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_MultiPendulumApp.swift; sourceTree = "<group>"; };
+		98EDDDB6270D0C8F006F9F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98EDDDD7270D1BB8006F9F44 /* AR-MultiPendulum-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AR-MultiPendulum-Info.plist"; sourceTree = SOURCE_ROOT; };
+		98EDDDE7270D28B7006F9F44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		98EDDDE9270D28BD006F9F44 /* PendulumRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumRenderer.swift; sourceTree = "<group>"; };
+		98EDDDED270D29EA006F9F44 /* PendulumSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumSettingsView.swift; sourceTree = "<group>"; };
+		98FDEE9A271DFFD700FD7F25 /* ARHeadsetKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ARHeadsetKit.xcodeproj; path = ARHeadsetKit/ARHeadsetKit.xcodeproj; sourceTree = "<group>"; };
+		98FDEEA3271E000000FD7F25 /* Metal_Utilities_Combined.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Metal_Utilities_Combined.metal; path = ARHeadsetKit/Metal_Utilities_Combined.metal; sourceTree = SOURCE_ROOT; };
+		98FDEEA5271E000400FD7F25 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "ARHeadsetKit/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		98A88F8B2625FE7B00BA7E0F /* Frameworks */ = {
+		98EDDDAC270D0C8E006F9F44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98328DCF26C2D039008B627A /* DeviceKit in Frameworks */,
-				98EF71C526D5F1E5006A97AA /* ZippyJSON in Frameworks */,
+				98FDEEA7271E001900FD7F25 /* ARHeadsetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9801D8292661948000D350D0 /* Detection */ = {
+		988853C8270E4D2A0066E7EA /* Pendulum Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				98A78BA12628D5E900217444 /* HandDetection.swift */,
-				988C5F1E2627526500DBAFF4 /* HandDetectionUtilities.swift */,
-				988C5F1126263D5100DBAFF4 /* Kernels.metal */,
+				98EDDDE9270D28BD006F9F44 /* PendulumRenderer.swift */,
+				988853E0270E52CD0066E7EA /* PendulumRendererExtensions.swift */,
+				988853DE270E52C70066E7EA /* PendulumStandRendering.swift */,
 			);
-			path = Detection;
+			path = "Pendulum Renderer";
 			sourceTree = "<group>";
 		};
-		9801D82B2661954500D350D0 /* Optical Flow Measurement */ = {
+		988853CA270E4D500066E7EA /* Simulation */ = {
 			isa = PBXGroup;
 			children = (
-				9801D8392662991200D350D0 /* OpticalFlowMeasurer.swift */,
-				9801D83D2662A46600D350D0 /* OpticalFlowMeasurementExecution.swift */,
-				9801D83526619E6200D350D0 /* Types.metal */,
-				9801D82C2661956200D350D0 /* Kernels.metal */,
+				988853CE270E4DF70066E7EA /* Prototype */,
+				988853CF270E4E180066E7EA /* Pendulum State */,
+				988853CC270E4DC20066E7EA /* Time Stepping */,
+				988853CD270E4DDC0066E7EA /* State Equations */,
 			);
-			path = "Optical Flow Measurement";
+			path = Simulation;
 			sourceTree = "<group>";
 		};
-		980B0CDF26C6CF5B00CA0AA0 /* Scene Rendering (2D) */ = {
+		988853CB270E4D5B0066E7EA /* Mesh Construction */ = {
 			isa = PBXGroup;
 			children = (
-				980B0CE126C6CF9D00CA0AA0 /* SceneRenderer2D.swift */,
-				980B0CE726C6CFC000CA0AA0 /* Shaders.metal */,
+				9888543C270E55400066E7EA /* PendulumMeshConstructor.swift */,
+				98885446270E55400066E7EA /* PendulumMeshConstructorExtensions.swift */,
+				98885447270E55400066E7EA /* PendulumMeshConstructionExecution.swift */,
+				98885448270E55400066E7EA /* Joints */,
+				9888544D270E55400066E7EA /* Rectangles */,
+				9888544C270E55400066E7EA /* PendulumRendering.metal */,
 			);
-			path = "Scene Rendering (2D)";
+			path = "Mesh Construction";
 			sourceTree = "<group>";
 		};
-		980B0CE026C6CF6D00CA0AA0 /* Hand Rendering (2D) */ = {
+		988853CC270E4DC20066E7EA /* Time Stepping */ = {
 			isa = PBXGroup;
 			children = (
-				980B0CEB26C709F700CA0AA0 /* HandRenderer2D.swift */,
-				980B0CEE26C70A5000CA0AA0 /* HandRenderer2DExtensions.swift */,
-			);
-			path = "Hand Rendering (2D)";
-			sourceTree = "<group>";
-		};
-		9819D69F26866AAD00BDA89E /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				9819D695268543DC00BDA89E /* HandColorTracker.swift */,
-				9819D6A026866ABC00BDA89E /* HandParityTracker.swift */,
-				9819D6A326875C4200BDA89E /* HandSamplingRateTracker.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9819D6AE2687C6B700BDA89E /* Central Object */ = {
-			isa = PBXGroup;
-			children = (
-				98E624E5262CA0FB006B6B69 /* CentralObject.swift */,
-				9802C7D4268A376F00885EED /* CentralObjectExtensions.swift */,
-				9802C7D7268A387A00885EED /* RayTracing.swift */,
-			);
-			path = "Central Object";
-			sourceTree = "<group>";
-		};
-		982CE99A269A1912009947B0 /* Rectangles */ = {
-			isa = PBXGroup;
-			children = (
-				981464542698EBCB00C4F8D2 /* Utilities.metal */,
-				981464582698EBE700C4F8D2 /* Utilities_Implementation.metal */,
-				98F0C89326976CE500C1EE48 /* Kernels.metal */,
-			);
-			path = Rectangles;
-			sourceTree = "<group>";
-		};
-		982CE99B269A191A009947B0 /* Joints */ = {
-			isa = PBXGroup;
-			children = (
-				982CE9AB269DBD0D009947B0 /* Utilities.metal */,
-				982CE9AE269DBD19009947B0 /* Utilities_Implementation.metal */,
-				982CE9A1269B92A6009947B0 /* Kernels.metal */,
-			);
-			path = Joints;
-			sourceTree = "<group>";
-		};
-		98328DCB26C2CF6F008B627A /* Lens Distortion Correction */ = {
-			isa = PBXGroup;
-			children = (
-				98328DD226C2D0B1008B627A /* LensDistortionCorrector.swift */,
-				98328DF926C2E8EA008B627A /* LensDistortionCorrectorExtensions.swift */,
-				98328DFD26C2E93A008B627A /* LensDistortionCorrectionExecution.swift */,
-				98328DD626C2D4A4008B627A /* Configuration */,
-				98328DE026C2D51A008B627A /* Optimized VRR Mapping */,
-				98A88FC6262606AA00BA7E0F /* Kernels.metal */,
-			);
-			path = "Lens Distortion Correction";
-			sourceTree = "<group>";
-		};
-		98328DD626C2D4A4008B627A /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				98328DE926C2E46E008B627A /* LensDistortionUniforms.swift */,
-				985632BB26D194EE0078578E /* LensDistortionSerialization.swift */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		98328DE026C2D51A008B627A /* Optimized VRR Mapping */ = {
-			isa = PBXGroup;
-			children = (
-				98328DE226C2DFEA008B627A /* LensDistortionPipelineCreation.swift */,
-				98328DE526C2DFFD008B627A /* VRRMapPartitioning.swift */,
-			);
-			path = "Optimized VRR Mapping";
-			sourceTree = "<group>";
-		};
-		98328DED26C2E59B008B627A /* Device Measurements */ = {
-			isa = PBXGroup;
-			children = (
-				98328DF526C2E685008B627A /* DeviceMeasurementProtocols.swift */,
-				98328DEE26C2E5D6008B627A /* DeviceMeasurements.swift */,
-				98328DF226C2E5E3008B627A /* FutureDeviceMeasurements.swift */,
-			);
-			path = "Device Measurements";
-			sourceTree = "<group>";
-		};
-		98328E0426C415D9008B627A /* Camera Measurements */ = {
-			isa = PBXGroup;
-			children = (
-				98328E0626C41A16008B627A /* CameraMeasurements.swift */,
-				98328E0A26C41B4B008B627A /* CameraMeasurementsExtensions.swift */,
-				98328DED26C2E59B008B627A /* Device Measurements */,
-			);
-			path = "Camera Measurements";
-			sourceTree = "<group>";
-		};
-		98328E1B26C60218008B627A /* Paragraph */ = {
-			isa = PBXGroup;
-			children = (
-				98328E1326C5FA9D008B627A /* InterfaceParagraph.swift */,
-				98328E1726C60212008B627A /* InterfaceParagraphCreation.swift */,
-			);
-			path = Paragraph;
-			sourceTree = "<group>";
-		};
-		985E5CAC267BB557007B1B5C /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
-				9801AAE426A0D99C00270F3E /* MemoryUtilities.metal */,
-				9819D6922685084A00BDA89E /* ColorUtilities.metal */,
-				982CE9A7269B9588009947B0 /* CentralObjectUtilities.metal */,
-			);
-			path = Implementations;
-			sourceTree = "<group>";
-		};
-		98898FD62676B1D4000A61CA /* User Settings */ = {
-			isa = PBXGroup;
-			children = (
-				98898FD72676B1EB000A61CA /* UserSettings.swift */,
-				985632B726D194CE0078578E /* UserSettingsSerialization.swift */,
-				98328E0426C415D9008B627A /* Camera Measurements */,
-				98328DCB26C2CF6F008B627A /* Lens Distortion Correction */,
-			);
-			path = "User Settings";
-			sourceTree = "<group>";
-		};
-		9889900126799901000A61CA /* Shapes */ = {
-			isa = PBXGroup;
-			children = (
-				98E624BF262B55A4006B6B69 /* CentralShape.swift */,
-				9889900226799916000A61CA /* Polyhedral Shapes */,
-				988990032679991F000A61CA /* Round Shapes */,
-			);
-			path = Shapes;
-			sourceTree = "<group>";
-		};
-		9889900226799916000A61CA /* Polyhedral Shapes */ = {
-			isa = PBXGroup;
-			children = (
-				98E624B1262B54EF006B6B69 /* CentralCube.swift */,
-				9889900B267A2C66000A61CA /* CentralSquarePyramid.swift */,
-				9889900F267A339C000A61CA /* CentralOctahedron.swift */,
-			);
-			path = "Polyhedral Shapes";
-			sourceTree = "<group>";
-		};
-		988990032679991F000A61CA /* Round Shapes */ = {
-			isa = PBXGroup;
-			children = (
-				98E624B5262B54F8006B6B69 /* CentralSphere.swift */,
-				98E624BB262B5504006B6B69 /* CentralCone.swift */,
-				98E624B8262B54FF006B6B69 /* CentralCylinder.swift */,
-			);
-			path = "Round Shapes";
-			sourceTree = "<group>";
-		};
-		988C5F0E2626377600DBAFF4 /* Central Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				98E624AD262B5441006B6B69 /* CentralRenderer.swift */,
-				98E624F7262DD99C006B6B69 /* CentralRendererExtensions.swift */,
-				9819D6AE2687C6B700BDA89E /* Central Object */,
-				98E624F0262DD5B9006B6B69 /* Central Shape Container */,
-				9889900126799901000A61CA /* Shapes */,
-				98E624E8262CDD75006B6B69 /* Shaders.metal */,
-			);
-			path = "Central Rendering";
-			sourceTree = "<group>";
-		};
-		988C5F1C2627523D00DBAFF4 /* Reconstruction */ = {
-			isa = PBXGroup;
-			children = (
-				98A78BAE2628D75A00217444 /* Hand3DReconstructionExecution.swift */,
-				98A78BAB2628D74B00217444 /* Hand3DReconstructionUtilities.swift */,
-				98A78BA72628D73D00217444 /* Hand3DReconstructionTypes.swift */,
-			);
-			path = Reconstruction;
-			sourceTree = "<group>";
-		};
-		988FA40826BB5EE400A35D89 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				988FA40926BB5EED00A35D89 /* Swift */,
-				988FA40A26BB5EF300A35D89 /* Metal */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		988FA40926BB5EED00A35D89 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				985632BF26D19F500078578E /* DebuggingUtilities.swift */,
-				98EB9A3F26A8BF7500B04F09 /* MemoryUtilities.swift */,
-				98A88FB22626048F00BA7E0F /* MathUtilities.swift */,
-				9838883E2667FC0400DCA879 /* MultiLevelBuffer.swift */,
-			);
-			path = Swift;
-			sourceTree = "<group>";
-		};
-		988FA40A26BB5EF300A35D89 /* Metal */ = {
-			isa = PBXGroup;
-			children = (
-				9801AAE126A0D99100270F3E /* MemoryUtilities.metal */,
-				9819D68F2685083900BDA89E /* ColorUtilities.metal */,
-				982CE9A4269B957B009947B0 /* CentralObjectUtilities.metal */,
-				985E5CAC267BB557007B1B5C /* Implementations */,
-			);
-			path = Metal;
-			sourceTree = "<group>";
-		};
-		9894CA71264C15A300E451E2 /* Model Fitting */ = {
-			isa = PBXGroup;
-			children = (
-				9894CA72264C160A00E451E2 /* HandModelFitter.swift */,
-				9894CA76264C4A1800E451E2 /* HandLengths.swift */,
-				9862D2A82658841F00010945 /* HandOrientationTracker.swift */,
-				9842EAFF265B098E00D0173B /* HandAngleTracker.swift */,
-				9819D6B92688F04300BDA89E /* Hand.swift */,
-			);
-			path = "Model Fitting";
-			sourceTree = "<group>";
-		};
-		98A0175926739C4500AE3355 /* Renderer */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FAF2626045D00BA7E0F /* Renderer.swift */,
-				98A0175B26739CA400AE3355 /* RendererExtensions.swift */,
-				98A0176226739E0500AE3355 /* RenderingExecution.swift */,
-			);
-			path = Renderer;
-			sourceTree = "<group>";
-		};
-		98A0176026739CCF00AE3355 /* Framework Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FB82626059600BA7E0F /* SIMDExtensions.swift */,
-				987D802D266C470C00309DCD /* MetalExtensions.swift */,
-				98DF198B26AA50FC00F12550 /* CoreVideoExtensions.swift */,
-				98DF198E26AA510A00F12550 /* CoreTextExtensions.swift */,
-				98F3449226D4566900544D05 /* SwiftUIExtensions.swift */,
-			);
-			path = "Framework Extensions";
-			sourceTree = "<group>";
-		};
-		98A88F852625FE7B00BA7E0F = {
-			isa = PBXGroup;
-			children = (
-				98A88F902625FE7B00BA7E0F /* AR MultiPendulum */,
-				98A88F8F2625FE7B00BA7E0F /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		98A88F8F2625FE7B00BA7E0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				98A88F8E2625FE7B00BA7E0F /* AR MultiPendulum.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		98A88F902625FE7B00BA7E0F /* AR MultiPendulum */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FA52626034900BA7E0F /* App Setup */,
-				98A0175926739C4500AE3355 /* Renderer */,
-				98898FD62676B1D4000A61CA /* User Settings */,
-				98A88FA7262603A900BA7E0F /* Scene Reconstruction */,
-				98A88FAA262603C400BA7E0F /* Hand Reconstruction */,
-				98F55F65268F59B10094194F /* MultiPendulum */,
-				98D4564A26B1803700598F61 /* Interface Rendering */,
-				988C5F0E2626377600DBAFF4 /* Central Rendering */,
-				98A88FA9262603BE00BA7E0F /* Other */,
-				98A88F952625FE7C00BA7E0F /* Assets.xcassets */,
-				98A88F9A2625FE7C00BA7E0F /* Info.plist */,
-				98F344AA26D5CB0A00544D05 /* Launch Screen.storyboard */,
-			);
-			path = "AR MultiPendulum";
-			sourceTree = "<group>";
-		};
-		98A88FA52626034900BA7E0F /* App Setup */ = {
-			isa = PBXGroup;
-			children = (
-				98A88F912625FE7B00BA7E0F /* AR_MultiPendulumApp.swift */,
-				98A88F932625FE7B00BA7E0F /* Views.swift */,
-				98A88FAC2626043E00BA7E0F /* Coordinator.swift */,
-			);
-			path = "App Setup";
-			sourceTree = "<group>";
-		};
-		98A88FA7262603A900BA7E0F /* Scene Reconstruction */ = {
-			isa = PBXGroup;
-			children = (
-				980B0CDF26C6CF5B00CA0AA0 /* Scene Rendering (2D) */,
-				98A88FCC2626078700BA7E0F /* SceneRenderer.swift */,
-				98A88FCF2626079300BA7E0F /* SceneRendererExtensions.swift */,
-				98A88FDB2626081000BA7E0F /* Reconstruction */,
-				98A88FD9262607E700BA7E0F /* Culling */,
-				98A88FDA262607EC00BA7E0F /* Occlusion Testing */,
-				98A88FDC2626083200BA7E0F /* Shaders.metal */,
-			);
-			path = "Scene Reconstruction";
-			sourceTree = "<group>";
-		};
-		98A88FA9262603BE00BA7E0F /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				98A0176026739CCF00AE3355 /* Framework Extensions */,
-				988FA40826BB5EE400A35D89 /* Utilities */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		98A88FAA262603C400BA7E0F /* Hand Reconstruction */ = {
-			isa = PBXGroup;
-			children = (
-				980B0CE026C6CF6D00CA0AA0 /* Hand Rendering (2D) */,
-				988C5F0B2626377200DBAFF4 /* HandRenderer.swift */,
-				988C5F152627516D00DBAFF4 /* HandRendererExtensions.swift */,
-				9801D82B2661954500D350D0 /* Optical Flow Measurement */,
-				9801D8292661948000D350D0 /* Detection */,
-				988C5F1C2627523D00DBAFF4 /* Reconstruction */,
-				9894CA71264C15A300E451E2 /* Model Fitting */,
-				9819D69F26866AAD00BDA89E /* Other */,
-			);
-			path = "Hand Reconstruction";
-			sourceTree = "<group>";
-		};
-		98A88FD2262607A500BA7E0F /* Mesh Reduction */ = {
-			isa = PBXGroup;
-			children = (
-				98A8907426260D3F00BA7E0F /* SceneMeshReducer.swift */,
-				98A8907726260D4700BA7E0F /* SceneMeshReducerExtensions.swift */,
-				98A8907A26260D5200BA7E0F /* SceneMeshReductionExecution.swift */,
-				98A8907D26260D5800BA7E0F /* Kernels.metal */,
-				9801AAF326A0F95500270F3E /* ReduceSubmeshesLibrary.metallib */,
-			);
-			path = "Mesh Reduction";
-			sourceTree = "<group>";
-		};
-		98A88FD3262607B300BA7E0F /* Sorting */ = {
-			isa = PBXGroup;
-			children = (
-				98A8903226260BD800BA7E0F /* SceneSorter.swift */,
-				98A8903526260BE100BA7E0F /* SceneSorterExtensions.swift */,
-				98A8903C26260BFB00BA7E0F /* Octree */,
-				98A8903B26260BF600BA7E0F /* First Sort */,
-				98A8903A26260BF000BA7E0F /* Second Sort */,
-				98A8903926260BEC00BA7E0F /* Third Sort */,
-				98A8903826260BE400BA7E0F /* Fourth Sort */,
-			);
-			path = Sorting;
-			sourceTree = "<group>";
-		};
-		98A88FD5262607CD00BA7E0F /* Duplicate Removal */ = {
-			isa = PBXGroup;
-			children = (
-				98A8902626260B9600BA7E0F /* SceneDuplicateRemover.swift */,
-				98A8902926260BA000BA7E0F /* SceneDuplicateRemoverExtensions.swift */,
-				98A8902C26260BAB00BA7E0F /* SceneDuplicateRemovalExecution.swift */,
-				98A8902F26260BB200BA7E0F /* Kernels.metal */,
-			);
-			path = "Duplicate Removal";
-			sourceTree = "<group>";
-		};
-		98A88FD6262607D400BA7E0F /* Mesh Matching */ = {
-			isa = PBXGroup;
-			children = (
-				98A8901326260A4500BA7E0F /* SceneMeshMatcher.swift */,
-				98A8901626260A4F00BA7E0F /* SceneMeshMatcherExtensions.swift */,
-				98A8901926260A5A00BA7E0F /* SceneMeshMatchingExecution.swift */,
-				98A8901F26260A6100BA7E0F /* Second Match */,
-				98ECD338267B9A7D00421062 /* Third Match */,
-				98A8901C26260A6000BA7E0F /* Kernels.metal */,
-			);
-			path = "Mesh Matching";
-			sourceTree = "<group>";
-		};
-		98A88FD7262607DB00BA7E0F /* Texel Rasterization */ = {
-			isa = PBXGroup;
-			children = (
-				98A89007262609EF00BA7E0F /* SceneTexelRasterizer.swift */,
-				98A8900D26260A0500BA7E0F /* SceneTexelRasterizationExecution.swift */,
-				98A8901026260A2000BA7E0F /* Kernels.metal */,
-			);
-			path = "Texel Rasterization";
-			sourceTree = "<group>";
-		};
-		98A88FD8262607E200BA7E0F /* Texel Management */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FFB2626098C00BA7E0F /* SceneTexelManager.swift */,
-				98A88FFE2626099800BA7E0F /* SceneTexelManagerExtensions.swift */,
-				98A89001262609A400BA7E0F /* SceneTexelManagementExecution.swift */,
-				98A89004262609AD00BA7E0F /* Kernels.metal */,
-			);
-			path = "Texel Management";
-			sourceTree = "<group>";
-		};
-		98A88FD9262607E700BA7E0F /* Culling */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FEF2626092100BA7E0F /* SceneCuller.swift */,
-				98A88FF52626094600BA7E0F /* SceneCullingExecution.swift */,
-				98A88FF82626094D00BA7E0F /* Kernels.metal */,
-			);
-			path = Culling;
-			sourceTree = "<group>";
-		};
-		98A88FDA262607EC00BA7E0F /* Occlusion Testing */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FDF2626085C00BA7E0F /* SceneOcclusionTester.swift */,
-				98A88FE52626087200BA7E0F /* SceneOcclusionTestingExecution.swift */,
-				98A88FE82626087A00BA7E0F /* Shaders.metal */,
-				98A88FEB2626088300BA7E0F /* Kernels.metal */,
-			);
-			path = "Occlusion Testing";
-			sourceTree = "<group>";
-		};
-		98A88FDB2626081000BA7E0F /* Reconstruction */ = {
-			isa = PBXGroup;
-			children = (
-				98A88FD2262607A500BA7E0F /* Mesh Reduction */,
-				98A88FD3262607B300BA7E0F /* Sorting */,
-				98A88FD5262607CD00BA7E0F /* Duplicate Removal */,
-				98A88FD6262607D400BA7E0F /* Mesh Matching */,
-				98A88FD7262607DB00BA7E0F /* Texel Rasterization */,
-				98A88FD8262607E200BA7E0F /* Texel Management */,
-			);
-			path = Reconstruction;
-			sourceTree = "<group>";
-		};
-		98A8901F26260A6100BA7E0F /* Second Match */ = {
-			isa = PBXGroup;
-			children = (
-				98ECD334267B86DC00421062 /* SecondSceneMeshMatch.swift */,
-				98A8902026260A8600BA7E0F /* Types.metal */,
-				98A8902326260A8A00BA7E0F /* Kernels.metal */,
-			);
-			path = "Second Match";
-			sourceTree = "<group>";
-		};
-		98A8903826260BE400BA7E0F /* Fourth Sort */ = {
-			isa = PBXGroup;
-			children = (
-				98A8903D26260C1100BA7E0F /* FourthSceneSorter.swift */,
-				98A8904426260C2500BA7E0F /* FourthSceneSortExecution.swift */,
-				98EB9A3B26A4E3CC00B04F09 /* Types.metal */,
-				98A8904726260C2A00BA7E0F /* Kernels.metal */,
-			);
-			path = "Fourth Sort";
-			sourceTree = "<group>";
-		};
-		98A8903926260BEC00BA7E0F /* Third Sort */ = {
-			isa = PBXGroup;
-			children = (
-				98A8904A26260C3500BA7E0F /* ThirdSceneSorter.swift */,
-				98A8905026260C4900BA7E0F /* ThirdSceneSortExecution.swift */,
-				98EB9A3826A4E3BE00B04F09 /* Types.metal */,
-				98A8905326260C4E00BA7E0F /* Kernels.metal */,
-			);
-			path = "Third Sort";
-			sourceTree = "<group>";
-		};
-		98A8903A26260BF000BA7E0F /* Second Sort */ = {
-			isa = PBXGroup;
-			children = (
-				98A8905626260C5600BA7E0F /* SecondSceneSorter.swift */,
-				98A8905C26260C6600BA7E0F /* SecondSceneSortExecution.swift */,
-				98A8905F26260C6C00BA7E0F /* Kernels.metal */,
-			);
-			path = "Second Sort";
-			sourceTree = "<group>";
-		};
-		98A8903B26260BF600BA7E0F /* First Sort */ = {
-			isa = PBXGroup;
-			children = (
-				98A8906226260C7500BA7E0F /* FirstSceneSorter.swift */,
-				98A8906826260C8300BA7E0F /* FirstSceneSortExecution.swift */,
-				98A8906B26260C8900BA7E0F /* Kernels.metal */,
-			);
-			path = "First Sort";
-			sourceTree = "<group>";
-		};
-		98A8903C26260BFB00BA7E0F /* Octree */ = {
-			isa = PBXGroup;
-			children = (
-				98A8906E26260C8F00BA7E0F /* OctreeNode.swift */,
-				98A8907126260C9800BA7E0F /* OctreeNodeExtensions.swift */,
-			);
-			path = Octree;
-			sourceTree = "<group>";
-		};
-		98D3525426CAB76700B67901 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				98D3525526CAB77A00B67901 /* PendulumInterface.swift */,
-				98D3525B26CABD4F00B67901 /* PendulumInterfaceExtensions.swift */,
-				98D3528C26CD6B9500B67901 /* PendulumInterfaceRendering.swift */,
-				98D3525826CAB89F00B67901 /* PendulumInterfaceParagraphs.swift */,
-				98D3526726CC1D9600B67901 /* Components */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
-		98D3526726CC1D9600B67901 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				98D3526826CC1DAA00B67901 /* PendulumInterfaceAnchor.swift */,
-				98D3527A26CD3AB900B67901 /* PendulumInterfaceBackButton.swift */,
-				98D3526D26CC21DE00B67901 /* PendulumInterfacePicker.swift */,
-				98D3529226CD891E00B67901 /* PendulumInterfaceCounter.swift */,
-				98D3527126CC227700B67901 /* Pickers */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		98D3527126CC227700B67901 /* Pickers */ = {
-			isa = PBXGroup;
-			children = (
-				98D3527226CC22C700B67901 /* PendulumPropertyPicker.swift */,
-				98D3527F26CD4D4B00B67901 /* PendulumLengthPicker.swift */,
-				98D3528226CD4D5700B67901 /* PendulumMassPicker.swift */,
-				98D3528526CD4D6200B67901 /* PendulumAnglePicker.swift */,
-				98D3528826CD4DC600B67901 /* PendulumAngularVelocityPicker.swift */,
-			);
-			path = Pickers;
-			sourceTree = "<group>";
-		};
-		98D3529726CECCF800B67901 /* Failure Trajectory */ = {
-			isa = PBXGroup;
-			children = (
-				98D3529826CECD8900B67901 /* PendulumFailureTrajectory.swift */,
-			);
-			path = "Failure Trajectory";
-			sourceTree = "<group>";
-		};
-		98D3529B26CF227C00B67901 /* Stand */ = {
-			isa = PBXGroup;
-			children = (
-				98D3529C26CF229E00B67901 /* PendulumStandRendering.swift */,
-			);
-			path = Stand;
-			sourceTree = "<group>";
-		};
-		98D4564A26B1803700598F61 /* Interface Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				98D4564B26B1804D00598F61 /* InterfaceRenderer.swift */,
-				98D4564E26B1806000598F61 /* InterfaceRendererExtensions.swift */,
-				98D4565226B1A09E00598F61 /* AR Interface */,
-				98D4565326B1A0A700598F61 /* Touchscreen Interface */,
-			);
-			path = "Interface Rendering";
-			sourceTree = "<group>";
-		};
-		98D4565226B1A09E00598F61 /* AR Interface */ = {
-			isa = PBXGroup;
-			children = (
-				98D4565726B1D57600598F61 /* InterfaceElement.swift */,
-				98DBB65B26B3255900479FFD /* Font Handle */,
-				98328E1B26C60218008B627A /* Paragraph */,
-				98426FAA26B8643D007C5D4C /* Kernels.metal */,
-				98D4565426B1A0BD00598F61 /* Shaders.metal */,
-				98D3526026CAFAF200B67901 /* InterfaceSurfaceMeshIndices.data */,
-			);
-			path = "AR Interface";
-			sourceTree = "<group>";
-		};
-		98D4565326B1A0A700598F61 /* Touchscreen Interface */ = {
-			isa = PBXGroup;
-			children = (
-				98F3449626D45BD000544D05 /* MRViewSeparator.swift */,
-				988DD56A26D2EF07002F5895 /* SettingsIconView.swift */,
-				98B6221726D3C11A00BD4435 /* MainSettingsView.swift */,
-				98F3448B26D44B0900544D05 /* Settings Groups */,
-				98F3449B26D474E300544D05 /* Tutorials */,
-			);
-			path = "Touchscreen Interface";
-			sourceTree = "<group>";
-		};
-		98DBB65B26B3255900479FFD /* Font Handle */ = {
-			isa = PBXGroup;
-			children = (
-				98DBB64F26B30CC200479FFD /* InterfaceFontHandle.swift */,
-				98DBB65326B30D3100479FFD /* InterfaceFontCreation.swift */,
-				98DBB65726B30D5C00479FFD /* InterfaceFontSerialization.swift */,
-				98DBB65C26B3256B00479FFD /* Kernels.metal */,
-			);
-			path = "Font Handle";
-			sourceTree = "<group>";
-		};
-		98E624F0262DD5B9006B6B69 /* Central Shape Container */ = {
-			isa = PBXGroup;
-			children = (
-				98E624E1262C9EEB006B6B69 /* CentralShapeContainer.swift */,
-				98E624F4262DD60B006B6B69 /* CentralShapeContainerExtensions.swift */,
-			);
-			path = "Central Shape Container";
-			sourceTree = "<group>";
-		};
-		98ECD338267B9A7D00421062 /* Third Match */ = {
-			isa = PBXGroup;
-			children = (
-				98ECD33A267B9B0100421062 /* ThirdSceneMeshMatch.swift */,
-				9819D6842682954E00BDA89E /* Types.metal */,
-				9819D6872682955500BDA89E /* Kernels.metal */,
-			);
-			path = "Third Match";
-			sourceTree = "<group>";
-		};
-		98F0C8762695E87A00C1EE48 /* Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				98D3529B26CF227C00B67901 /* Stand */,
-				98D3529726CECCF800B67901 /* Failure Trajectory */,
-				98F0C8772695E89C00C1EE48 /* PendulumMeshConstructor.swift */,
-				98F0C87E2695E8C300C1EE48 /* PendulumMeshConstructorExtensions.swift */,
-				98F0C8812695E8CC00C1EE48 /* PendulumMeshConstructionExecution.swift */,
-				98F0C88426964C2D00C1EE48 /* Shape Intersections */,
-				98F0C89A2697960F00C1EE48 /* Shaders.metal */,
-			);
-			path = Rendering;
-			sourceTree = "<group>";
-		};
-		98F0C88426964C2D00C1EE48 /* Shape Intersections */ = {
-			isa = PBXGroup;
-			children = (
-				982CE99A269A1912009947B0 /* Rectangles */,
-				982CE99B269A191A009947B0 /* Joints */,
-			);
-			path = "Shape Intersections";
-			sourceTree = "<group>";
-		};
-		98F3448B26D44B0900544D05 /* Settings Groups */ = {
-			isa = PBXGroup;
-			children = (
-				98F3448E26D44B8F00544D05 /* RenderingSettingsView.swift */,
-				98F3448826D44B0400544D05 /* InteractionSettingsView.swift */,
-				982EE04F26D3EF0F00503C0B /* LiDAREnabledSettingsView.swift */,
-			);
-			path = "Settings Groups";
-			sourceTree = "<group>";
-		};
-		98F3449B26D474E300544D05 /* Tutorials */ = {
-			isa = PBXGroup;
-			children = (
-				98F344A426D5672E00544D05 /* AppTutorialView.swift */,
-				98F3449F26D476E600544D05 /* HeadsetTutorialView.swift */,
-				98F3449C26D474F900544D05 /* FlyingTutorialView.swift */,
-			);
-			path = Tutorials;
-			sourceTree = "<group>";
-		};
-		98F55F65268F59B10094194F /* MultiPendulum */ = {
-			isa = PBXGroup;
-			children = (
-				98F55F67268F5B610094194F /* PendulumRenderer.swift */,
-				98F55F6A268F5B6E0094194F /* PendulumRendererExtensions.swift */,
-				98F55F82268F5D1A0094194F /* PendulumState.swift */,
-				98D3525426CAB76700B67901 /* Interface */,
-				98F55F8F268F5D750094194F /* Simulation Prototype */,
-				98F0C8762695E87A00C1EE48 /* Rendering */,
-				98F55F70268F5B9B0094194F /* Time Stepping */,
-				98F55F71268F5BA50094194F /* State Equations */,
-			);
-			path = MultiPendulum;
-			sourceTree = "<group>";
-		};
-		98F55F70268F5B9B0094194F /* Time Stepping */ = {
-			isa = PBXGroup;
-			children = (
-				98F55F72268F5BBC0094194F /* PendulumTimeStepper.swift */,
-				98F55F75268F5BCA0094194F /* PendulumTimeStepperExtensions.swift */,
+				988853D7270E52A90066E7EA /* PendulumTimeStepper.swift */,
+				988853D6270E52A90066E7EA /* PendulumTimeStepperExtensions.swift */,
 			);
 			path = "Time Stepping";
 			sourceTree = "<group>";
 		};
-		98F55F71268F5BA50094194F /* State Equations */ = {
+		988853CD270E4DDC0066E7EA /* State Equations */ = {
 			isa = PBXGroup;
 			children = (
-				98F55F78268F5BE30094194F /* PendulumStateEquations.swift */,
-				98F55F7B268F5C040094194F /* PendulumStateEquationsExtensions.swift */,
-				98F55F7E268F5C120094194F /* PendulumMatrixSolving.swift */,
+				988853D1270E52A10066E7EA /* PendulumStateEquations.swift */,
+				988853D2270E52A10066E7EA /* PendulumStateEquationsExtensions.swift */,
+				988853D0270E52A10066E7EA /* PendulumMatrixSolving.swift */,
 			);
 			path = "State Equations";
 			sourceTree = "<group>";
 		};
-		98F55F8F268F5D750094194F /* Simulation Prototype */ = {
+		988853CE270E4DF70066E7EA /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				98F55F90268F5D880094194F /* PendulumSimulationPrototype.swift */,
-				98F55F94268F5D950094194F /* PendulumSimulationPrototypeExtensions.swift */,
+				988853E4270E52E40066E7EA /* PendulumSimulationPrototype.swift */,
+				988853E3270E52E40066E7EA /* PendulumSimulationPrototypeExtensions.swift */,
 			);
-			path = "Simulation Prototype";
+			path = Prototype;
+			sourceTree = "<group>";
+		};
+		988853CF270E4E180066E7EA /* Pendulum State */ = {
+			isa = PBXGroup;
+			children = (
+				988853DC270E52C00066E7EA /* PendulumState.swift */,
+				988853DA270E52BC0066E7EA /* PendulumFailureTrajectory.swift */,
+			);
+			path = "Pendulum State";
+			sourceTree = "<group>";
+		};
+		988853E2270E52D00066E7EA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				98885422270E53240066E7EA /* PendulumInterface.swift */,
+				98885423270E53240066E7EA /* PendulumInterfaceExtensions.swift */,
+				98885425270E53250066E7EA /* PendulumInterfaceRendering.swift */,
+				98885424270E53250066E7EA /* PendulumInterfaceParagraphs.swift */,
+				98885420270E530B0066E7EA /* Components */,
+				98885421270E53160066E7EA /* Pickers */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		98885420270E530B0066E7EA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9888542D270E53340066E7EA /* PendulumInterfaceAnchor.swift */,
+				9888542C270E53340066E7EA /* PendulumInterfaceBackButton.swift */,
+				9888542A270E53340066E7EA /* PendulumInterfacePicker.swift */,
+				9888542B270E53340066E7EA /* PendulumInterfaceCounter.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		98885421270E53160066E7EA /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				98885433270E53440066E7EA /* PendulumPropertyPicker.swift */,
+				98885434270E53440066E7EA /* PendulumLengthPicker.swift */,
+				98885432270E53440066E7EA /* PendulumMassPicker.swift */,
+				98885435270E53450066E7EA /* PendulumAnglePicker.swift */,
+				98885436270E53450066E7EA /* PendulumAngularVelocityPicker.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		98885448270E55400066E7EA /* Joints */ = {
+			isa = PBXGroup;
+			children = (
+				98885449270E55400066E7EA /* PendulumJointUtilities.h */,
+				9888544A270E55400066E7EA /* PendulumJointUtilities.metal */,
+				9888544B270E55400066E7EA /* PendulumJointConstruction.metal */,
+			);
+			path = Joints;
+			sourceTree = "<group>";
+		};
+		9888544D270E55400066E7EA /* Rectangles */ = {
+			isa = PBXGroup;
+			children = (
+				9888544E270E55400066E7EA /* PendulumRectangleUtilities.h */,
+				9888544F270E55400066E7EA /* PendulumRectangleUtilities.metal */,
+				98885450270E55400066E7EA /* PendulumRectangleConstruction.metal */,
+			);
+			path = Rectangles;
+			sourceTree = "<group>";
+		};
+		98ECC3B9270F003D008BACD3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				98ECC3BA270F0045008BACD3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98EDDDA6270D0C8E006F9F44 = {
+			isa = PBXGroup;
+			children = (
+				98FDEE9A271DFFD700FD7F25 /* ARHeadsetKit.xcodeproj */,
+				98EDDDB1270D0C8E006F9F44 /* AR MultiPendulum */,
+				98EDDDB0270D0C8E006F9F44 /* Products */,
+				98EDDDC6270D100C006F9F44 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		98EDDDB0270D0C8E006F9F44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98EDDDAF270D0C8E006F9F44 /* AR MultiPendulum.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98EDDDB1270D0C8E006F9F44 /* AR MultiPendulum */ = {
+			isa = PBXGroup;
+			children = (
+				98FDEEA3271E000000FD7F25 /* Metal_Utilities_Combined.metal */,
+				98FDEEA5271E000400FD7F25 /* Launch Screen.storyboard */,
+				98EDDDD7270D1BB8006F9F44 /* AR-MultiPendulum-Info.plist */,
+				98EDDDB2270D0C8E006F9F44 /* AR_MultiPendulumApp.swift */,
+				98ECC3DA270FCEC1008BACD3 /* ContentView.swift */,
+				98EDDDEB270D29BB006F9F44 /* App Setup */,
+				988853C8270E4D2A0066E7EA /* Pendulum Renderer */,
+				988853E2270E52D00066E7EA /* Interface */,
+				988853CA270E4D500066E7EA /* Simulation */,
+				988853CB270E4D5B0066E7EA /* Mesh Construction */,
+				98EDDDB6270D0C8F006F9F44 /* Assets.xcassets */,
+				98ECC3B9270F003D008BACD3 /* Preview Content */,
+			);
+			path = "AR MultiPendulum";
+			sourceTree = "<group>";
+		};
+		98EDDDC6270D100C006F9F44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98EDDDEB270D29BB006F9F44 /* App Setup */ = {
+			isa = PBXGroup;
+			children = (
+				98EDDDE7270D28B7006F9F44 /* Coordinator.swift */,
+				98EDDDED270D29EA006F9F44 /* PendulumSettingsView.swift */,
+			);
+			path = "App Setup";
+			sourceTree = "<group>";
+		};
+		98FDEE9B271DFFD700FD7F25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */,
+				98FDEEA2271DFFD700FD7F25 /* ARHeadsetKit_macOS.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98A88F8D2625FE7B00BA7E0F /* AR MultiPendulum */ = {
+		98EDDDAE270D0C8E006F9F44 /* AR MultiPendulum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98A88F9D2625FE7C00BA7E0F /* Build configuration list for PBXNativeTarget "AR MultiPendulum" */;
+			buildConfigurationList = 98EDDDBD270D0C8F006F9F44 /* Build configuration list for PBXNativeTarget "AR MultiPendulum" */;
 			buildPhases = (
-				98A88F8A2625FE7B00BA7E0F /* Sources */,
-				98A88F8B2625FE7B00BA7E0F /* Frameworks */,
-				98A88F8C2625FE7B00BA7E0F /* Resources */,
+				98EDDDAB270D0C8E006F9F44 /* Sources */,
+				98EDDDAC270D0C8E006F9F44 /* Frameworks */,
+				98EDDDAD270D0C8E006F9F44 /* Resources */,
+				98EDDDC9270D100C006F9F44 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "AR MultiPendulum";
-			packageProductDependencies = (
-				98328DCE26C2D039008B627A /* DeviceKit */,
-				98EF71C426D5F1E5006A97AA /* ZippyJSON */,
-			);
 			productName = "AR MultiPendulum";
-			productReference = 98A88F8E2625FE7B00BA7E0F /* AR MultiPendulum.app */;
+			productReference = 98EDDDAF270D0C8E006F9F44 /* AR MultiPendulum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		98A88F862625FE7B00BA7E0F /* Project object */ = {
+		98EDDDA7270D0C8E006F9F44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					98A88F8D2625FE7B00BA7E0F = {
-						CreatedOnToolsVersion = 12.4;
+					98EDDDAE270D0C8E006F9F44 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 98A88F892625FE7B00BA7E0F /* Build configuration list for PBXProject "AR MultiPendulum" */;
-			compatibilityVersion = "Xcode 12.0";
+			buildConfigurationList = 98EDDDAA270D0C8E006F9F44 /* Build configuration list for PBXProject "AR MultiPendulum" */;
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 98A88F852625FE7B00BA7E0F;
-			packageReferences = (
-				98328DCD26C2D039008B627A /* XCRemoteSwiftPackageReference "DeviceKit" */,
-				98EF71C326D5F1E5006A97AA /* XCRemoteSwiftPackageReference "ZippyJSON" */,
-			);
-			productRefGroup = 98A88F8F2625FE7B00BA7E0F /* Products */;
+			mainGroup = 98EDDDA6270D0C8E006F9F44;
+			productRefGroup = 98EDDDB0270D0C8E006F9F44 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 98FDEE9B271DFFD700FD7F25 /* Products */;
+					ProjectRef = 98FDEE9A271DFFD700FD7F25 /* ARHeadsetKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				98A88F8D2625FE7B00BA7E0F /* AR MultiPendulum */,
+				98EDDDAE270D0C8E006F9F44 /* AR MultiPendulum */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		98FDEEA0271DFFD700FD7F25 /* ARHeadsetKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ARHeadsetKit.framework;
+			remoteRef = 98FDEE9F271DFFD700FD7F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98FDEEA2271DFFD700FD7F25 /* ARHeadsetKit_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ARHeadsetKit_macOS.framework;
+			remoteRef = 98FDEEA1271DFFD700FD7F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
-		98A88F8C2625FE7B00BA7E0F /* Resources */ = {
+		98EDDDAD270D0C8E006F9F44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F344AB26D5CB0A00544D05 /* Launch Screen.storyboard in Resources */,
-				98D3526126CAFAF200B67901 /* InterfaceSurfaceMeshIndices.data in Resources */,
-				98A88F962625FE7C00BA7E0F /* Assets.xcassets in Resources */,
+				98FDEEA6271E000400FD7F25 /* Launch Screen.storyboard in Resources */,
+				98ECC3BB270F0045008BACD3 /* Preview Assets.xcassets in Resources */,
+				98EDDDB7270D0C8F006F9F44 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		98A88F8A2625FE7B00BA7E0F /* Sources */ = {
+		98EDDDAB270D0C8E006F9F44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98D3525926CAB89F00B67901 /* PendulumInterfaceParagraphs.swift in Sources */,
-				98D3529926CECD8900B67901 /* PendulumFailureTrajectory.swift in Sources */,
-				98F55F95268F5D950094194F /* PendulumSimulationPrototypeExtensions.swift in Sources */,
-				98A8905D26260C6600BA7E0F /* SecondSceneSortExecution.swift in Sources */,
-				98A8904526260C2500BA7E0F /* FourthSceneSortExecution.swift in Sources */,
-				98DBB65826B30D5C00479FFD /* InterfaceFontSerialization.swift in Sources */,
-				982CE9AC269DBD0D009947B0 /* Utilities.metal in Sources */,
-				98D4565826B1D57600598F61 /* InterfaceElement.swift in Sources */,
-				98F55F83268F5D1A0094194F /* PendulumState.swift in Sources */,
-				98D3529D26CF229E00B67901 /* PendulumStandRendering.swift in Sources */,
-				98A88FE92626087A00BA7E0F /* Shaders.metal in Sources */,
-				9862D2A92658841F00010945 /* HandOrientationTracker.swift in Sources */,
-				98328DF326C2E5E3008B627A /* FutureDeviceMeasurements.swift in Sources */,
-				98898FD82676B1EB000A61CA /* UserSettings.swift in Sources */,
-				9802C7D8268A387A00885EED /* RayTracing.swift in Sources */,
-				98A8904826260C2A00BA7E0F /* Kernels.metal in Sources */,
-				98899010267A339C000A61CA /* CentralOctahedron.swift in Sources */,
-				982CE9A8269B9588009947B0 /* CentralObjectUtilities.metal in Sources */,
-				98D3525C26CABD4F00B67901 /* PendulumInterfaceExtensions.swift in Sources */,
-				98E624E9262CDD75006B6B69 /* Shaders.metal in Sources */,
-				9801D82D2661956200D350D0 /* Kernels.metal in Sources */,
-				98A88FCD2626078700BA7E0F /* SceneRenderer.swift in Sources */,
-				98A0176326739E0500AE3355 /* RenderingExecution.swift in Sources */,
-				98A8902426260A8A00BA7E0F /* Kernels.metal in Sources */,
-				98DBB65426B30D3100479FFD /* InterfaceFontCreation.swift in Sources */,
-				98A8906926260C8300BA7E0F /* FirstSceneSortExecution.swift in Sources */,
-				9801AAE226A0D99100270F3E /* MemoryUtilities.metal in Sources */,
-				98328DF626C2E685008B627A /* DeviceMeasurementProtocols.swift in Sources */,
-				98A8906326260C7500BA7E0F /* FirstSceneSorter.swift in Sources */,
-				98F55F79268F5BE30094194F /* PendulumStateEquations.swift in Sources */,
-				98A8901D26260A6000BA7E0F /* Kernels.metal in Sources */,
-				98E624B6262B54F8006B6B69 /* CentralSphere.swift in Sources */,
-				98D3526E26CC21DE00B67901 /* PendulumInterfacePicker.swift in Sources */,
-				98A8901726260A4F00BA7E0F /* SceneMeshMatcherExtensions.swift in Sources */,
-				98ECD335267B86DC00421062 /* SecondSceneMeshMatch.swift in Sources */,
-				98A8901126260A2000BA7E0F /* Kernels.metal in Sources */,
-				98A88FF92626094D00BA7E0F /* Kernels.metal in Sources */,
-				98DF198F26AA510A00F12550 /* CoreTextExtensions.swift in Sources */,
-				98A89002262609A400BA7E0F /* SceneTexelManagementExecution.swift in Sources */,
-				98F344A026D476E600544D05 /* HeadsetTutorialView.swift in Sources */,
-				98A8902726260B9600BA7E0F /* SceneDuplicateRemover.swift in Sources */,
-				981464552698EBCB00C4F8D2 /* Utilities.metal in Sources */,
-				98A8905726260C5600BA7E0F /* SecondSceneSorter.swift in Sources */,
-				981464592698EBE700C4F8D2 /* Utilities_Implementation.metal in Sources */,
-				98F55F76268F5BCA0094194F /* PendulumTimeStepperExtensions.swift in Sources */,
-				98D3528026CD4D4B00B67901 /* PendulumLengthPicker.swift in Sources */,
-				98A88FC7262606AA00BA7E0F /* Kernels.metal in Sources */,
-				98E624B9262B54FF006B6B69 /* CentralCylinder.swift in Sources */,
-				98E624B2262B54EF006B6B69 /* CentralCube.swift in Sources */,
-				98D4565526B1A0BD00598F61 /* Shaders.metal in Sources */,
-				98A8907B26260D5200BA7E0F /* SceneMeshReductionExecution.swift in Sources */,
-				98328DD326C2D0B1008B627A /* LensDistortionCorrector.swift in Sources */,
-				98A8903626260BE100BA7E0F /* SceneSorterExtensions.swift in Sources */,
-				9819D6BA2688F04300BDA89E /* Hand.swift in Sources */,
-				98E624E2262C9EEB006B6B69 /* CentralShapeContainer.swift in Sources */,
-				98A88FFF2626099800BA7E0F /* SceneTexelManagerExtensions.swift in Sources */,
-				98D3528D26CD6B9500B67901 /* PendulumInterfaceRendering.swift in Sources */,
-				98A88FB02626045D00BA7E0F /* Renderer.swift in Sources */,
-				98F55F6B268F5B6E0094194F /* PendulumRendererExtensions.swift in Sources */,
-				98E624C0262B55A4006B6B69 /* CentralShape.swift in Sources */,
-				98328E0726C41A16008B627A /* CameraMeasurements.swift in Sources */,
-				98A8902D26260BAB00BA7E0F /* SceneDuplicateRemovalExecution.swift in Sources */,
-				988C5F162627516D00DBAFF4 /* HandRendererExtensions.swift in Sources */,
-				98F3448F26D44B8F00544D05 /* RenderingSettingsView.swift in Sources */,
-				98F0C8822695E8CC00C1EE48 /* PendulumMeshConstructionExecution.swift in Sources */,
-				98A8906F26260C8F00BA7E0F /* OctreeNode.swift in Sources */,
-				98A88F942625FE7B00BA7E0F /* Views.swift in Sources */,
-				9894CA73264C160A00E451E2 /* HandModelFitter.swift in Sources */,
-				987D802E266C470C00309DCD /* MetalExtensions.swift in Sources */,
-				98F55F68268F5B610094194F /* PendulumRenderer.swift in Sources */,
-				98A8900E26260A0500BA7E0F /* SceneTexelRasterizationExecution.swift in Sources */,
-				980B0CEF26C70A5000CA0AA0 /* HandRenderer2DExtensions.swift in Sources */,
-				98A88FD02626079300BA7E0F /* SceneRendererExtensions.swift in Sources */,
-				9801D83E2662A46600D350D0 /* OpticalFlowMeasurementExecution.swift in Sources */,
-				98A8906026260C6C00BA7E0F /* Kernels.metal in Sources */,
-				98F344A526D5672E00544D05 /* AppTutorialView.swift in Sources */,
-				98E624AE262B5441006B6B69 /* CentralRenderer.swift in Sources */,
-				98E624F5262DD60B006B6B69 /* CentralShapeContainerExtensions.swift in Sources */,
-				98EB9A3C26A4E3CC00B04F09 /* Types.metal in Sources */,
-				98328DEF26C2E5D6008B627A /* DeviceMeasurements.swift in Sources */,
-				98D4564C26B1804D00598F61 /* InterfaceRenderer.swift in Sources */,
-				98A8907826260D4700BA7E0F /* SceneMeshReducerExtensions.swift in Sources */,
-				98E624BC262B5504006B6B69 /* CentralCone.swift in Sources */,
-				98A8904B26260C3500BA7E0F /* ThirdSceneSorter.swift in Sources */,
-				98328DE326C2DFEA008B627A /* LensDistortionPipelineCreation.swift in Sources */,
-				98D3527B26CD3AB900B67901 /* PendulumInterfaceBackButton.swift in Sources */,
-				9801AAE526A0D99C00270F3E /* MemoryUtilities.metal in Sources */,
-				988DD56B26D2EF07002F5895 /* SettingsIconView.swift in Sources */,
-				98A8907226260C9800BA7E0F /* OctreeNodeExtensions.swift in Sources */,
-				9819D6852682954E00BDA89E /* Types.metal in Sources */,
-				98A88FFC2626098C00BA7E0F /* SceneTexelManager.swift in Sources */,
-				98A8901426260A4500BA7E0F /* SceneMeshMatcher.swift in Sources */,
-				98DBB65D26B3256B00479FFD /* Kernels.metal in Sources */,
-				9889900C267A2C66000A61CA /* CentralSquarePyramid.swift in Sources */,
-				98EB9A3926A4E3BE00B04F09 /* Types.metal in Sources */,
-				988C5F1F2627526500DBAFF4 /* HandDetectionUtilities.swift in Sources */,
-				98A89008262609EF00BA7E0F /* SceneTexelRasterizer.swift in Sources */,
-				98D3528326CD4D5700B67901 /* PendulumMassPicker.swift in Sources */,
-				98ECD33B267B9B0100421062 /* ThirdSceneMeshMatch.swift in Sources */,
-				98F0C8782695E89C00C1EE48 /* PendulumMeshConstructor.swift in Sources */,
-				98F55F7F268F5C120094194F /* PendulumMatrixSolving.swift in Sources */,
-				98A88F922625FE7B00BA7E0F /* AR_MultiPendulumApp.swift in Sources */,
-				98D3526926CC1DAA00B67901 /* PendulumInterfaceAnchor.swift in Sources */,
-				98A88FAD2626043E00BA7E0F /* Coordinator.swift in Sources */,
-				985632BC26D194EE0078578E /* LensDistortionSerialization.swift in Sources */,
-				98D3527326CC22C700B67901 /* PendulumPropertyPicker.swift in Sources */,
-				98A78BAC2628D74B00217444 /* Hand3DReconstructionUtilities.swift in Sources */,
-				98A8906C26260C8900BA7E0F /* Kernels.metal in Sources */,
-				98A0175C26739CA400AE3355 /* RendererExtensions.swift in Sources */,
-				98A8903026260BB200BA7E0F /* Kernels.metal in Sources */,
-				98F3448926D44B0400544D05 /* InteractionSettingsView.swift in Sources */,
-				9819D6902685083900BDA89E /* ColorUtilities.metal in Sources */,
-				98328DFA26C2E8EA008B627A /* LensDistortionCorrectorExtensions.swift in Sources */,
-				98E624F8262DD99C006B6B69 /* CentralRendererExtensions.swift in Sources */,
-				9894CA77264C4A1800E451E2 /* HandLengths.swift in Sources */,
-				9802C7D5268A376F00885EED /* CentralObjectExtensions.swift in Sources */,
-				98F55F7C268F5C040094194F /* PendulumStateEquationsExtensions.swift in Sources */,
-				98A8907E26260D5800BA7E0F /* Kernels.metal in Sources */,
-				9801D83A2662991200D350D0 /* OpticalFlowMeasurer.swift in Sources */,
-				98328E0B26C41B4B008B627A /* CameraMeasurementsExtensions.swift in Sources */,
-				98A8902A26260BA000BA7E0F /* SceneDuplicateRemoverExtensions.swift in Sources */,
-				98B6221826D3C11A00BD4435 /* MainSettingsView.swift in Sources */,
-				98328E1826C60212008B627A /* InterfaceParagraphCreation.swift in Sources */,
-				98DF198C26AA50FC00F12550 /* CoreVideoExtensions.swift in Sources */,
-				98A78BA22628D5E900217444 /* HandDetection.swift in Sources */,
-				985632C026D19F500078578E /* DebuggingUtilities.swift in Sources */,
-				98328E1426C5FA9D008B627A /* InterfaceParagraph.swift in Sources */,
-				980B0CE226C6CF9D00CA0AA0 /* SceneRenderer2D.swift in Sources */,
-				98A88FE02626085C00BA7E0F /* SceneOcclusionTester.swift in Sources */,
-				98F3449D26D474F900544D05 /* FlyingTutorialView.swift in Sources */,
-				982CE9A5269B957B009947B0 /* CentralObjectUtilities.metal in Sources */,
-				98A8905426260C4E00BA7E0F /* Kernels.metal in Sources */,
-				98A8901A26260A5A00BA7E0F /* SceneMeshMatchingExecution.swift in Sources */,
-				98F0C89426976CE500C1EE48 /* Kernels.metal in Sources */,
-				98A8907526260D3F00BA7E0F /* SceneMeshReducer.swift in Sources */,
-				98F0C89B2697960F00C1EE48 /* Shaders.metal in Sources */,
-				9819D6932685084A00BDA89E /* ColorUtilities.metal in Sources */,
-				98D3528626CD4D6200B67901 /* PendulumAnglePicker.swift in Sources */,
-				98A8903326260BD800BA7E0F /* SceneSorter.swift in Sources */,
-				98A88FDD2626083200BA7E0F /* Shaders.metal in Sources */,
-				9819D6882682955500BDA89E /* Kernels.metal in Sources */,
-				9819D6A126866ABC00BDA89E /* HandParityTracker.swift in Sources */,
-				980B0CEC26C709F700CA0AA0 /* HandRenderer2D.swift in Sources */,
-				98A78BAF2628D75A00217444 /* Hand3DReconstructionExecution.swift in Sources */,
-				988C5F0C2626377200DBAFF4 /* HandRenderer.swift in Sources */,
-				982EE05026D3EF0F00503C0B /* LiDAREnabledSettingsView.swift in Sources */,
-				98F3449726D45BD000544D05 /* MRViewSeparator.swift in Sources */,
-				980B0CE826C6CFC000CA0AA0 /* Shaders.metal in Sources */,
-				98A88FF02626092100BA7E0F /* SceneCuller.swift in Sources */,
-				98A8902126260A8600BA7E0F /* Types.metal in Sources */,
-				98328DFE26C2E93A008B627A /* LensDistortionCorrectionExecution.swift in Sources */,
-				98F55F73268F5BBC0094194F /* PendulumTimeStepper.swift in Sources */,
-				98A8903E26260C1100BA7E0F /* FourthSceneSorter.swift in Sources */,
-				98426FAB26B8643D007C5D4C /* Kernels.metal in Sources */,
-				98F3449326D4566900544D05 /* SwiftUIExtensions.swift in Sources */,
-				9819D6A426875C4200BDA89E /* HandSamplingRateTracker.swift in Sources */,
-				98E624E6262CA0FB006B6B69 /* CentralObject.swift in Sources */,
-				985632B826D194CE0078578E /* UserSettingsSerialization.swift in Sources */,
-				98A88FF62626094600BA7E0F /* SceneCullingExecution.swift in Sources */,
-				98F0C87F2695E8C300C1EE48 /* PendulumMeshConstructorExtensions.swift in Sources */,
-				98A88FE62626087200BA7E0F /* SceneOcclusionTestingExecution.swift in Sources */,
-				98A8905126260C4900BA7E0F /* ThirdSceneSortExecution.swift in Sources */,
-				98A88FB32626048F00BA7E0F /* MathUtilities.swift in Sources */,
-				9801D83626619E6200D350D0 /* Types.metal in Sources */,
-				982CE9A2269B92A6009947B0 /* Kernels.metal in Sources */,
-				98EB9A4026A8BF7500B04F09 /* MemoryUtilities.swift in Sources */,
-				988C5F1226263D5100DBAFF4 /* Kernels.metal in Sources */,
-				98A88FB92626059600BA7E0F /* SIMDExtensions.swift in Sources */,
-				98A88FEC2626088300BA7E0F /* Kernels.metal in Sources */,
-				98D3528926CD4DC600B67901 /* PendulumAngularVelocityPicker.swift in Sources */,
-				982CE9AF269DBD19009947B0 /* Utilities_Implementation.metal in Sources */,
-				9838883F2667FC0400DCA879 /* MultiLevelBuffer.swift in Sources */,
-				9842EB00265B098E00D0173B /* HandAngleTracker.swift in Sources */,
-				98DBB65026B30CC200479FFD /* InterfaceFontHandle.swift in Sources */,
-				98A89005262609AD00BA7E0F /* Kernels.metal in Sources */,
-				98D3529326CD891E00B67901 /* PendulumInterfaceCounter.swift in Sources */,
-				98D4564F26B1806000598F61 /* InterfaceRendererExtensions.swift in Sources */,
-				98A78BA82628D73D00217444 /* Hand3DReconstructionTypes.swift in Sources */,
-				98328DEA26C2E46E008B627A /* LensDistortionUniforms.swift in Sources */,
-				98D3525626CAB77A00B67901 /* PendulumInterface.swift in Sources */,
-				9819D696268543DC00BDA89E /* HandColorTracker.swift in Sources */,
-				98F55F91268F5D880094194F /* PendulumSimulationPrototype.swift in Sources */,
-				98328DE626C2DFFD008B627A /* VRRMapPartitioning.swift in Sources */,
+				98885426270E53250066E7EA /* PendulumInterface.swift in Sources */,
+				98EDDDE8270D28B7006F9F44 /* Coordinator.swift in Sources */,
+				9888542F270E53340066E7EA /* PendulumInterfaceCounter.swift in Sources */,
+				98885451270E55400066E7EA /* PendulumMeshConstructor.swift in Sources */,
+				988853D3270E52A10066E7EA /* PendulumMatrixSolving.swift in Sources */,
+				98885458270E55400066E7EA /* PendulumMeshConstructorExtensions.swift in Sources */,
+				988853D4270E52A10066E7EA /* PendulumStateEquations.swift in Sources */,
+				98885429270E53250066E7EA /* PendulumInterfaceRendering.swift in Sources */,
+				98ECC3DB270FCEC1008BACD3 /* ContentView.swift in Sources */,
+				98885431270E53340066E7EA /* PendulumInterfaceAnchor.swift in Sources */,
+				988853E6270E52E40066E7EA /* PendulumSimulationPrototype.swift in Sources */,
+				98EDDDB3270D0C8E006F9F44 /* AR_MultiPendulumApp.swift in Sources */,
+				9888545B270E55400066E7EA /* PendulumJointUtilities.metal in Sources */,
+				98885459270E55400066E7EA /* PendulumMeshConstructionExecution.swift in Sources */,
+				988853D9270E52A90066E7EA /* PendulumTimeStepper.swift in Sources */,
+				988853E5270E52E40066E7EA /* PendulumSimulationPrototypeExtensions.swift in Sources */,
+				988853DB270E52BC0066E7EA /* PendulumFailureTrajectory.swift in Sources */,
+				98FDEEA4271E000000FD7F25 /* Metal_Utilities_Combined.metal in Sources */,
+				988853E1270E52CD0066E7EA /* PendulumRendererExtensions.swift in Sources */,
+				9888545F270E55400066E7EA /* PendulumRectangleUtilities.metal in Sources */,
+				988853DF270E52C70066E7EA /* PendulumStandRendering.swift in Sources */,
+				9888543B270E53450066E7EA /* PendulumAngularVelocityPicker.swift in Sources */,
+				98885438270E53450066E7EA /* PendulumPropertyPicker.swift in Sources */,
+				98EDDDEA270D28BD006F9F44 /* PendulumRenderer.swift in Sources */,
+				9888545C270E55400066E7EA /* PendulumJointConstruction.metal in Sources */,
+				988853D8270E52A90066E7EA /* PendulumTimeStepperExtensions.swift in Sources */,
+				988853D5270E52A10066E7EA /* PendulumStateEquationsExtensions.swift in Sources */,
+				988853DD270E52C10066E7EA /* PendulumState.swift in Sources */,
+				9888543A270E53450066E7EA /* PendulumAnglePicker.swift in Sources */,
+				9888542E270E53340066E7EA /* PendulumInterfacePicker.swift in Sources */,
+				98885427270E53250066E7EA /* PendulumInterfaceExtensions.swift in Sources */,
+				98885437270E53450066E7EA /* PendulumMassPicker.swift in Sources */,
+				98885439270E53450066E7EA /* PendulumLengthPicker.swift in Sources */,
+				98885460270E55400066E7EA /* PendulumRectangleConstruction.metal in Sources */,
+				9888545D270E55400066E7EA /* PendulumRendering.metal in Sources */,
+				98EDDDEE270D29EA006F9F44 /* PendulumSettingsView.swift in Sources */,
+				98885430270E53340066E7EA /* PendulumInterfaceBackButton.swift in Sources */,
+				98885428270E53250066E7EA /* PendulumInterfaceParagraphs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		98A88F9B2625FE7C00BA7E0F /* Debug */ = {
+		98EDDDBB270D0C8F006F9F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1452,7 +532,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_COMPILER_FLAGS = "-fpreserve-invariance";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1462,13 +541,13 @@
 			};
 			name = Debug;
 		};
-		98A88F9C2625FE7C00BA7E0F /* Release */ = {
+		98EDDDBC270D0C8F006F9F44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1508,7 +587,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_COMPILER_FLAGS = "-fpreserve-invariance";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1518,55 +596,67 @@
 			};
 			name = Release;
 		};
-		98A88F9E2625FE7C00BA7E0F /* Debug */ = {
+		98EDDDBE270D0C8F006F9F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"AR MultiPendulum/Preview Content\"";
 				DEVELOPMENT_TEAM = 6T952M2592;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "AR MultiPendulum/Info.plist";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-MultiPendulum-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application uses your device's camera to provide an augmented reality experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				MTL_FAST_MATH = YES;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philipturner.AR-MultiPendulum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		98A88F9F2625FE7C00BA7E0F /* Release */ = {
+		98EDDDBF270D0C8F006F9F44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"AR MultiPendulum/Preview Content\"";
 				DEVELOPMENT_TEAM = 6T952M2592;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "AR MultiPendulum/Info.plist";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-MultiPendulum-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application uses your device's camera to provide an augmented reality experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				MTL_FAST_MATH = YES;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philipturner.AR-MultiPendulum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1575,57 +665,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98A88F892625FE7B00BA7E0F /* Build configuration list for PBXProject "AR MultiPendulum" */ = {
+		98EDDDAA270D0C8E006F9F44 /* Build configuration list for PBXProject "AR MultiPendulum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98A88F9B2625FE7C00BA7E0F /* Debug */,
-				98A88F9C2625FE7C00BA7E0F /* Release */,
+				98EDDDBB270D0C8F006F9F44 /* Debug */,
+				98EDDDBC270D0C8F006F9F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98A88F9D2625FE7C00BA7E0F /* Build configuration list for PBXNativeTarget "AR MultiPendulum" */ = {
+		98EDDDBD270D0C8F006F9F44 /* Build configuration list for PBXNativeTarget "AR MultiPendulum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98A88F9E2625FE7C00BA7E0F /* Debug */,
-				98A88F9F2625FE7C00BA7E0F /* Release */,
+				98EDDDBE270D0C8F006F9F44 /* Debug */,
+				98EDDDBF270D0C8F006F9F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		98328DCD26C2D039008B627A /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devicekit/DeviceKit";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		98EF71C326D5F1E5006A97AA /* XCRemoteSwiftPackageReference "ZippyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/michaeleisel/ZippyJSON";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		98328DCE26C2D039008B627A /* DeviceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98328DCD26C2D039008B627A /* XCRemoteSwiftPackageReference "DeviceKit" */;
-			productName = DeviceKit;
-		};
-		98EF71C426D5F1E5006A97AA /* ZippyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98EF71C326D5F1E5006A97AA /* XCRemoteSwiftPackageReference "ZippyJSON" */;
-			productName = ZippyJSON;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 98A88F862625FE7B00BA7E0F /* Project object */;
+	rootObject = 98EDDDA7270D0C8E006F9F44 /* Project object */;
 }
