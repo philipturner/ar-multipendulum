@@ -91,7 +91,7 @@ extension PendulumInterface.Anchor: RayTraceable {
     
     func trace(ray worldSpaceRay: RayTracing.Ray) -> Float? {
         let testRay = worldSpaceRay.transformedIntoBoundingBox(boundingBox)
-        guard testRay.passesInitialBoundingBoxTest(), testRay.getCentralCubeProgress() != nil else {
+        guard testRay.passesInitialBoundingBoxTest(), testRay.getCubeProgress() != nil else {
             return nil
         }
         

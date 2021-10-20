@@ -142,7 +142,7 @@ extension PendulumRenderer {
             let inverseScale = simd_float3(diameterReciprocal, diameterReciprocal, pendulumWidthReciprocal)
             let testRay = RayTracing.Ray(origin: modelSpaceOrigin * inverseScale, direction: modelSpaceDirection * inverseScale)
             
-            guard testRay.passesInitialBoundingBoxTest(), testRay.getCentralCylinderProgress() != nil else {
+            guard testRay.passesInitialBoundingBoxTest(), testRay.getCylinderProgress() != nil else {
                 return nil
             }
         }
@@ -219,7 +219,7 @@ extension PendulumRenderer {
             func testBox(_ boundingBox: simd_float2x3) -> Bool {
                 let transformedRay = modelSpaceRay.transformedIntoBoundingBox(boundingBox)
                 
-                if transformedRay.passesInitialBoundingBoxTest(), transformedRay.getCentralCubeProgress() != nil {
+                if transformedRay.passesInitialBoundingBoxTest(), transformedRay.getCubeProgress() != nil {
                     return true
                 } else {
                     return false
@@ -293,7 +293,7 @@ extension PendulumRenderer {
                     let inverseScale = simd_float3(.init(repeating: jointDiameterReciprocal), inverseScaleZ)
                     let testRay = flip(RayTracing.Ray(origin: testOrigin * inverseScale, direction: testDirection * inverseScale))
                     
-                    if testRay.passesInitialBoundingBoxTest(), let progress = testRay.getCentralCylinderProgress() {
+                    if testRay.passesInitialBoundingBoxTest(), let progress = testRay.getCylinderProgress() {
                         return progress
                     } else {
                         return nil
@@ -334,7 +334,7 @@ extension PendulumRenderer {
                     let inverseScale = rectangleInverseScale
                     let testRay = RayTracing.Ray(origin: testOrigin * inverseScale, direction: testDirection * inverseScale)
                     
-                    if testRay.passesInitialBoundingBoxTest(), let progress = testRay.getCentralCubeProgress() {
+                    if testRay.passesInitialBoundingBoxTest(), let progress = testRay.getCubeProgress() {
                         return progress
                     } else {
                         return nil
